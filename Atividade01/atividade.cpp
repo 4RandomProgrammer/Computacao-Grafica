@@ -10,17 +10,27 @@ class png_processor {
         png_byte color_type = PNG_COLOR_TYPE_RGBA;
         png_byte bit_depth = 8;
         png_byte **rows = NULL;
+        //! Método que inicializa a imagem
         void init_png();
+        //! Método responsável por preencher uma matriz ja inicializada com valores para gerar um gradiente
         int process_png_file_gradient();
+        //! Método responsável por preencher uma matriz ja inicializada com valores para gerar um circulo
         int process_png_file_circle();
+        //! Método responsável por preencher uma matriz ja inicializada com valores para gerar um triangulo
         int process_png_file_triangle();
+        //! Método responsável por converter a matriz com valores em um arquivo png.
         int write_png_file(char *filename);
+        //! Função para verificar se um ponto esta dentro do triângulo
         bool is_inside(int x1, int y1, int x2, int y2, int x3, int y3, int x, int y);
+        //! Função para calculo da área de triangulo.
         float triangle_area(int x1, int y1, int x2, int y2, int x3, int y3);
 
     public:
+        //! Método responsável por renderizar a um gradiente
         void render_gradient(char *filename);
+        //! Método responsável por renderizar a um círculo
         void render_circle(char *filename);
+        //! Método responsável por renderizar a um triângulo
         void render_triangle(char *filename);
 };
 // Função não foi criada por mim! Retirada do seguinte local: https://www.geeksforgeeks.org/check-whether-a-given-point-lies-inside-a-triangle-or-not/
