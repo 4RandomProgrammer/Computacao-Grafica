@@ -1,0 +1,106 @@
+\doxysection{vec3.\+h}
+\hypertarget{vec3_8h_source}{}\label{vec3_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ VEC3\_H}}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ VEC3\_H}}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00007}00007\ \textcolor{keyword}{using\ }std::sqrt;}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00009}\mbox{\hyperlink{classvec3}{00009}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classvec3}{vec3}}\ \{}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00010}00010\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00011}00011\ \ \ \ \ \textcolor{keywordtype}{double}\ e[3];}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00013}00013\ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}()\ :\ e\{0,0,0\}\ \{\}}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00014}00014\ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}(\textcolor{keywordtype}{double}\ e0,\ \textcolor{keywordtype}{double}\ e1,\ \textcolor{keywordtype}{double}\ e2)\ :\ e\{e0,\ e1,\ e2\}\ \{\}}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00016}00016\ \ \ \ \ \textcolor{keywordtype}{double}\ x()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ e[0];\ \}}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00017}00017\ \ \ \ \ \textcolor{keywordtype}{double}\ y()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ e[1];\ \}}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00018}00018\ \ \ \ \ \textcolor{keywordtype}{double}\ z()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ e[2];\ \}}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00020}00020\ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ operator-\/()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classvec3}{vec3}}(-\/e[0],\ -\/e[1],\ -\/e[2]);\ \}}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00021}00021\ \ \ \ \ \textcolor{keywordtype}{double}\ operator[](\textcolor{keywordtype}{int}\ i)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ e[i];\ \}}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00022}00022\ \ \ \ \ \textcolor{keywordtype}{double}\&\ operator[](\textcolor{keywordtype}{int}\ i)\ \{\ \textcolor{keywordflow}{return}\ e[i];\ \}}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00024}00024\ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\&\ operator+=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classvec3}{vec3}}\ \&v)\ \{}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00025}00025\ \ \ \ \ \ \ \ \ e[0]\ +=\ v.e[0];}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00026}00026\ \ \ \ \ \ \ \ \ e[1]\ +=\ v.e[1];}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00027}00027\ \ \ \ \ \ \ \ \ e[2]\ +=\ v.e[2];}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00031}00031\ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\&\ operator*=(\textcolor{keywordtype}{double}\ t)\ \{}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00032}00032\ \ \ \ \ \ \ \ \ e[0]\ *=\ t;}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ e[1]\ *=\ t;}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00034}00034\ \ \ \ \ \ \ \ \ e[2]\ *=\ t;}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00038}00038\ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\&\ operator/=(\textcolor{keywordtype}{double}\ t)\ \{}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this}\ *=\ 1/t;}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00042}00042\ \ \ \ \ \textcolor{keywordtype}{double}\ length()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sqrt(length\_squared());}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00044}00044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00046}00046\ \ \ \ \ \textcolor{keywordtype}{double}\ length\_squared()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ e[0]*e[0]\ +\ e[1]*e[1]\ +\ e[2]*e[2];}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00048}00048\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00049}00049\ \};}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00051}00051\ \textcolor{comment}{//\ point3\ is\ just\ an\ alias\ for\ vec3,\ but\ useful\ for\ geometric\ clarity\ in\ the\ code.}}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00052}00052\ \textcolor{keyword}{using\ }\mbox{\hyperlink{classmat4}{point3}}\ =\ \mbox{\hyperlink{classvec3}{vec3}};}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00055}00055\ \textcolor{comment}{//\ Vector\ Utility\ Functions}}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00057}00057\ \textcolor{keyword}{inline}\ std::ostream\&\ operator<<(std::ostream\ \&out,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classvec3}{vec3}}\ \&v)\ \{}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00058}00058\ \ \ \ \ \textcolor{keywordflow}{return}\ out\ <<\ v.e[0]\ <<\ \textcolor{charliteral}{'\ '}\ <<\ v.e[1]\ <<\ \textcolor{charliteral}{'\ '}\ <<\ v.e[2];}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00059}00059\ \}}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00061}00061\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classvec3}{vec3}}\ operator+(\textcolor{keyword}{const}\ \mbox{\hyperlink{classvec3}{vec3}}\ \&u,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classvec3}{vec3}}\ \&v)\ \{}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00062}00062\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classvec3}{vec3}}(u.e[0]\ +\ v.e[0],\ u.e[1]\ +\ v.e[1],\ u.e[2]\ +\ v.e[2]);}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00063}00063\ \}}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00065}00065\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classvec3}{vec3}}\ operator-\/(\textcolor{keyword}{const}\ \mbox{\hyperlink{classvec3}{vec3}}\ \&u,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classvec3}{vec3}}\ \&v)\ \{}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00066}00066\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classvec3}{vec3}}(u.e[0]\ -\/\ v.e[0],\ u.e[1]\ -\/\ v.e[1],\ u.e[2]\ -\/\ v.e[2]);}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00067}00067\ \}}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00069}00069\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classvec3}{vec3}}\ operator*(\textcolor{keyword}{const}\ \mbox{\hyperlink{classvec3}{vec3}}\ \&u,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classvec3}{vec3}}\ \&v)\ \{}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00070}00070\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classvec3}{vec3}}(u.e[0]\ *\ v.e[0],\ u.e[1]\ *\ v.e[1],\ u.e[2]\ *\ v.e[2]);}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00071}00071\ \}}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00073}00073\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classvec3}{vec3}}\ operator*(\textcolor{keywordtype}{double}\ t,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classvec3}{vec3}}\ \&v)\ \{}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00074}00074\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classvec3}{vec3}}(t*v.e[0],\ t*v.e[1],\ t*v.e[2]);}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00075}00075\ \}}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00077}00077\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classvec3}{vec3}}\ operator*(\textcolor{keyword}{const}\ \mbox{\hyperlink{classvec3}{vec3}}\ \&v,\ \textcolor{keywordtype}{double}\ t)\ \{}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00078}00078\ \ \ \ \ \textcolor{keywordflow}{return}\ t\ *\ v;}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00079}00079\ \}}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00081}00081\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classvec3}{vec3}}\ operator/(\mbox{\hyperlink{classvec3}{vec3}}\ v,\ \textcolor{keywordtype}{double}\ t)\ \{}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00082}00082\ \ \ \ \ \textcolor{keywordflow}{return}\ (1/t)\ *\ v;}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00083}00083\ \}}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00085}00085\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ dot(\textcolor{keyword}{const}\ \mbox{\hyperlink{classvec3}{vec3}}\ \&u,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classvec3}{vec3}}\ \&v)\ \{}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00086}00086\ \ \ \ \ \textcolor{keywordflow}{return}\ u.e[0]\ *\ v.e[0]}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00087}00087\ \ \ \ \ \ \ \ \ \ +\ u.e[1]\ *\ v.e[1]}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00088}00088\ \ \ \ \ \ \ \ \ \ +\ u.e[2]\ *\ v.e[2];}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00089}00089\ \}}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00091}00091\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classvec3}{vec3}}\ cross(\textcolor{keyword}{const}\ \mbox{\hyperlink{classvec3}{vec3}}\ \&u,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classvec3}{vec3}}\ \&v)\ \{}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00092}00092\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classvec3}{vec3}}(u.e[1]\ *\ v.e[2]\ -\/\ u.e[2]\ *\ v.e[1],}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u.e[2]\ *\ v.e[0]\ -\/\ u.e[0]\ *\ v.e[2],}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u.e[0]\ *\ v.e[1]\ -\/\ u.e[1]\ *\ v.e[0]);}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00095}00095\ \}}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00097}00097\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classvec3}{vec3}}\ unit\_vector(\mbox{\hyperlink{classvec3}{vec3}}\ v)\ \{}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00098}00098\ \ \ \ \ \textcolor{keywordflow}{return}\ v\ /\ v.length();}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00099}00099\ \}}
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{vec3_8h_source_l00101}00101\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

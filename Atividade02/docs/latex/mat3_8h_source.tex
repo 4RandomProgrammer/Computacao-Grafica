@@ -1,0 +1,164 @@
+\doxysection{mat3.\+h}
+\hypertarget{mat3_8h_source}{}\label{mat3_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ MAT3\_H}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ MAT3\_H}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00007}00007\ \textcolor{keyword}{using\ }std::sqrt;}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00009}\mbox{\hyperlink{classmat3}{00009}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmat3}{mat3}}\ \{}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00011}00011\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00012}00012\ \ \ \ \ \textcolor{keywordtype}{double}\ e[3][3];}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00014}\mbox{\hyperlink{classmat3_a463027040addb1c56fe84c91b74b8d79}{00014}}\ \ \ \ \ \mbox{\hyperlink{classmat3_a463027040addb1c56fe84c91b74b8d79}{mat3}}()\ :\ e\{\{0,0,0\},\ \{0,0,0\},\ \{0,0,0\}\}\ \{\}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00016}00016\ \ \ \ \ \textcolor{comment}{//\(\backslash\)@params:\ e0\ elemento\ 0,0\ da\ matriz}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00017}00017\ \ \ \ \ \textcolor{comment}{//\(\backslash\)@params:\ e1\ elemento\ 0,1\ da\ matriz}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00018}00018\ \ \ \ \ \textcolor{comment}{//\(\backslash\)@params:\ e2\ elemento\ 0,2\ da\ matriz}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00019}00019\ \ \ \ \ \textcolor{comment}{//\(\backslash\)@params:\ f0\ elemento\ 1,0\ da\ matriz}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00020}00020\ \ \ \ \ \textcolor{comment}{//\(\backslash\)@params:\ f1\ elemento\ 1,1\ da\ matriz}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00021}00021\ \ \ \ \ \textcolor{comment}{//\(\backslash\)@params:\ f2\ elemento\ 1,2\ da\ matriz}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00022}00022\ \ \ \ \ \textcolor{comment}{//\(\backslash\)@params:\ g0\ elemento\ 2,0\ da\ matriz}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00023}00023\ \ \ \ \ \textcolor{comment}{//\(\backslash\)@params:\ g1\ elemento\ 2,1\ da\ matriz}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00024}00024\ \ \ \ \ \textcolor{comment}{//\(\backslash\)@params:\ g2\ elemento\ 2,2\ da\ matriz}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00025}\mbox{\hyperlink{classmat3_ab2eb2daa5190ce3fb2d465ac2a0fcac1}{00025}}\ \ \ \ \ \mbox{\hyperlink{classmat3_ab2eb2daa5190ce3fb2d465ac2a0fcac1}{mat3}}(\textcolor{keywordtype}{double}\ e0,\ \textcolor{keywordtype}{double}\ e1,\ \textcolor{keywordtype}{double}\ e2,\ \textcolor{keywordtype}{double}\ f0,\ \textcolor{keywordtype}{double}\ f1,\ \textcolor{keywordtype}{double}\ f2,\ \textcolor{keywordtype}{double}\ g0,\ \textcolor{keywordtype}{double}\ g1,\ \textcolor{keywordtype}{double}\ g2)\ :\ e\{\{e0,\ e1,\ e2\},\ \{f0,\ f1,\ f2\},\ \{g0,\ g1,\ g2\}\}\ \{\}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00028}\mbox{\hyperlink{classmat3_a4717e2c227c9e5db00fe1043115118f4}{00028}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmat3_a4717e2c227c9e5db00fe1043115118f4}{x1}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ e[0][0];\ \}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00030}\mbox{\hyperlink{classmat3_a7b6b4c8278b2b7d90b08fe0ad9176742}{00030}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmat3_a7b6b4c8278b2b7d90b08fe0ad9176742}{y1}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ e[0][1];\ \}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00032}\mbox{\hyperlink{classmat3_a00d9ce97616bbbeac6b9ab079fca3a73}{00032}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmat3_a00d9ce97616bbbeac6b9ab079fca3a73}{z1}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ e[0][2];\ \}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00034}\mbox{\hyperlink{classmat3_a1f4737437a39d539a67ee58e3de36eed}{00034}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmat3_a1f4737437a39d539a67ee58e3de36eed}{x2}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ e[1][0];\ \}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00036}\mbox{\hyperlink{classmat3_abaf2533e3812028a3cb789ad1ba7bf6d}{00036}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmat3_abaf2533e3812028a3cb789ad1ba7bf6d}{y2}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ e[1][1];\ \}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00038}\mbox{\hyperlink{classmat3_a5232120a4d534085cfa01a46ac50efbe}{00038}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmat3_a5232120a4d534085cfa01a46ac50efbe}{z2}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ e[1][2];\ \}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00040}\mbox{\hyperlink{classmat3_ae9fd1af4bc2200d6a8a24900d8448e5e}{00040}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmat3_ae9fd1af4bc2200d6a8a24900d8448e5e}{x3}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ e[2][0];\ \}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00042}\mbox{\hyperlink{classmat3_aabbdf5a4b2a989d7c7f8236e8c2e5ce5}{00042}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmat3_aabbdf5a4b2a989d7c7f8236e8c2e5ce5}{y3}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ e[2][1];\ \}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00044}\mbox{\hyperlink{classmat3_a4dd7765de70bfb88b51c6ce701a0dc6e}{00044}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classmat3_a4dd7765de70bfb88b51c6ce701a0dc6e}{z3}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ e[2][2];\ \}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00047}\mbox{\hyperlink{classmat3_a319d0ef3acc68daac58cf5d68375d1e6}{00047}}\ \ \ \ \ \mbox{\hyperlink{classmat3}{mat3}}\ \mbox{\hyperlink{classmat3_a319d0ef3acc68daac58cf5d68375d1e6}{operator-\/}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmat3}{mat3}}(-\/e[0][0],\ -\/e[0][1],\ -\/e[0][2]\ ,-\/e[1][0],\ -\/e[1][1],\ -\/e[1][2],-\/e[2][0],\ -\/e[2][1],\ -\/e[2][2]);\ \}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00050}00050\ \ \ \ \ \textcolor{comment}{//\(\backslash\)@params:\ v\ corresponde\ a\ outra\ matriz\ da\ soma.\ }}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00051}\mbox{\hyperlink{classmat3_a994ae0dddd51daaf92fa46d375e2eb8b}{00051}}\ \ \ \ \ \mbox{\hyperlink{classmat3}{mat3}}\&\ \mbox{\hyperlink{classmat3_a994ae0dddd51daaf92fa46d375e2eb8b}{operator+=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classmat3}{mat3}}\ \&v)\ \{}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ j++)\ \{}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ e[i][j]\ +=\ v.e[i][j];}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00060}00060\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00063}00063\ \ \ \ \ \textcolor{comment}{//@params:\ t\ é\ o\ escalar\ que\ irá\ multiplicar\ os\ elementos\ da\ matriz}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00064}\mbox{\hyperlink{classmat3_addda74746fd3055e1a015089b1e0256d}{00064}}\ \ \ \ \ \mbox{\hyperlink{classmat3}{mat3}}\&\ \mbox{\hyperlink{classmat3_addda74746fd3055e1a015089b1e0256d}{operator*=}}(\textcolor{keywordtype}{double}\ t)\ \{}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ j++)\ \{}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ e[i][j]\ *=\ t;}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00072}00072\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00075}00075\ \ \ \ \ \textcolor{comment}{//\(\backslash\)@params:\ t:\ corresponde\ ao\ escalar\ que\ irá\ dividir\ toda\ a\ matriz}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00076}\mbox{\hyperlink{classmat3_a6b2c07d1df367a5e26a66a8e01d4d473}{00076}}\ \ \ \ \ \mbox{\hyperlink{classmat3}{mat3}}\&\ \mbox{\hyperlink{classmat3_a6b2c07d1df367a5e26a66a8e01d4d473}{operator/=}}(\textcolor{keywordtype}{double}\ t)\ \{}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this}\ *=\ 1/t;}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00078}00078\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00079}00079\ \};}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00081}00081\ \textcolor{comment}{//\ point3\ is\ just\ an\ alias\ for\ mat3,\ but\ useful\ for\ geometric\ clarity\ in\ the\ code.}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00082}00082\ \textcolor{keyword}{using\ }\mbox{\hyperlink{classmat3}{point3x3}}\ =\ \mbox{\hyperlink{classmat3}{mat3}};}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00085}00085\ \textcolor{comment}{//\ Vector\ Utility\ Functions}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00087}00087\ \textcolor{keyword}{inline}\ std::ostream\&\ operator<<(std::ostream\ \&out,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classmat3}{mat3}}\ \&v)\ \{}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00088}00088\ \ \ \ \ \textcolor{keywordflow}{return}\ out\ <<\ v.e[0][0]\ <<\ \textcolor{charliteral}{'\ '}\ <<\ v.e[0][1]\ <<\ \textcolor{charliteral}{'\ '}\ <<\ v.e[0][2]\ <<\ \textcolor{charliteral}{'\ '}\ <<\ v.e[1][0]\ <<\ \textcolor{charliteral}{'\ '}\ <<\ v.e[1][1]\ <<\ \textcolor{charliteral}{'\ '}\ <<\ v.e[1][2]\ <<\ \textcolor{charliteral}{'\ '}\ <<\ v.e[2][0]\ <<\ \textcolor{charliteral}{'\ '}\ <<\ v.e[2][1]\ <<\ \textcolor{charliteral}{'\ '}\ <<\ v.e[2][2];}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00089}00089\ \}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00092}00092\ \textcolor{comment}{//\(\backslash\)@params:\ u\ corresponde\ a\ primeira\ matriz\ da\ soma.\ }}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00093}00093\ \textcolor{comment}{//\(\backslash\)@params:\ v\ corresponde\ a\ segunda\ matriz\ da\ soma.\ }}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00094}00094\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classmat3}{mat3}}\ operator+(\textcolor{keyword}{const}\ \mbox{\hyperlink{classmat3}{mat3}}\ \&u,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classmat3}{mat3}}\ \&v)\ \{}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00095}00095\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmat3}{mat3}}(u.e[0][0]\ +\ v.e[0][0],\ }
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u.e[0][1]\ +\ v.e[0][1],}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u.e[0][2]\ +\ v.e[0][2],}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u.e[1][0]\ +\ v.e[1][0],}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u.e[1][1]\ +\ v.e[1][1],}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u.e[1][2]\ +\ v.e[1][2],}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u.e[2][0]\ +\ v.e[2][0],}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u.e[2][1]\ +\ v.e[2][1],}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u.e[2][2]\ +\ v.e[2][2]);}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00104}00104\ \}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00107}00107\ \textcolor{comment}{//\(\backslash\)@params:\ u\ corresponde\ a\ primeira\ matriz\ da\ subtração.\ }}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00108}00108\ \textcolor{comment}{//\(\backslash\)@params:\ v\ corresponde\ a\ segunda\ matriz\ da\ subtração.\ }}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00109}00109\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classmat3}{mat3}}\ operator-\/(\textcolor{keyword}{const}\ \mbox{\hyperlink{classmat3}{mat3}}\ \&u,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classmat3}{mat3}}\ \&v)\ \{}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00110}00110\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmat3}{mat3}}(u.e[0][0]\ -\/\ v.e[0][0],}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u.e[0][1]\ -\/\ v.e[0][1],}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u.e[0][2]\ -\/\ v.e[0][2],}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u.e[1][0]\ -\/\ v.e[1][0],}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u.e[1][1]\ -\/\ v.e[1][1],}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u.e[1][2]\ -\/\ v.e[1][2],}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u.e[2][0]\ -\/\ v.e[2][0],}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u.e[2][1]\ -\/\ v.e[2][1],}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u.e[2][2]\ -\/\ v.e[2][2]);}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00119}00119\ \}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00122}00122\ \textcolor{comment}{//\(\backslash\)@params:\ u\ corresponde\ a\ primeira\ matriz\ da\ multiplicação.\ }}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00123}00123\ \textcolor{comment}{//\(\backslash\)@params:\ v\ corresponde\ a\ segunda\ matriz\ da\ multiplicação.\ }}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00124}00124\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classmat3}{mat3}}\ operator*(\textcolor{keyword}{const}\ \mbox{\hyperlink{classmat3}{mat3}}\ \&u,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classmat3}{mat3}}\ \&v)\ \{}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00125}00125\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmat3}{mat3}}(u.e[0][0]\ *\ v.e[0][0],}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u.e[0][1]\ *\ v.e[0][1],\ }
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u.e[0][2]\ *\ v.e[0][2],}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u.e[1][0]\ *\ v.e[1][0],}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u.e[1][1]\ *\ v.e[1][1],}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u.e[1][2]\ *\ v.e[1][2],}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u.e[2][0]\ *\ v.e[2][0],}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u.e[2][1]\ *\ v.e[2][1],}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u.e[2][2]\ *\ v.e[2][2]);}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00134}00134\ \}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00137}00137\ \textcolor{comment}{//\(\backslash\)@params:\ t\ corresponde\ ao\ escalar\ que\ irá\ multiplicar\ os\ elementos\ da\ matriz.\ }}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00138}00138\ \textcolor{comment}{//\(\backslash\)@params:\ v\ corresponde\ a\ matriz\ a\ ser\ multiplicada.}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00139}00139\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classmat3}{mat3}}\ operator*(\textcolor{keywordtype}{double}\ t,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classmat3}{mat3}}\ \&v)\ \{}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00140}00140\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmat3}{mat3}}(t*v.e[0][0],\ t*v.e[0][1],}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ t*v.e[0][2],\ t*v.e[1][0],}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ t*v.e[1][1],\ t*v.e[1][2],}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ t*v.e[2][0],\ t*v.e[2][1],}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ t*v.e[2][2]);}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00145}00145\ \}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00148}00148\ \textcolor{comment}{//\(\backslash\)@params:\ v\ corresponde\ a\ matriz\ a\ ser\ multiplicada.\ }}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00149}00149\ \textcolor{comment}{//\(\backslash\)@params:\ t\ corresponde\ ao\ escalar\ que\ irá\ multiplicar\ os\ elementos\ da\ matriz.}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00150}00150\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classmat3}{mat3}}\ operator*(\textcolor{keyword}{const}\ \mbox{\hyperlink{classmat3}{mat3}}\ \&v,\ \textcolor{keywordtype}{double}\ t)\ \{}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00151}00151\ \ \ \ \ \textcolor{keywordflow}{return}\ t\ *\ v;}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00152}00152\ \}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00155}00155\ \textcolor{comment}{//\(\backslash\)@params:\ v\ corresponde\ a\ matriz\ a\ ser\ multiplicada.\ }}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00156}00156\ \textcolor{comment}{//\(\backslash\)@params:\ t\ corresponde\ ao\ escalar\ que\ irá\ multiplicar\ os\ elementos\ da\ matriz.}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00157}00157\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classmat3}{mat3}}\ operator/(\mbox{\hyperlink{classmat3}{mat3}}\ v,\ \textcolor{keywordtype}{double}\ t)\ \{}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00158}00158\ \ \ \ \ \textcolor{keywordflow}{return}\ (1/t)\ *\ v;}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00159}00159\ \}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00162}00162\ \textcolor{comment}{//\(\backslash\)@params:\ u\ corresponde\ a\ primeira\ matriz\ da\ multiplicação\ matricial.\ }}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00163}00163\ \textcolor{comment}{//\(\backslash\)@params:\ v\ corresponde\ a\ segunda\ matriz\ da\ multiplicação\ matricial.\ }}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00164}00164\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classmat3}{mat3}}\ dot(\textcolor{keyword}{const}\ \mbox{\hyperlink{classmat3}{mat3}}\ \&u,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classmat3}{mat3}}\ \&v)\ \{}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00165}00165\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmat3}{mat3}}(}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00166}00166\ \ \ \ \ \ \ \ \ u.e[0][0]\ *\ v.e[0][0]\ +\ u.e[0][1]\ *\ v.e[1][0]\ +\ u.e[0][2]\ *\ v.e[2][0],}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00167}00167\ \ \ \ \ \ \ \ \ u.e[0][0]\ *\ v.e[0][1]\ +\ u.e[0][1]\ *\ v.e[1][1]\ +\ u.e[0][2]\ *\ v.e[2][1],}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00168}00168\ \ \ \ \ \ \ \ \ u.e[0][0]\ *\ v.e[0][2]\ +\ u.e[0][1]\ *\ v.e[1][2]\ +\ u.e[0][2]\ *\ v.e[2][2],}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00170}00170\ \ \ \ \ \ \ \ \ u.e[1][0]\ *\ v.e[0][0]\ +\ u.e[1][1]\ *\ v.e[1][0]\ +\ u.e[1][2]\ *\ v.e[2][0],}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00171}00171\ \ \ \ \ \ \ \ \ u.e[1][0]\ *\ v.e[0][1]\ +\ u.e[1][1]\ *\ v.e[1][1]\ +\ u.e[1][2]\ *\ v.e[2][1],}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00172}00172\ \ \ \ \ \ \ \ \ u.e[1][0]\ *\ v.e[0][2]\ +\ u.e[1][1]\ *\ v.e[1][2]\ +\ u.e[1][2]\ *\ v.e[2][2],}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00173}00173\ }
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00174}00174\ \ \ \ \ \ \ \ \ u.e[2][0]\ *\ v.e[0][0]\ +\ u.e[2][1]\ *\ v.e[1][0]\ +\ u.e[2][2]\ *\ v.e[2][0],}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00175}00175\ \ \ \ \ \ \ \ \ u.e[2][0]\ *\ v.e[0][1]\ +\ u.e[2][1]\ *\ v.e[1][1]\ +\ u.e[2][2]\ *\ v.e[2][1],}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00176}00176\ \ \ \ \ \ \ \ \ u.e[2][0]\ *\ v.e[0][2]\ +\ u.e[2][1]\ *\ v.e[1][2]\ +\ u.e[2][2]\ *\ v.e[2][2]}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00177}00177\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00178}00178\ \}}
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00180}00180\ }
+\DoxyCodeLine{\Hypertarget{mat3_8h_source_l00181}00181\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

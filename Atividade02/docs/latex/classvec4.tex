@@ -1,0 +1,353 @@
+\doxysection{vec4 Class Reference}
+\hypertarget{classvec4}{}\label{classvec4}\index{vec4@{vec4}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classvec4_aa29685cf2528dae6ad7d74a7e01c1d6f}{vec4}} ()
+\begin{DoxyCompactList}\small\item\em Construtor base\+: inicializa a função com zeros. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classvec4_aab75403b358eade4f3fd059819858b96}{vec4}} (double e0, double e1, double e2, double e3)
+\begin{DoxyCompactList}\small\item\em Construtor com params\+: \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classvec4_a25d847358270626b627d4a61923f3cbe}{x}} () const
+\begin{DoxyCompactList}\small\item\em Função de coordenada\+: retorna elemento 0 do vetor. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classvec4_adce71e1986b04f4245efcf6e3e84ef59}{y}} () const
+\begin{DoxyCompactList}\small\item\em Função de coordenada\+: retorna elemento 1 do vetor. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classvec4_af155ae027f00d8ac0663d0fe10fe5dd8}{z}} () const
+\begin{DoxyCompactList}\small\item\em Função de coordenada\+: retorna elemento 2 do vetor. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classvec4_a143f8f4b5ef372195a2eb20b91958cf4}{w}} () const
+\begin{DoxyCompactList}\small\item\em Função de coordenada\+: retorna elemento 3 do vetor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classvec4}{vec4}} \mbox{\hyperlink{classvec4_ad70d259308c10779ca37fa100084e33b}{operator-\/}} () const
+\begin{DoxyCompactList}\small\item\em Operação de -\/\+: Realização a inversão dos valores guardados no vetor. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classvec4_acacb6da88d4a0c92d585ee7c61658acf}{operator\mbox{[}$\,$\mbox{]}}} (int i) const
+\begin{DoxyCompactList}\small\item\em retorna o elemento na posição i do vetor, não previne contra violação de memória, ou seja, pode acessar fora do vetor \end{DoxyCompactList}\item 
+double \& \mbox{\hyperlink{classvec4_afc5b954c340a9f40be2f181dcc7f07cc}{operator\mbox{[}$\,$\mbox{]}}} (int i)
+\begin{DoxyCompactList}\small\item\em retorna o elemento na posição i do vetor, não previne contra violação de memória, ou seja, pode acessar fora do vetor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classvec4}{vec4}} \& \mbox{\hyperlink{classvec4_a16d10f2ed44304fb1309f959f245ca52}{operator+=}} (const \mbox{\hyperlink{classvec4}{vec4}} \&v)
+\begin{DoxyCompactList}\small\item\em Operação de +\+: Realiza a soma entre dois vetores do mesmo tipo e guarda o resultado no mesmo vetor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classvec4}{vec4}} \& \mbox{\hyperlink{classvec4_aa94397f407157c06f6d82e4667b2b169}{operator\texorpdfstring{$\ast$}{*}=}} (double t)
+\begin{DoxyCompactList}\small\item\em Operação de \texorpdfstring{$\ast$}{*}\+: Realiza a multiplicação entre o vetor e um escalar. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classvec4}{vec4}} \& \mbox{\hyperlink{classvec4_a14bd8aee70c80e5ca0bc019a4e86c797}{operator/=}} (double t)
+\begin{DoxyCompactList}\small\item\em Operação de /\+: Realiza a divisão de todos os elementos do vetor por um escalar. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classvec4_a55e485d22f9ee137f383304b962489b1}{length}} () const
+\begin{DoxyCompactList}\small\item\em Operação que faz a raiz dos elementos de um vetor, necessária para a normalização de vetores. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classvec4_a73437e8e0ec221f1d6587f871848320d}{length\+\_\+squared}} () const
+\begin{DoxyCompactList}\small\item\em Operação que calcula a soma dos quadrados dos elementos de um vetor, necessária para a normalização de vetores. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classvec4_af33f44f3aadf308d577e85b4c131cbac}{e}} \mbox{[}4\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{vec4_8h_source_l00009}{9}} of file \mbox{\hyperlink{vec4_8h_source}{vec4.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classvec4_aa29685cf2528dae6ad7d74a7e01c1d6f}\label{classvec4_aa29685cf2528dae6ad7d74a7e01c1d6f} 
+\index{vec4@{vec4}!vec4@{vec4}}
+\index{vec4@{vec4}!vec4@{vec4}}
+\doxysubsubsection{\texorpdfstring{vec4()}{vec4()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily vec4\+::vec4 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor base\+: inicializa a função com zeros. 
+
+
+
+Definition at line \mbox{\hyperlink{vec4_8h_source_l00014}{14}} of file \mbox{\hyperlink{vec4_8h_source}{vec4.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ :\ e\{0,0,0,0\}\ \{\}}
+
+\end{DoxyCode}
+\Hypertarget{classvec4_aab75403b358eade4f3fd059819858b96}\label{classvec4_aab75403b358eade4f3fd059819858b96} 
+\index{vec4@{vec4}!vec4@{vec4}}
+\index{vec4@{vec4}!vec4@{vec4}}
+\doxysubsubsection{\texorpdfstring{vec4()}{vec4()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily vec4\+::vec4 (\begin{DoxyParamCaption}\item[{double}]{e0,  }\item[{double}]{e1,  }\item[{double}]{e2,  }\item[{double}]{e3 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor com params\+: 
+
+
+
+Definition at line \mbox{\hyperlink{vec4_8h_source_l00020}{20}} of file \mbox{\hyperlink{vec4_8h_source}{vec4.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ :\ e\{e0,\ e1,e2,\ e3\}\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classvec4_a55e485d22f9ee137f383304b962489b1}\label{classvec4_a55e485d22f9ee137f383304b962489b1} 
+\index{vec4@{vec4}!length@{length}}
+\index{length@{length}!vec4@{vec4}}
+\doxysubsubsection{\texorpdfstring{length()}{length()}}
+{\footnotesize\ttfamily double vec4\+::length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operação que faz a raiz dos elementos de um vetor, necessária para a normalização de vetores. 
+
+
+
+Definition at line \mbox{\hyperlink{vec4_8h_source_l00065}{65}} of file \mbox{\hyperlink{vec4_8h_source}{vec4.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sqrt(\mbox{\hyperlink{classvec4_a73437e8e0ec221f1d6587f871848320d}{length\_squared}}());}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classvec4_a73437e8e0ec221f1d6587f871848320d}\label{classvec4_a73437e8e0ec221f1d6587f871848320d} 
+\index{vec4@{vec4}!length\_squared@{length\_squared}}
+\index{length\_squared@{length\_squared}!vec4@{vec4}}
+\doxysubsubsection{\texorpdfstring{length\_squared()}{length\_squared()}}
+{\footnotesize\ttfamily double vec4\+::length\+\_\+squared (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operação que calcula a soma dos quadrados dos elementos de um vetor, necessária para a normalização de vetores. 
+
+
+
+Definition at line \mbox{\hyperlink{vec4_8h_source_l00070}{70}} of file \mbox{\hyperlink{vec4_8h_source}{vec4.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ e[0]*e[0]\ +\ e[1]*e[1]\ +\ e[2]*e[2]\ +\ e[3]*e[3];}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classvec4_aa94397f407157c06f6d82e4667b2b169}\label{classvec4_aa94397f407157c06f6d82e4667b2b169} 
+\index{vec4@{vec4}!operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}}
+\index{operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}!vec4@{vec4}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}=()}{operator*=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classvec4}{vec4}} \& vec4\+::operator\texorpdfstring{$\ast$}{*}= (\begin{DoxyParamCaption}\item[{double}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operação de \texorpdfstring{$\ast$}{*}\+: Realiza a multiplicação entre o vetor e um escalar. 
+
+
+
+Definition at line \mbox{\hyperlink{vec4_8h_source_l00050}{50}} of file \mbox{\hyperlink{vec4_8h_source}{vec4.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ e[0]\ *=\ t;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ e[1]\ *=\ t;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ e[3]\ *=\ t;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ e[4]\ *=\ t;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classvec4_a16d10f2ed44304fb1309f959f245ca52}\label{classvec4_a16d10f2ed44304fb1309f959f245ca52} 
+\index{vec4@{vec4}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!vec4@{vec4}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classvec4}{vec4}} \& vec4\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classvec4}{vec4}} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operação de +\+: Realiza a soma entre dois vetores do mesmo tipo e guarda o resultado no mesmo vetor. 
+
+
+
+Definition at line \mbox{\hyperlink{vec4_8h_source_l00040}{40}} of file \mbox{\hyperlink{vec4_8h_source}{vec4.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ e[0]\ +=\ v.e[0];}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ e[1]\ +=\ v.e[1];}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ e[2]\ +=\ v.e[2];}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ e[3]\ +=\ v.e[3];}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classvec4_ad70d259308c10779ca37fa100084e33b}\label{classvec4_ad70d259308c10779ca37fa100084e33b} 
+\index{vec4@{vec4}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!vec4@{vec4}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classvec4}{vec4}} vec4\+::operator-\/ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operação de -\/\+: Realização a inversão dos valores guardados no vetor. 
+
+
+
+Definition at line \mbox{\hyperlink{vec4_8h_source_l00032}{32}} of file \mbox{\hyperlink{vec4_8h_source}{vec4.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classvec4_aa29685cf2528dae6ad7d74a7e01c1d6f}{vec4}}(-\/e[0],\ -\/e[1],-\/e[2],\ -\/e[3]);\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classvec4_a14bd8aee70c80e5ca0bc019a4e86c797}\label{classvec4_a14bd8aee70c80e5ca0bc019a4e86c797} 
+\index{vec4@{vec4}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!vec4@{vec4}}
+\doxysubsubsection{\texorpdfstring{operator/=()}{operator/=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classvec4}{vec4}} \& vec4\+::operator/= (\begin{DoxyParamCaption}\item[{double}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operação de /\+: Realiza a divisão de todos os elementos do vetor por um escalar. 
+
+
+
+Definition at line \mbox{\hyperlink{vec4_8h_source_l00060}{60}} of file \mbox{\hyperlink{vec4_8h_source}{vec4.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this}\ *=\ 1/t;}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classvec4_afc5b954c340a9f40be2f181dcc7f07cc}\label{classvec4_afc5b954c340a9f40be2f181dcc7f07cc} 
+\index{vec4@{vec4}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!vec4@{vec4}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double \& vec4\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+retorna o elemento na posição i do vetor, não previne contra violação de memória, ou seja, pode acessar fora do vetor 
+
+
+
+Definition at line \mbox{\hyperlink{vec4_8h_source_l00036}{36}} of file \mbox{\hyperlink{vec4_8h_source}{vec4.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \{\ \textcolor{keywordflow}{return}\ e[i];\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classvec4_acacb6da88d4a0c92d585ee7c61658acf}\label{classvec4_acacb6da88d4a0c92d585ee7c61658acf} 
+\index{vec4@{vec4}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!vec4@{vec4}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily double vec4\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+retorna o elemento na posição i do vetor, não previne contra violação de memória, ou seja, pode acessar fora do vetor 
+
+
+
+Definition at line \mbox{\hyperlink{vec4_8h_source_l00034}{34}} of file \mbox{\hyperlink{vec4_8h_source}{vec4.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034\ \{\ \textcolor{keywordflow}{return}\ e[i];\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classvec4_a143f8f4b5ef372195a2eb20b91958cf4}\label{classvec4_a143f8f4b5ef372195a2eb20b91958cf4} 
+\index{vec4@{vec4}!w@{w}}
+\index{w@{w}!vec4@{vec4}}
+\doxysubsubsection{\texorpdfstring{w()}{w()}}
+{\footnotesize\ttfamily double vec4\+::w (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Função de coordenada\+: retorna elemento 3 do vetor. 
+
+
+
+Definition at line \mbox{\hyperlink{vec4_8h_source_l00029}{29}} of file \mbox{\hyperlink{vec4_8h_source}{vec4.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \{\ \textcolor{keywordflow}{return}\ e[3];\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classvec4_a25d847358270626b627d4a61923f3cbe}\label{classvec4_a25d847358270626b627d4a61923f3cbe} 
+\index{vec4@{vec4}!x@{x}}
+\index{x@{x}!vec4@{vec4}}
+\doxysubsubsection{\texorpdfstring{x()}{x()}}
+{\footnotesize\ttfamily double vec4\+::x (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Função de coordenada\+: retorna elemento 0 do vetor. 
+
+
+
+Definition at line \mbox{\hyperlink{vec4_8h_source_l00023}{23}} of file \mbox{\hyperlink{vec4_8h_source}{vec4.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \{\ \textcolor{keywordflow}{return}\ e[0];\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classvec4_adce71e1986b04f4245efcf6e3e84ef59}\label{classvec4_adce71e1986b04f4245efcf6e3e84ef59} 
+\index{vec4@{vec4}!y@{y}}
+\index{y@{y}!vec4@{vec4}}
+\doxysubsubsection{\texorpdfstring{y()}{y()}}
+{\footnotesize\ttfamily double vec4\+::y (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Função de coordenada\+: retorna elemento 1 do vetor. 
+
+
+
+Definition at line \mbox{\hyperlink{vec4_8h_source_l00025}{25}} of file \mbox{\hyperlink{vec4_8h_source}{vec4.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \{\ \textcolor{keywordflow}{return}\ e[1];\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classvec4_af155ae027f00d8ac0663d0fe10fe5dd8}\label{classvec4_af155ae027f00d8ac0663d0fe10fe5dd8} 
+\index{vec4@{vec4}!z@{z}}
+\index{z@{z}!vec4@{vec4}}
+\doxysubsubsection{\texorpdfstring{z()}{z()}}
+{\footnotesize\ttfamily double vec4\+::z (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Função de coordenada\+: retorna elemento 2 do vetor. 
+
+
+
+Definition at line \mbox{\hyperlink{vec4_8h_source_l00027}{27}} of file \mbox{\hyperlink{vec4_8h_source}{vec4.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \{\ \textcolor{keywordflow}{return}\ e[2];\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classvec4_af33f44f3aadf308d577e85b4c131cbac}\label{classvec4_af33f44f3aadf308d577e85b4c131cbac} 
+\index{vec4@{vec4}!e@{e}}
+\index{e@{e}!vec4@{vec4}}
+\doxysubsubsection{\texorpdfstring{e}{e}}
+{\footnotesize\ttfamily double vec4\+::e\mbox{[}4\mbox{]}}
+
+
+
+Definition at line \mbox{\hyperlink{vec4_8h_source_l00012}{12}} of file \mbox{\hyperlink{vec4_8h_source}{vec4.\+h}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+vec4.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,265 @@
+\doxysection{mat2 Class Reference}
+\hypertarget{classmat2}{}\label{classmat2}\index{mat2@{mat2}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmat2_a16c2f59c181807c930eca7955a17e6ed}{mat2}} ()
+\begin{DoxyCompactList}\small\item\em Construtor base\+: inicializa a função com zeros. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmat2_abf9e08a754d30fae9e256f427d8749ee}{mat2}} (double e0, double e1, double f0, double f1)
+\begin{DoxyCompactList}\small\item\em Construtor com params\+: \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classmat2_aa8bfbf435b9e953af58583229d7d938e}{x1}} () const
+\begin{DoxyCompactList}\small\item\em Função de coordenada\+: retorna elemento 0,0 da matriz. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classmat2_a16d3b12b2ed7b5432446ccdfeee56a4f}{y1}} () const
+\begin{DoxyCompactList}\small\item\em Função de coordenada\+: retorna elemento 0,1 da matriz. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classmat2_a97d21aad600351bb32c80528aeb5163d}{x2}} () const
+\begin{DoxyCompactList}\small\item\em Função de coordenada\+: retorna elemento 1,0 da matriz. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classmat2_a07937f4c01f97bd88dd1b9f5fa6f5db2}{y2}} () const
+\begin{DoxyCompactList}\small\item\em Função de coordenada\+: retorna elemento 1,1 da matriz. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmat2}{mat2}} \mbox{\hyperlink{classmat2_a85aabcbce4efea86041f51a5cf46a0aa}{operator-\/}} () const
+\begin{DoxyCompactList}\small\item\em Operação de -\/\+: Realização a inversão dos valores guardados na matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmat2}{mat2}} \& \mbox{\hyperlink{classmat2_a130eafc77cfc9ac23403de788a20fee9}{operator+=}} (const \mbox{\hyperlink{classmat2}{mat2}} \&v)
+\begin{DoxyCompactList}\small\item\em Operação de +\+: Realiza a soma entre duas matrizes do mesmo tipo e guarda o resultado na mesma matriz. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmat2}{mat2}} \& \mbox{\hyperlink{classmat2_ad1d02e604bd84f68864d0598f004221e}{operator\texorpdfstring{$\ast$}{*}=}} (double t)
+\begin{DoxyCompactList}\small\item\em Operação de \texorpdfstring{$\ast$}{*}\+: Realiza a multiplicação entre a matriz e um escalar. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmat2}{mat2}} \& \mbox{\hyperlink{classmat2_aa86666c7b6e52c23327b902bd1fee527}{operator/=}} (double t)
+\begin{DoxyCompactList}\small\item\em Operação de /\+: Realiza a divisão de todos os elementos da matriz por um escalar. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classmat2_af3f7cefd721ab45da0c91cb3ec282848}{e}} \mbox{[}2\mbox{]}\mbox{[}2\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{mat2_8h_source_l00010}{10}} of file \mbox{\hyperlink{mat2_8h_source}{mat2.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classmat2_a16c2f59c181807c930eca7955a17e6ed}\label{classmat2_a16c2f59c181807c930eca7955a17e6ed} 
+\index{mat2@{mat2}!mat2@{mat2}}
+\index{mat2@{mat2}!mat2@{mat2}}
+\doxysubsubsection{\texorpdfstring{mat2()}{mat2()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily mat2\+::mat2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor base\+: inicializa a função com zeros. 
+
+
+
+Definition at line \mbox{\hyperlink{mat2_8h_source_l00014}{14}} of file \mbox{\hyperlink{mat2_8h_source}{mat2.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ :\ e\{\{0,0\},\ \{0,0\}\}\ \{\}}
+
+\end{DoxyCode}
+\Hypertarget{classmat2_abf9e08a754d30fae9e256f427d8749ee}\label{classmat2_abf9e08a754d30fae9e256f427d8749ee} 
+\index{mat2@{mat2}!mat2@{mat2}}
+\index{mat2@{mat2}!mat2@{mat2}}
+\doxysubsubsection{\texorpdfstring{mat2()}{mat2()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily mat2\+::mat2 (\begin{DoxyParamCaption}\item[{double}]{e0,  }\item[{double}]{e1,  }\item[{double}]{f0,  }\item[{double}]{f1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor com params\+: 
+
+
+
+Definition at line \mbox{\hyperlink{mat2_8h_source_l00020}{20}} of file \mbox{\hyperlink{mat2_8h_source}{mat2.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ :\ e\{\{e0,\ e1\},\ \{f0,\ f1\}\}\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmat2_ad1d02e604bd84f68864d0598f004221e}\label{classmat2_ad1d02e604bd84f68864d0598f004221e} 
+\index{mat2@{mat2}!operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}}
+\index{operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}!mat2@{mat2}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}=()}{operator*=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmat2}{mat2}} \& mat2\+::operator\texorpdfstring{$\ast$}{*}= (\begin{DoxyParamCaption}\item[{double}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operação de \texorpdfstring{$\ast$}{*}\+: Realiza a multiplicação entre a matriz e um escalar. 
+
+
+
+Definition at line \mbox{\hyperlink{mat2_8h_source_l00045}{45}} of file \mbox{\hyperlink{mat2_8h_source}{mat2.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ e[0][0]\ *=\ t;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ e[0][1]\ *=\ t;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ e[1][0]\ *=\ t;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ e[1][1]\ *=\ t;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classmat2_a130eafc77cfc9ac23403de788a20fee9}\label{classmat2_a130eafc77cfc9ac23403de788a20fee9} 
+\index{mat2@{mat2}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!mat2@{mat2}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmat2}{mat2}} \& mat2\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classmat2}{mat2}} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operação de +\+: Realiza a soma entre duas matrizes do mesmo tipo e guarda o resultado na mesma matriz. 
+
+
+
+Definition at line \mbox{\hyperlink{mat2_8h_source_l00035}{35}} of file \mbox{\hyperlink{mat2_8h_source}{mat2.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ e[0][0]\ +=\ v.e[0][0];}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ e[0][1]\ +=\ v.e[0][1];}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ e[1][0]\ +=\ v.e[1][0];}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ e[1][1]\ +=\ v.e[1][1];}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classmat2_a85aabcbce4efea86041f51a5cf46a0aa}\label{classmat2_a85aabcbce4efea86041f51a5cf46a0aa} 
+\index{mat2@{mat2}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!mat2@{mat2}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmat2}{mat2}} mat2\+::operator-\/ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operação de -\/\+: Realização a inversão dos valores guardados na matrix. 
+
+
+
+Definition at line \mbox{\hyperlink{mat2_8h_source_l00031}{31}} of file \mbox{\hyperlink{mat2_8h_source}{mat2.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmat2_a16c2f59c181807c930eca7955a17e6ed}{mat2}}(-\/e[0][0],\ -\/e[0][1],-\/e[1][0],\ -\/e[1][1]);\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classmat2_aa86666c7b6e52c23327b902bd1fee527}\label{classmat2_aa86666c7b6e52c23327b902bd1fee527} 
+\index{mat2@{mat2}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!mat2@{mat2}}
+\doxysubsubsection{\texorpdfstring{operator/=()}{operator/=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmat2}{mat2}} \& mat2\+::operator/= (\begin{DoxyParamCaption}\item[{double}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operação de /\+: Realiza a divisão de todos os elementos da matriz por um escalar. 
+
+
+
+Definition at line \mbox{\hyperlink{mat2_8h_source_l00054}{54}} of file \mbox{\hyperlink{mat2_8h_source}{mat2.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this}\ *=\ 1/t;}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classmat2_aa8bfbf435b9e953af58583229d7d938e}\label{classmat2_aa8bfbf435b9e953af58583229d7d938e} 
+\index{mat2@{mat2}!x1@{x1}}
+\index{x1@{x1}!mat2@{mat2}}
+\doxysubsubsection{\texorpdfstring{x1()}{x1()}}
+{\footnotesize\ttfamily double mat2\+::x1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Função de coordenada\+: retorna elemento 0,0 da matriz. 
+
+
+
+Definition at line \mbox{\hyperlink{mat2_8h_source_l00022}{22}} of file \mbox{\hyperlink{mat2_8h_source}{mat2.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \{\ \textcolor{keywordflow}{return}\ e[0][0];\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classmat2_a97d21aad600351bb32c80528aeb5163d}\label{classmat2_a97d21aad600351bb32c80528aeb5163d} 
+\index{mat2@{mat2}!x2@{x2}}
+\index{x2@{x2}!mat2@{mat2}}
+\doxysubsubsection{\texorpdfstring{x2()}{x2()}}
+{\footnotesize\ttfamily double mat2\+::x2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Função de coordenada\+: retorna elemento 1,0 da matriz. 
+
+
+
+Definition at line \mbox{\hyperlink{mat2_8h_source_l00026}{26}} of file \mbox{\hyperlink{mat2_8h_source}{mat2.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \{\ \textcolor{keywordflow}{return}\ e[1][0];\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classmat2_a16d3b12b2ed7b5432446ccdfeee56a4f}\label{classmat2_a16d3b12b2ed7b5432446ccdfeee56a4f} 
+\index{mat2@{mat2}!y1@{y1}}
+\index{y1@{y1}!mat2@{mat2}}
+\doxysubsubsection{\texorpdfstring{y1()}{y1()}}
+{\footnotesize\ttfamily double mat2\+::y1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Função de coordenada\+: retorna elemento 0,1 da matriz. 
+
+
+
+Definition at line \mbox{\hyperlink{mat2_8h_source_l00024}{24}} of file \mbox{\hyperlink{mat2_8h_source}{mat2.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \{\ \textcolor{keywordflow}{return}\ e[0][1];\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classmat2_a07937f4c01f97bd88dd1b9f5fa6f5db2}\label{classmat2_a07937f4c01f97bd88dd1b9f5fa6f5db2} 
+\index{mat2@{mat2}!y2@{y2}}
+\index{y2@{y2}!mat2@{mat2}}
+\doxysubsubsection{\texorpdfstring{y2()}{y2()}}
+{\footnotesize\ttfamily double mat2\+::y2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Função de coordenada\+: retorna elemento 1,1 da matriz. 
+
+
+
+Definition at line \mbox{\hyperlink{mat2_8h_source_l00028}{28}} of file \mbox{\hyperlink{mat2_8h_source}{mat2.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \{\ \textcolor{keywordflow}{return}\ e[1][1];\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classmat2_af3f7cefd721ab45da0c91cb3ec282848}\label{classmat2_af3f7cefd721ab45da0c91cb3ec282848} 
+\index{mat2@{mat2}!e@{e}}
+\index{e@{e}!mat2@{mat2}}
+\doxysubsubsection{\texorpdfstring{e}{e}}
+{\footnotesize\ttfamily double mat2\+::e\mbox{[}2\mbox{]}\mbox{[}2\mbox{]}}
+
+
+
+Definition at line \mbox{\hyperlink{mat2_8h_source_l00012}{12}} of file \mbox{\hyperlink{mat2_8h_source}{mat2.\+h}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+mat2.\+h\end{DoxyCompactItemize}
