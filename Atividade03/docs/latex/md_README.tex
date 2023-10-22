@@ -1,0 +1,23 @@
+\chapter{Atividade 03}
+\hypertarget{md_README}{}\label{md_README}\index{Atividade 03@{Atividade 03}}
+\label{md_README_autotoc_md0}%
+\Hypertarget{md_README_autotoc_md0}%
+ Nessa atividade o professor deu a tarefa ao aluno de criar uma classe faz a leitura de arquivos .obj. Para isso a classe \doxylink{classObjReader}{Obj\+Reader} foi criada e seu conteúdos se encontram no arquivo \doxylink{ObjReader_8h_source}{Obj\+Reader.\+h}.
+
+Essa classe possui as seguintes funções\+:
+\begin{DoxyItemize}
+\item Construtor,
+\item get\+\_\+file\+\_\+read,
+\item open\+\_\+file,
+\item read\+\_\+file,
+\item write\+\_\+file,
+\item close\+\_\+file.
+\end{DoxyItemize}
+
+Detalhando agora cada uma das funções criadas acima\+: \hypertarget{md_README_autotoc_md1}{}\doxysubsection{\texorpdfstring{Construtor\+:}{Construtor:}}\label{md_README_autotoc_md1}
+Params\+: file\+\_\+reader\+: (string) Nome do arquivo a ser lido. file\+\_\+writer\+: (string) Nome do arquivo a ser escrito. Essa função é responsavel por instanciar um objeto da classe \doxylink{classObjReader}{Obj\+Reader} e recebe os nomes dos arquivos que o objeto vai tratar durante o uso.\hypertarget{md_README_autotoc_md2}{}\doxysubsection{\texorpdfstring{get\+\_\+file\+\_\+read\+:}{get\_file\_read:}}\label{md_README_autotoc_md2}
+Retorna o valor de uma variavel interna do código, que é responsavel por armazenar os conteúdos lidos de um arquivo especificado.\hypertarget{md_README_autotoc_md3}{}\doxysubsection{\texorpdfstring{open\+\_\+file\+:}{open\_file:}}\label{md_README_autotoc_md3}
+Função responsável por fazer a abertura do arquivo a ser lido. É necessário executar esta função antes das outras, pois através dela que é possivel realizar operações de leitura e escrita. \hypertarget{md_README_autotoc_md4}{}\doxysubsection{\texorpdfstring{read\+\_\+file\+:}{read\_file:}}\label{md_README_autotoc_md4}
+Função responsável fazer a leitura do arquivo especificado no construturor e armazenar em uma variavel interna da classe. \hypertarget{md_README_autotoc_md5}{}\doxysubsection{\texorpdfstring{write\+\_\+file\+:}{write\_file:}}\label{md_README_autotoc_md5}
+Função responsável por fazer a escrita do arquivo lido em outro arquivo cujo nome fora fornecido no construtor. \hypertarget{md_README_autotoc_md6}{}\doxysubsection{\texorpdfstring{close\+\_\+file\+:}{close\_file:}}\label{md_README_autotoc_md6}
+Função responsável por realizar o fechamento do arquivo de leitura. 

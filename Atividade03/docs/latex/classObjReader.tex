@@ -1,0 +1,190 @@
+\doxysection{Obj\+Reader Class Reference}
+\hypertarget{classObjReader}{}\label{classObjReader}\index{ObjReader@{ObjReader}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classObjReader_ad40e882c1bd893711be7e22c6cd611c3}{Obj\+Reader}} (string file\+\_\+reader, string file\+\_\+writer)
+\begin{DoxyCompactList}\small\item\em Construtor da classe de leitura de .Obj. Parametros\+: file\+\_\+reader\+: nome do arquivo a ser lido. File writer\+: nome do arquivo a ser escrito. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classObjReader_acd8a724306f737468d1657256a19f8e2}{get\+\_\+file\+\_\+read}} ()
+\begin{DoxyCompactList}\small\item\em Getter da variavel que armazena os conteúdos do arquivo lido. Retorna o valor dele apenas. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classObjReader_adad1f5452402d395843451a2c6a49af9}{open\+\_\+file}} ()
+\begin{DoxyCompactList}\small\item\em Função de abertura de arquivo. É necessário executa-\/la antes de qualquer operação. Ela verfica se o arquivo com nome indicado pode ser aberto e retorna 0 sim e -\/1 indicando erro. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classObjReader_a30e7fd57d8ecc1ba4e9250eafd013ceb}{read\+\_\+file}} ()
+\begin{DoxyCompactList}\small\item\em Função de leitura de arquivo. Ela lê um arquivo aberto. Ela verfica se o arquivo ja foi aberto para fazer a leitura, caso não tenha retorna erro. Em caso do arquivo estar aberto le o arquivo e guarda o seu valor em uma variavel interna. Se tudo ocorrer bem retorna 0. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classObjReader_af743b10dd579cb651d4e7c7a3d9da1de}{write\+\_\+file}} ()
+\begin{DoxyCompactList}\small\item\em Função de leitura de escrita. Ela escreve os conteudos de um arquivo aberto. Ela verfica se o arquivo ja foi aberto para fazer a escrita, caso não tenha retorna erro. Em caso do arquivo estar aberto escreve em outro arquivo com o nome fornecido. Se tudo ocorrer bem retorna 0. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classObjReader_a04b31b5a0973dd3151f0b98b82852edc}{close\+\_\+file}} ()
+\begin{DoxyCompactList}\small\item\em Função de fechamento de arquivo. É necessário a abertura do arquivo antes do fechamento. Ela verfica se o arquivo com nome indicado ja foi aberto, se não retornar erro. Caso contrário, fecha o arquivo e retorna 0. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{ObjReader_8h_source_l00008}{8}} of file \mbox{\hyperlink{ObjReader_8h_source}{Obj\+Reader.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classObjReader_ad40e882c1bd893711be7e22c6cd611c3}\label{classObjReader_ad40e882c1bd893711be7e22c6cd611c3} 
+\index{ObjReader@{ObjReader}!ObjReader@{ObjReader}}
+\index{ObjReader@{ObjReader}!ObjReader@{ObjReader}}
+\doxysubsubsection{\texorpdfstring{ObjReader()}{ObjReader()}}
+{\footnotesize\ttfamily Obj\+Reader\+::\+Obj\+Reader (\begin{DoxyParamCaption}\item[{string}]{file\+\_\+reader,  }\item[{string}]{file\+\_\+writer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor da classe de leitura de .Obj. Parametros\+: file\+\_\+reader\+: nome do arquivo a ser lido. File writer\+: nome do arquivo a ser escrito. 
+
+
+
+Definition at line \mbox{\hyperlink{ObjReader_8h_source_l00019}{19}} of file \mbox{\hyperlink{ObjReader_8h_source}{Obj\+Reader.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ file\_name\_reader\ =\ file\_reader;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ file\_name\_writer\ =\ file\_writer;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ file\_initiated\ =\ 0;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classObjReader_a04b31b5a0973dd3151f0b98b82852edc}\label{classObjReader_a04b31b5a0973dd3151f0b98b82852edc} 
+\index{ObjReader@{ObjReader}!close\_file@{close\_file}}
+\index{close\_file@{close\_file}!ObjReader@{ObjReader}}
+\doxysubsubsection{\texorpdfstring{close\_file()}{close\_file()}}
+{\footnotesize\ttfamily int Obj\+Reader\+::close\+\_\+file (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Função de fechamento de arquivo. É necessário a abertura do arquivo antes do fechamento. Ela verfica se o arquivo com nome indicado ja foi aberto, se não retornar erro. Caso contrário, fecha o arquivo e retorna 0. 
+
+
+
+Definition at line \mbox{\hyperlink{ObjReader_8h_source_l00069}{69}} of file \mbox{\hyperlink{ObjReader_8h_source}{Obj\+Reader.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ !file\_initiated\ )\ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ file\_to\_read.close();}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classObjReader_acd8a724306f737468d1657256a19f8e2}\label{classObjReader_acd8a724306f737468d1657256a19f8e2} 
+\index{ObjReader@{ObjReader}!get\_file\_read@{get\_file\_read}}
+\index{get\_file\_read@{get\_file\_read}!ObjReader@{ObjReader}}
+\doxysubsubsection{\texorpdfstring{get\_file\_read()}{get\_file\_read()}}
+{\footnotesize\ttfamily string Obj\+Reader\+::get\+\_\+file\+\_\+read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter da variavel que armazena os conteúdos do arquivo lido. Retorna o valor dele apenas. 
+
+
+
+Definition at line \mbox{\hyperlink{ObjReader_8h_source_l00025}{25}} of file \mbox{\hyperlink{ObjReader_8h_source}{Obj\+Reader.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ fileRead;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classObjReader_adad1f5452402d395843451a2c6a49af9}\label{classObjReader_adad1f5452402d395843451a2c6a49af9} 
+\index{ObjReader@{ObjReader}!open\_file@{open\_file}}
+\index{open\_file@{open\_file}!ObjReader@{ObjReader}}
+\doxysubsubsection{\texorpdfstring{open\_file()}{open\_file()}}
+{\footnotesize\ttfamily int Obj\+Reader\+::open\+\_\+file (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Função de abertura de arquivo. É necessário executa-\/la antes de qualquer operação. Ela verfica se o arquivo com nome indicado pode ser aberto e retorna 0 sim e -\/1 indicando erro. 
+
+
+
+Definition at line \mbox{\hyperlink{ObjReader_8h_source_l00030}{30}} of file \mbox{\hyperlink{ObjReader_8h_source}{Obj\+Reader.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ file\_to\_read.open(file\_name\_reader.c\_str(),\ ios::in);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!file\_to\_read)\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}No\ file\ found!"{}};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ file\_initiated\ =\ 1;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classObjReader_a30e7fd57d8ecc1ba4e9250eafd013ceb}\label{classObjReader_a30e7fd57d8ecc1ba4e9250eafd013ceb} 
+\index{ObjReader@{ObjReader}!read\_file@{read\_file}}
+\index{read\_file@{read\_file}!ObjReader@{ObjReader}}
+\doxysubsubsection{\texorpdfstring{read\_file()}{read\_file()}}
+{\footnotesize\ttfamily int Obj\+Reader\+::read\+\_\+file (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Função de leitura de arquivo. Ela lê um arquivo aberto. Ela verfica se o arquivo ja foi aberto para fazer a leitura, caso não tenha retorna erro. Em caso do arquivo estar aberto le o arquivo e guarda o seu valor em uma variavel interna. Se tudo ocorrer bem retorna 0. 
+
+
+
+Definition at line \mbox{\hyperlink{ObjReader_8h_source_l00042}{42}} of file \mbox{\hyperlink{ObjReader_8h_source}{Obj\+Reader.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!file\_initiated)\ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::getline(file\_to\_read,fileRead);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ full\_file\ +=\ fileRead\ +\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ file\_to\_read.eof()\ )\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classObjReader_af743b10dd579cb651d4e7c7a3d9da1de}\label{classObjReader_af743b10dd579cb651d4e7c7a3d9da1de} 
+\index{ObjReader@{ObjReader}!write\_file@{write\_file}}
+\index{write\_file@{write\_file}!ObjReader@{ObjReader}}
+\doxysubsubsection{\texorpdfstring{write\_file()}{write\_file()}}
+{\footnotesize\ttfamily int Obj\+Reader\+::write\+\_\+file (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Função de leitura de escrita. Ela escreve os conteudos de um arquivo aberto. Ela verfica se o arquivo ja foi aberto para fazer a escrita, caso não tenha retorna erro. Em caso do arquivo estar aberto escreve em outro arquivo com o nome fornecido. Se tudo ocorrer bem retorna 0. 
+
+
+
+Definition at line \mbox{\hyperlink{ObjReader_8h_source_l00055}{55}} of file \mbox{\hyperlink{ObjReader_8h_source}{Obj\+Reader.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!file\_initiated)\ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ ofstream\ test\_file(file\_name\_writer);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!test\_file)\ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ test\_file\ \ <<\ full\_file;}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Obj\+Reader.\+h\end{DoxyCompactItemize}
