@@ -42,7 +42,7 @@ class png_processor {
 float png_processor::triangle_area(int x1, int y1, int x2, int y2, int x3, int y3) {
    return abs((x1*(y2-y3) + x2*(y3-y1)+ x3*(y1-y2))/2.0);
 }
-
+ 
 // Função não foi criada por mim! Retirada do seguinte local: https://www.geeksforgeeks.org/check-whether-a-given-point-lies-inside-a-triangle-or-not/
 bool png_processor::is_inside(int x1, int y1, int x2, int y2, int x3, int y3, int x, int y) {   
    /* Calculate area of triangle ABC */
