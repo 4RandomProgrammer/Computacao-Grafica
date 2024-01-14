@@ -9,10 +9,11 @@
 #include <array>
 #include "utils.h"
 #include "vec3.h"
+#include "triangle.h"
 
 using namespace std;
 
-class ObjReader : public hittable {
+class ObjReader : public hittable{
     private:
         string file_name_reader;
         string file_name_writer;
@@ -51,80 +52,10 @@ class ObjReader : public hittable {
             return teste;
         }
 
-        bool hit_triangle( const point3& v0, const point3& v1, const point3& v2, const ray& r, hit_record& rec) const {
-            vec3 v0v1 = v1 - v0;
-            vec3 v0v2 = v2 - v0;
-
-            constexpr double kEpsilon = std::numeric_limits<double>::epsilon();
-
-            vec3 N = cross(v0v1,v0v2);
-
-            double area2 = N.length();
-            
-            double NdotRayDirection = dot(N,r.direction());
-
-            if (fabs(NdotRayDirection) < kEpsilon) // almost 0
-                return false; // they are parallel, so they don't intersect! 
-
-            double d = dot(N, v0);
-
-            double t = (d - dot(N,r.origin())) / NdotRayDirection;
-
-            if (t < 0) return false;    
-
-            vec3 P = r.origin() + t * r.direction();
-
-            vec3 C;
-
-            vec3 edge0 = v1 - v0; 
-            vec3 vp0 = P - v0;
-            C = cross(edge0,vp0);
-
-            if (dot(N,C) < 0) return false;
-
-            vec3 edge1 = v2 - v1; 
-            vec3 vp1 = P - v1;
-            C = cross(edge1,vp1);
-
-            if (dot(N,C) < 0) return false;
-
-            vec3 edge2 = v0 - v2; 
-            vec3 vp2 = P - v2;
-            C = cross(edge2,vp2);
-
-            if (dot(N,C) < 0) return false;
-            
-            int normal_sizes = normals_idx.size();
-
-            rec.t = t;
-            rec.p = P;
-            rec.normal = N;
-            vec3 outward_normal = N;
-            rec.set_face_normal(r, outward_normal);
-            rec.mat = mat;
-
-            // if( normal_sizes > 0) {
-                
-            // }
-            // else {
-            //     rec.t = t;
-            //     rec.p = P;
-            //     rec.normal = N;
-            //     vec3 outward_normal = N;
-            //     rec.set_face_normal(r, outward_normal);
-            // }
-
-            return true;
-
-    }
-
-        
-
     public:
         std::vector<vec3> vertices;
-        std::vector<int*> triangles = std::vector<int*>();
-        std::vector<int> normals_idx = std::vector<int>();
-        std::vector<float*> normals = std::vector<float*>();;
+        std::vector<triangle> triangles;
+        std::vector<vec3> normals;
         shared_ptr<material> mat;
         string full_file;
         vec3 mass_center;
@@ -141,39 +72,30 @@ class ObjReader : public hittable {
             disloc(move);
         }
 
+        bool hit( const ray& r, interval ray_t, hit_record& rec) const override {
+        
+            int size = triangles.size();
+            std::clog << "waaaaa" << '\n';
+            for(int i = 0; i < size; i++) {
+                // std::clog << i << ' ' << size << '\n';
+                // std::clog << triangles[i].v0 << ' ' << triangles[i].v1 << ' ' << triangles[i].v2 << ' ' << size << '\n';
+                // std::clog << triangles[i].normal << '\n';
+                std::clog << "waaaaa" << '\n';
+                if (triangles[i].hit(r, ray_t,rec)){
+                    std::clog << "waaaaa3" << '\n';
+                    return true;
+                }
+            }
+
+            return false;
+
+        }
+
         void disloc(vec3 disloc) {
             int size = vertices.size();
             for (int i = 0; i < size; i++){
                 vertices[i] += disloc;
             }
-        }
-
-
-        bool hit( const ray& r, interval ray_t, hit_record& rec) const override {
-        
-            int size = triangles.size();
-
-            for(int i = 0; i < size; i++) {
-                int t0,t1,t2;
-
-                t0 = triangles[i][0] - 1;
-                t1 = triangles[i][1] - 1;
-                t2 = triangles[i][2] - 1;
-
-                vec3 v0 = vertices[t0];
-                vec3 v1 = vertices[t1];
-                vec3 v2 = vertices[t2];
-
-                if (hit_triangle(v0,v1,v2, r, rec)){
-
-                        
-                        return true;
-                }
-            }
-            return false;
-            //hit record aqui, n?
-                    
-
         }
 
         //! Getter da variavel que armazena os conteúdos do arquivo lido. Retorna o valor dele apenas
@@ -210,7 +132,6 @@ class ObjReader : public hittable {
                     teste >> x >> y >> z;
                     vec3 teste(x,y,z);
                     vertices.push_back(teste);
-                    // std::clog << x << y << z << '\n';
                 }
                 else if (type == "f") {
                     int A,B,C,value;
@@ -218,18 +139,20 @@ class ObjReader : public hittable {
                     teste >> A >> maybe >> B >> maybe >>  C ;
                     int* numbers = allocate(A,B,C);
                     // std::clog << A << B << C << id1 << id2 << id3 << '\n';
-                    // std::clog << A << B << C << maybe[2] << '\n';
-                    value = (int)maybe[2];
-                    normals_idx.push_back(value);
-                    triangles.push_back(numbers);
-
+                    std::clog << A << ' ' << B << ' ' << C << ' ' << maybe[2] << '\n';
+                    value = (int)maybe[2] - 1;
+                    A -= 1;
+                    B -= 1;
+                    C -= 1;
+                    triangle new_triangle(vertices[A], vertices[B], vertices[C],normals[value], mat);
+                    triangles.push_back(new_triangle);
                 }
 
                 else if (type == "vn") {
                     double x,y,z;
                     teste >> x >> y >> z;
-                    float* number = allocate_float(x,y,z);
-                    normals.push_back(number);
+                    vec3 normal(x,y,z);
+                    normals.push_back(normal);
                 }
 
                 if( file_to_read.eof() ) break;
