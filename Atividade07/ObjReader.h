@@ -2,6 +2,7 @@
 #define OBJREADER_H
 
 #include <iostream>
+#include <string>
 #include<fstream>
 #include "hittable.h"
 #include <vector>
@@ -75,14 +76,9 @@ class ObjReader : public hittable{
         bool hit( const ray& r, interval ray_t, hit_record& rec) const override {
         
             int size = triangles.size();
-            std::clog << "waaaaa" << '\n';
+
             for(int i = 0; i < size; i++) {
-                // std::clog << i << ' ' << size << '\n';
-                // std::clog << triangles[i].v0 << ' ' << triangles[i].v1 << ' ' << triangles[i].v2 << ' ' << size << '\n';
-                // std::clog << triangles[i].normal << '\n';
-                std::clog << "waaaaa" << '\n';
                 if (triangles[i].hit(r, ray_t,rec)){
-                    std::clog << "waaaaa3" << '\n';
                     return true;
                 }
             }
@@ -92,9 +88,9 @@ class ObjReader : public hittable{
         }
 
         void disloc(vec3 disloc) {
-            int size = vertices.size();
+            int size = triangles.size();
             for (int i = 0; i < size; i++){
-                vertices[i] += disloc;
+                triangles[i].disloc(disloc);
             }
         }
 
@@ -139,18 +135,27 @@ class ObjReader : public hittable{
                     teste >> A >> maybe >> B >> maybe >>  C ;
                     int* numbers = allocate(A,B,C);
                     // std::clog << A << B << C << id1 << id2 << id3 << '\n';
-                    std::clog << A << ' ' << B << ' ' << C << ' ' << maybe[2] << '\n';
-                    value = (int)maybe[2] - 1;
+
+                    std::stringstream ss;
+                    ss << maybe[2];
+                    ss >> value;
+
+                    value -= 1;
                     A -= 1;
                     B -= 1;
                     C -= 1;
-                    triangle new_triangle(vertices[A], vertices[B], vertices[C],normals[value], mat);
+                    // std::clog << A << ' ' << B << ' ' << C << ' ' << value << '\n';
+                    // std::clog << vertices[A] << '-' << vertices[B] << '-' <<  vertices[C] << '-' << normals[value] << '\n';
+                    triangle new_triangle(vertices[A], vertices[B], vertices[C],normals[value], mat,true);
                     triangles.push_back(new_triangle);
                 }
 
                 else if (type == "vn") {
                     double x,y,z;
                     teste >> x >> y >> z;
+
+                    // std::clog << x << ' ' << y << ' ' << z << '\n' ;
+
                     vec3 normal(x,y,z);
                     normals.push_back(normal);
                 }

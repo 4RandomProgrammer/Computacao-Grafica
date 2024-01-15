@@ -12,9 +12,10 @@ class triangle : public hittable {
         vec3 v1;
         vec3 v2;
         vec3 normal;
+        bool there_is_normal;
         shared_ptr<material> mat;
 
-        triangle(vec3 _v1, vec3 _v2, vec3 _v3, vec3 _normal, shared_ptr<material> _material) : v0(_v1), v1(_v2), v2(_v3),normal(_normal), mat(_material) {}
+        triangle(vec3 _v1, vec3 _v2, vec3 _v3, vec3 _normal, shared_ptr<material> _material, bool _there_is_normal) : v0(_v1), v1(_v2), v2(_v3),normal(_normal), mat(_material), there_is_normal(_there_is_normal) {}
 
         bool hit_triangle(const ray& r, hit_record& rec) const {
             vec3 v0v1 = v1 - v0;
@@ -61,22 +62,38 @@ class triangle : public hittable {
 
             rec.t = t;
             rec.p = P;
-            rec.normal = N;
-            vec3 outward_normal = N;
+            rec.normal = normal;
+            vec3 outward_normal = normal;
             rec.set_face_normal(r, outward_normal);
             rec.mat = mat;
 
-            // if( normal_sizes > 0) {
+            if( there_is_normal ) {
+                float d00 = dot(edge0,edge0);
+                float d01 = dot(edge0,edge1);
+                float d11 = dot(edge1,edge1);
+                float d20 = dot(vp1,edge0);
+                float d21 = dot(vp1,edge1);
+
+                float denominador = d00 * d11 - d01 * d01;
+
+                float u,w,v;
+
+                v = (d11 * d20 - d01 * d21) / denominador;
+                w = (d00 * d21 - d01 * d20) / denominador;
+                u = 1.0 - v - w;
+                vec3 new_normal = u * normal + v * normal + w * normal;
+
+                rec.normal = new_normal;
+                vec3 outward_normal = new_normal;
+                rec.set_face_normal(r, outward_normal);
+            }
+            else {
                 
-            // }
-            // else {
-            //     rec.t = t;
-            //     rec.p = P;
-            //     rec.normal = N;
-            //     vec3 outward_normal = N;
-            //     rec.set_face_normal(r, outward_normal);
-            // }
-            std::clog << "waaaaa" << '\n';
+                rec.normal = N;
+                vec3 outward_normal = N;
+                rec.set_face_normal(r, outward_normal);
+            }
+
             return true;
 
 
@@ -92,6 +109,11 @@ class triangle : public hittable {
 
         }
 
+        void disloc(vec3 disloc) {
+            v0 += disloc;
+            v1 += disloc;
+            v2 += disloc; 
+        }
 
 };
 
