@@ -1,5 +1,5 @@
-#ifndef OBJREADER2_H
-#define OBJREADER2_H
+#ifndef OBJREADER_H
+#define OBJREADER_H
 
 #include <iostream>
 #include<fstream>
@@ -9,6 +9,7 @@
 #include <array>
 #include "utils.h"
 #include "vec3.h"
+#include "triangle.h"
 
 using namespace std;
 
@@ -50,130 +51,14 @@ class ObjReader : public hittable {
 
             return teste;
         }
-
-      
-
-        bool hit_triangle( const point3& v0, const point3& v1, const point3& v2, const ray& r, hit_record& rec) const {
-            vec3 v0v1 = v1 - v0;
-            vec3 v0v2 = v2 - v0;
-
-            constexpr double kEpsilon = std::numeric_limits<double>::epsilon();
-
-            vec3 N = cross(v0v1,v0v2);
-
-            double area2 = N.length();
-            
-            double NdotRayDirection = dot(N,r.direction());
-
-            if (fabs(NdotRayDirection) < kEpsilon) // almost 0
-                return false; // they are parallel, so they don't intersect! 
-
-            double d = dot(N, v0);
-
-            double t = (d - dot(N,r.origin())) / NdotRayDirection;
-
-            if (t < 0) return false;    
-
-            vec3 P = r.origin() + t * r.direction();
-
-            vec3 C;
-
-            vec3 edge0 = v1 - v0; 
-            vec3 vp0 = P - v0;
-            C = cross(edge0,vp0);
-
-            if (dot(N,C) < 0) return false;
-
-            vec3 edge1 = v2 - v1; 
-            vec3 vp1 = P - v1;
-            C = cross(edge1,vp1);
-
-            if (dot(N,C) < 0) return false;
-
-            vec3 edge2 = v0 - v2; 
-            vec3 vp2 = P - v2;
-            C = cross(edge2,vp2);
-
-            if (dot(N,C) < 0) return false;
-            
-            int normal_sizes = normals_idx.size();
-
-            rec.t = t;
-            rec.p = P;
-            rec.normal = N;
-            vec3 outward_normal = N;
-            rec.set_face_normal(r, outward_normal);
-
-            // if( normal_sizes > 0) {
-            //     float d00 = dot(edge0,edge0);
-            //     float d01 = dot(edge0,edge1);
-            //     float d11 = dot(edge1,edge1);
-            //     float d20 = dot(vp1,edge0);
-            //     float d21 = dot(vp1,edge1);
-
-            //     float denominador = d00 * d11 - d01 * d01;
-
-            //     float u,w,v;
-
-            //     v = (d11 * d20 - d01 * d21) / denominador;
-            //     w = (d00 * d21 - d01 * d20) / denominador;
-            //     u = 1.0 - v - w;
-            //     vec3 normal = get_normal(v0,v1,v2);
-            //     vec3 new_normal = u * normal + v * normal + w * normal;
-
-            //     rec.normal = new_normal;
-            //     vec3 outward_normal = new_normal;
-            //     rec.set_face_normal(r, outward_normal);
-            // }
-            // else {
-                
-            //     rec.normal = N;
-            //     vec3 outward_normal = N;
-            //     rec.set_face_normal(r, outward_normal);
-            // }
-
-            return true;
-
-    }
-
-      vec3 get_normal(const point3& r1, const point3& r2, const point3& r3) const {
-            std::clog << "waaa";
-            int size = triangles.size();
-            bool c1,c2, c3;
-            c1 = c2 = c3 = false;
-            
-            for(int i = 0; i < size; i++) {
-                int t0,t1,t2;
-
-                t0 = triangles[i][0] - 1;
-                t1 = triangles[i][1] - 1;
-                t2 = triangles[i][2] - 1;
-
-                vec3 v0 = vertices[t0];
-                vec3 v1 = vertices[t1];
-                vec3 v2 = vertices[t2];
-                
-                int normal_idx = normals_idx[i][0] - 1;
- 
-                c1 = v0.x() == r1.x() && v0.y() == r1.y() && v0.z() == r1.z();
-                c2 = v1[0] == r2[0] && v1[1] == r2[1] && v1[2] == r2[2];
-                c3 = v2[0] == r3[0] && v2[1] == r3[1] && v2[2] == r3[2];
-                
-                if (c1 && c2 && c3) {
-  
-                    return obj_normals[normal_idx];
-                }
-            }
-
-            return vec3(0,0,0);
-        }
         
 
     public:
         std::vector<vec3> vertices;
-        std::vector<vec3> obj_normals;
         std::vector<int*> triangles = std::vector<int*>();
-        std::vector<int*> normals_idx = std::vector<int*>();
+        std::vector<triangle> t; 
+        std::vector<int> normals_idx = std::vector<int>();
+        std::vector<float*> normals = std::vector<float*>();;
         shared_ptr<material> mat;
         string full_file;
         vec3 mass_center;
@@ -191,35 +76,21 @@ class ObjReader : public hittable {
         }
 
         void disloc(vec3 disloc) {
-            int size = vertices.size();
+            int size = t.size();
             for (int i = 0; i < size; i++){
-                vertices[i] += disloc;
+                t[i].disloc(disloc);
             }
         }
 
 
         bool hit( const ray& r, interval ray_t, hit_record& rec) const override {
         
-            int size = triangles.size();
-            
+            int size = t.size();
+
             for(int i = 0; i < size; i++) {
-                int t0,t1,t2;
-
-                t0 = triangles[i][0] - 1;
-                t1 = triangles[i][1] - 1;
-                t2 = triangles[i][2] - 1;
-
-                vec3 v0 = vertices[t0];
-                vec3 v1 = vertices[t1];
-                vec3 v2 = vertices[t2];
-
-                if (hit_triangle(v0,v1,v2, r, rec)){
-                    std::clog << i;
-                    return true;
+                if (t[i].hit(r, ray_t, rec)){
+                        return true;
                 }
-                
-                
-
             }
             return false;
             //hit record aqui, n?
@@ -265,34 +136,29 @@ class ObjReader : public hittable {
                 }
                 else if (type == "f") {
                     int A,B,C,value;
-
-                    value = 0;
-                    string maybe, maybe2;
-
-                    teste >> A >> maybe >> B >> maybe2 >>  C ;
-  
+                    string maybe;
+                    teste >> A >> maybe >> B >> maybe >>  C ;
                     int* numbers = allocate(A,B,C);
-
-                    stringstream ss;
-                    ss << maybe[2];
-                    ss >> value;
-
-                    int *values = allocate_one_int(value);
-                    normals_idx.push_back(values);
+                    // std::clog << A << B << C << id1 << id2 << id3 << '\n';
+                    // std::clog << A << B << C << maybe[2] << '\n';
+                    
+                    triangle t_new(vertices[A - 1], vertices[B - 1],vertices[C - 1],vec3(0,0,0), mat, false);
+                    t.push_back(t_new);
+                    value = (int)maybe[2];
+                    normals_idx.push_back(value);
                     triangles.push_back(numbers);
 
                 }
 
                 else if (type == "vn") {
-                    double nx,ny,nz;
-                    teste >> nx >> ny >> nz;
-                    vec3 normal(nx,ny,nz);
-                    obj_normals.push_back(normal);
+                    double x,y,z;
+                    teste >> x >> y >> z;
+                    float* number = allocate_float(x,y,z);
+                    normals.push_back(number);
                 }
 
                 if( file_to_read.eof() ) break;
             }
-
             
             object_center();
 

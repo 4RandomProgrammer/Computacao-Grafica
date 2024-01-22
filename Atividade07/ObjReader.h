@@ -66,17 +66,16 @@ class ObjReader : public hittable{
             file_name_reader = file_reader;
             file_name_writer = file_writer;
             file_initiated = 0;
+            mat = _material;
             open_file();
             read_file();
             close_file();
-            mat = _material;
             disloc(move);
         }
 
         bool hit( const ray& r, interval ray_t, hit_record& rec) const override {
         
             int size = triangles.size();
-
             for(int i = 0; i < size; i++) {
                 if (triangles[i].hit(r, ray_t,rec)){
                     return true;
@@ -134,7 +133,6 @@ class ObjReader : public hittable{
                     string maybe;
                     teste >> A >> maybe >> B >> maybe >>  C ;
                     int* numbers = allocate(A,B,C);
-                    // std::clog << A << B << C << id1 << id2 << id3 << '\n';
 
                     std::stringstream ss;
                     ss << maybe[2];
@@ -144,9 +142,7 @@ class ObjReader : public hittable{
                     A -= 1;
                     B -= 1;
                     C -= 1;
-                    // std::clog << A << ' ' << B << ' ' << C << ' ' << value << '\n';
-                    // std::clog << vertices[A] << '-' << vertices[B] << '-' <<  vertices[C] << '-' << normals[value] << '\n';
-                    triangle new_triangle(vertices[A], vertices[B], vertices[C],normals[value], mat,true);
+                    triangle new_triangle(vertices[A], vertices[B], vertices[C],normals[value],normals[value],normals[value], mat,true);
                     triangles.push_back(new_triangle);
                 }
 

@@ -3,6 +3,7 @@
 
 #include "vec3.h"
 #include "utils.h"
+#include<png.h>
 
 #include <iostream>
 

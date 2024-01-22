@@ -11,11 +11,13 @@ class triangle : public hittable {
         vec3 v0;
         vec3 v1;
         vec3 v2;
-        vec3 normal;
+        vec3 n1;
+        vec3 n2;
+        vec3 n3;
         bool there_is_normal;
         shared_ptr<material> mat;
 
-        triangle(vec3 _v1, vec3 _v2, vec3 _v3, vec3 _normal, shared_ptr<material> _material, bool _there_is_normal) : v0(_v1), v1(_v2), v2(_v3),normal(_normal), mat(_material), there_is_normal(_there_is_normal) {}
+        triangle(vec3 _v1, vec3 _v2, vec3 _v3, vec3 _normal,vec3 _normal2,vec3 _normal3, shared_ptr<material> _material, bool _there_is_normal) : v0(_v1), v1(_v2), v2(_v3),n1(_normal), mat(_material), there_is_normal(_there_is_normal) {}
 
         bool hit_triangle(const ray& r, hit_record& rec) const {
             vec3 v0v1 = v1 - v0;
@@ -62,27 +64,13 @@ class triangle : public hittable {
 
             rec.t = t;
             rec.p = P;
-            rec.normal = normal;
-            vec3 outward_normal = normal;
-            rec.set_face_normal(r, outward_normal);
             rec.mat = mat;
 
             if( there_is_normal ) {
-                float d00 = dot(edge0,edge0);
-                float d01 = dot(edge0,edge1);
-                float d11 = dot(edge1,edge1);
-                float d20 = dot(vp1,edge0);
-                float d21 = dot(vp1,edge1);
-
-                float denominador = d00 * d11 - d01 * d01;
-
-                float u,w,v;
-
-                v = (d11 * d20 - d01 * d21) / denominador;
-                w = (d00 * d21 - d01 * d20) / denominador;
-                u = 1.0 - v - w;
-                vec3 new_normal = u * normal + v * normal + w * normal;
-
+                double weights[3];
+                baricentric(v0, v1,v2,P,weights);
+                vec3 new_normal = weights[0] * n1 + weights[1] * n2 + weights[2] * n3;
+                new_normal = unit_vector(new_normal);
                 rec.normal = new_normal;
                 vec3 outward_normal = new_normal;
                 rec.set_face_normal(r, outward_normal);
@@ -113,6 +101,31 @@ class triangle : public hittable {
             v0 += disloc;
             v1 += disloc;
             v2 += disloc; 
+        }
+
+    private:
+        void baricentric(vec3 point1, vec3 point2, vec3 point3, vec3 intersec_point, double *ret) const {
+            vec3 v0 = point2 - point1;
+            vec3 v1 = point3 - point1;
+            vec3 v2 = intersec_point - point1;
+
+            double d00 = dot(v0,v0);
+            double d01 = dot(v0,v1);
+            double d11 = dot(v1,v1);
+            double d20 = dot(v2,v0);
+            double d21 = dot(v2,v1);
+
+            double denom = d00 * d11 - d01 * d01;
+
+            double v = (d11 * d20 - d01 * d21) / denom;
+            double w = (d00 * d21 - d01 * d20) / denom;
+            double u = 1.0 - v - w;
+            
+            ret[0] = u;
+            ret[1] = v;
+            ret[2] = w;
+
+            std::clog << u << ' ' << v << ' ' << w << '\n';
         }
 
 };
