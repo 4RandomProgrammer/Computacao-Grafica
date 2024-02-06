@@ -8,7 +8,10 @@
 #include "material.h"
 #include <iostream>
 #include <libpng/png.h>
+#include <string>
+#include <cstring>
 
+using namespace std;
 
 class camera {
     public:
@@ -16,6 +19,7 @@ class camera {
         int    image_width  = 100;  // Rendered image width in pixel count
         int    samples_per_pixel = 10; // Count of random samples for each pixel
         int max_depth = 10; // Maximum number of ray bounces into scene 
+        int anim_frame = 0;
 
         double vfov = 90; // Vertical view angle (field of view)
 
@@ -27,8 +31,6 @@ class camera {
         void render(const hittable& world) {
             initialize();
 
-            std::cout << "P3\n" << image_width << ' ' << image_height << "\n255\n";
-
             for (int j = 0; j < image_height; ++j) {
                 std::clog << "\rScanlines remaining: " << (image_height - j) << ' ' << std::flush;
                 for (int i = 0; i < image_width; ++i) {
@@ -37,13 +39,28 @@ class camera {
                         ray r = get_ray(i,j);
                         pixel_color += ray_color(r, max_depth, world);
                     }
-
+                    
                     write_color(pixel_color, samples_per_pixel, j, i);
                 }
             }
+
+
             // write the full png here when done
-            char file_name[] = "teste.png";
+            string animation = "animation_";
+            string type =  ".png";
+            string file = animation + std::to_string(anim_frame) + type;
+            char file_name[file.length()+1];
+            strcpy(file_name, file.c_str());
             write_png_file(file_name);
+            std::clog << "Image Generated!" << '\n';
+        }
+
+        void lerp_look_from(point3 start, point3 end, double time) {
+            lookfrom = start * ( 1 - time ) + end * time;
+        }
+
+        void lerp_look_at(point3 start, point3 end, double time) {
+            lookat = start * ( 1 - time ) + end * time;
         }
 
     private:
@@ -100,7 +117,7 @@ class camera {
                 if (rec.mat->scatter(r, rec, attenuation, scattered)){
                     return attenuation * ray_color(scattered, depth-1, world);
                 }
-                return color(1,0,0);
+                return color(0,0,0);
             }
             vec3 unit_direction = unit_vector(r.direction());
             auto a = 0.5*(unit_direction.y() + 1.0);

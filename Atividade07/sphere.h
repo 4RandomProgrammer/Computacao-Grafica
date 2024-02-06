@@ -6,6 +6,7 @@
 
 class sphere : public hittable {
     public:
+        point3 center;
         sphere(point3 _center, double _radius, shared_ptr<material> _material) : center(_center), radius(_radius), mat(_material) {}
 
         bool hit( const ray& r, interval ray_t, hit_record& rec) const override {
@@ -38,8 +39,12 @@ class sphere : public hittable {
             return true;
         }
 
+        void lerp(point3 start, point3 end, double time) {
+            center = start * ( 1 - time ) + end * time;
+        }
+
     private:
-        point3 center;
+        
         double radius;
         shared_ptr<material> mat;
 

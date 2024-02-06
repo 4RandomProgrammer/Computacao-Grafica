@@ -17,7 +17,7 @@ class triangle : public hittable {
         bool there_is_normal;
         shared_ptr<material> mat;
 
-        triangle(vec3 _v1, vec3 _v2, vec3 _v3, vec3 _normal,vec3 _normal2,vec3 _normal3, shared_ptr<material> _material, bool _there_is_normal) : v0(_v1), v1(_v2), v2(_v3),n1(_normal), mat(_material), there_is_normal(_there_is_normal) {}
+        triangle(vec3 _v1, vec3 _v2, vec3 _v3, vec3 _normal, vec3 _normal2, vec3 _normal3, shared_ptr<material> _material, bool _there_is_normal) : v0(_v1), v1(_v2), v2(_v3),n1(_normal),n2(_normal2),n3(_normal3), mat(_material), there_is_normal(_there_is_normal) {}
 
         bool hit_triangle(const ray& r, hit_record& rec) const {
             vec3 v0v1 = v1 - v0;
@@ -62,11 +62,14 @@ class triangle : public hittable {
 
             if (dot(N,C) < 0) return false;
 
+            std::clog << "object normal: " << n1.x() << ' ' << n1.y() << ' ' << n1.z() << '\n';
+            std::clog << "calculated normal: " << N.x() << ' ' << N.y() << ' ' << N.z() << '\n';
+            std::clog <<  "t: " << t << '\n';
             rec.t = t;
             rec.p = P;
-            rec.mat = mat;
 
             if( there_is_normal ) {
+
                 double weights[3];
                 baricentric(v0, v1,v2,P,weights);
                 vec3 new_normal = weights[0] * n1 + weights[1] * n2 + weights[2] * n3;
@@ -74,6 +77,7 @@ class triangle : public hittable {
                 rec.normal = new_normal;
                 vec3 outward_normal = new_normal;
                 rec.set_face_normal(r, outward_normal);
+                
             }
             else {
                 
@@ -124,8 +128,6 @@ class triangle : public hittable {
             ret[0] = u;
             ret[1] = v;
             ret[2] = w;
-
-            // std::clog << u << ' ' << v << ' ' << w << '\n';
         }
 
 };
