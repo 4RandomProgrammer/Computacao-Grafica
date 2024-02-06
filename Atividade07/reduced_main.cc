@@ -1,3 +1,7 @@
+/// \file reduced_main.cpp
+/// \brief Arquivo principal da animação.
+/// \author Luís Felipe Dobner Henriques, baseado no tutorial rtweekend
+
 #include "utils.h"
 
 #include "camera.h"

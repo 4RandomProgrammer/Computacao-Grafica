@@ -1,3 +1,8 @@
+/// \file vec3.h
+/// \brief Arquivo que implementa a base para operações com vetores de 3 dimensões.
+/// \author Criado por Luís Felipe Dobner Henriques, porém retirado do tutorial: https://raytracing.github.io/books/RayTracingInOneWeekend.html
+
+
 #ifndef VEC3_H
 #define VEC3_H
 

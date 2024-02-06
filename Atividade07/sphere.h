@@ -1,3 +1,7 @@
+/// \file sphere.h
+/// \brief Arquivo que implementa a lógica de renderizar uma esfera.
+/// \author Criado por Luís Felipe Dobner Henriques, porém retirado do tutorial: https://raytracing.github.io/books/RayTracingInOneWeekend.html
+
 #ifndef SPHERE_H
 #define SPHERE_H
 

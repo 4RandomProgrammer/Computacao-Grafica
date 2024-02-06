@@ -17,8 +17,26 @@ class triangle : public hittable {
         bool there_is_normal;
         shared_ptr<material> mat;
 
+        /**
+         * @brief Construtor do triangulo. Responsável por receber todos os seus valores e inicializalos
+         * @param _v1 Vertice 1 do triangulo.
+         * @param _v2 Vertice 2 do triangulo.
+         * @param _v3 Vertice 3 do triangulo.
+         * @param _normal normal do vertice 1 do triangulo.
+         * @param _normal2 normal do vertice 2 do triangulo.
+         * @param _normal3 normal do vertice 3 do triangulo.
+         * @param _material material para a textura do triangulo.
+         * @param _there_is_normal booleano utilizado para entender caso o triangulo teve normais fornecidas.
+        */  
         triangle(vec3 _v1, vec3 _v2, vec3 _v3, vec3 _normal,vec3 _normal2,vec3 _normal3, shared_ptr<material> _material, bool _there_is_normal) : v0(_v1), v1(_v2), v2(_v3),n1(_normal), mat(_material), there_is_normal(_there_is_normal) {}
 
+
+        /**
+         * @brief faz o calculo e a lógica para entender se o triangulo foi acertado. Caso o triangulo seja acertado e tenha normal, realiza o calculo das baricentrica para entender a influencia de cada ponto na normal obtida. Caso não fora fornecidas as normais apenas retorna a normal calculada.
+         * @param r O raio que se deseja ver se acerta o triangulo.
+         * @param rec O objeto fornecido para realizar .
+         * @return retorna verdadeiro em caso de acerto e falso em caso de erro.
+        */  
         bool hit_triangle(const ray& r, hit_record& rec) const {
             vec3 v0v1 = v1 - v0;
             vec3 v0v2 = v2 - v0;

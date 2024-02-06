@@ -1,3 +1,7 @@
+/// \file utils.h
+/// \brief Arquivo que centraliza todas as coisas úteis que são mais utilizadas dentro de projeto.
+/// \author Criado por Luís Felipe Dobner Henriques, porém retirado do tutorial: https://raytracing.github.io/books/RayTracingInOneWeekend.html
+
 #ifndef UTILS_H
 #define UTILS_H
 

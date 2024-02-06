@@ -1,3 +1,8 @@
+/// \file camera.h
+/// \brief Arquivo que implementa a lógica da camera e foi adaptado no tutorial para gerar arquivos PNG.
+/// \author Criado por Luís Felipe Dobner Henriques, baseado no tutorial: https://raytracing.github.io/books/RayTracingInOneWeekend.html
+
+
 #ifndef CAMERA_H
 #define CAMERA_H
 

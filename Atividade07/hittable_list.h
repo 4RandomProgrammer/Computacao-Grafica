@@ -1,3 +1,6 @@
+/// \file hittable_list.h
+/// \brief Arquivo que implementa uma lista de objeto que podem receber um hit.
+/// \author Criado por Luís Felipe Dobner Henriques, porém retirado do tutorial: https://raytracing.github.io/books/RayTracingInOneWeekend.html
 #ifndef HITTABLE_LIST_H
 #define HITTABLE_LIST_H
 

@@ -1,8 +1,8 @@
 # Trabalho de Computação Gráfica
 
 Nesta pasta encontra-se os arquivos necessários para a execução do trabalho final da matéria de Computação Gráfica que foi ministrada pelo professor Mário Lizier.
-Aluno:                          RA:
-Luís Felipe Dobner Henriques            771036
+Aluno:  
+Luís Felipe Dobner Henriques      -     RA 771036
 
 
 ## Descrição do projeto:
@@ -25,10 +25,10 @@ A animação criada pelo aluno contém 4 objetos diferentes. Um cubo de cor sól
 
 ## Atendimento dos requisitos:
 
-O projeto deve gerar uma animação com pelo menos 5 segundos:
-A geração das imagens deve utilizar as implementações dos membros do grupo: a implementação foi criada por mim, como pode ser conferida nas pastas de outras atividades. Algumas adaptações foram feitas baseadas nessas implementações com o intuito de facilitar o uso e a leitura do código.
-Utilize pelo menos 3 objetos sendo pelo menos um deles formado por triângulos: foram usados dois cubos e duas esferas (totalizando quatro objetos). O cubo é um objeto formado por triângulos (cada face do cubo é formada por dois triângulos)
-Utilize materiais difusos e reflexivos: uma esfera e um cubo utilizam materiais difusos e enquaunto os outros objetos utilizam de material reflexivo (metálico e vidro)
+- O projeto deve gerar uma animação com pelo menos 5 segundos: A annimação gerada foi feita com duração total de 5 segundos e 24 frames por segundo.
+- A geração das imagens deve utilizar as implementações dos membros do grupo: a implementação foi criada por mim, como pode ser conferida nas pastas de outras atividades. Algumas adaptações foram feitas baseadas nessas implementações com o intuito de facilitar o uso e a leitura do código.
+- Utilize pelo menos 3 objetos sendo pelo menos um deles formado por triângulos: foram usados dois cubos e duas esferas (totalizando quatro objetos). O cubo é um objeto formado por triângulos (cada face do cubo é formada por dois triângulos)
+- Utilize materiais difusos e reflexivos: uma esfera e um cubo utilizam materiais difusos e enquaunto os outros objetos utilizam de material reflexivo (metálico e vidro)
 Faça pelo menos um movimento com a câmera e outro com pelo menos um dos objetos: As esferas faz o movimento de ida e volta e a camera move tanto de posição quanto o ponto focal do qual olha.
 
 ## Como executar:

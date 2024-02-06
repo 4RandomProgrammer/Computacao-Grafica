@@ -1,3 +1,8 @@
+/// \file hittable.h
+/// \brief Arquivo que implementa a lógica básica para entender se um objeto foi acertado por um raio.
+/// \author Criado por Luís Felipe Dobner Henriques, porém retirado do tutorial: https://raytracing.github.io/books/RayTracingInOneWeekend.html
+
+
 #ifndef HITTABLE_H
 #define HITTABLE_H
 

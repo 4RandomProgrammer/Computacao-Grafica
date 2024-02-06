@@ -60,8 +60,13 @@ class ObjReader : public hittable{
         shared_ptr<material> mat;
         string full_file;
         vec3 mass_center;
+        
 
-        //! Construtor da classe de leitura de .Obj. Parametros: file_reader: nome do arquivo a ser lido. File writer: nome do arquivo a ser escrito.
+        /**
+         * @brief Construtor da classe de leitura de .Obj e criação dos respectivos triangulos lidos..
+         * @param file_reader: nome do arquivo a ser lido.
+         * @param file_writer writer: nome do arquivo a ser escrito.
+         */  
         ObjReader(string file_reader, string file_writer, vec3 move, shared_ptr<material> _material) {
             file_name_reader = file_reader;
             file_name_writer = file_writer;
@@ -73,6 +78,13 @@ class ObjReader : public hittable{
             disloc(move);
         }
 
+        /**
+         * @brief função de acerto para um objeto que vai verificar se um raio cruza determinado objeto. Essa função foi baseada na função realizada no tutorial.
+         * @param r O raio que queremos testar.
+         * @param ray_t O intervalo de acerto.
+         * @param rec caso o raio acerte foi indicar aonde foi acertado.
+         * @return se o raio fornecido acertou ou não o objeto.
+         */
         bool hit( const ray& r, interval ray_t, hit_record& rec) const override {
         
             int size = triangles.size();
@@ -86,6 +98,10 @@ class ObjReader : public hittable{
 
         }
 
+        /**
+         * @brief função com o objetivo de deslocar um objeto para uma posição desejada..
+         * @param discloc Deslocamento desejado a aplicar em um objeto.
+         */
         void disloc(vec3 disloc) {
             int size = triangles.size();
             for (int i = 0; i < size; i++){
