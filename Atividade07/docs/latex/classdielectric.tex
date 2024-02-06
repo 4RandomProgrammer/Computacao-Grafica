@@ -1,0 +1,87 @@
+\doxysection{dielectric Class Reference}
+\hypertarget{classdielectric}{}\label{classdielectric}\index{dielectric@{dielectric}}
+
+
+Inheritance diagram for dielectric\+:
+% FIG 0
+
+
+Collaboration diagram for dielectric\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdielectric_a41d64928c380a59555750a928ae92a63}{dielectric}} (double index\+\_\+of\+\_\+refraction)
+\item 
+bool \mbox{\hyperlink{classdielectric_aefd3b900c7e10ab92ecb127659a83d6e}{scatter}} (const \mbox{\hyperlink{classray}{ray}} \&r\+\_\+in, const \mbox{\hyperlink{classhit__record}{hit\+\_\+record}} \&rec, \mbox{\hyperlink{classvec3}{color}} \&attenuation, \mbox{\hyperlink{classray}{ray}} \&scattered) const override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{material_8h_source_l00057}{57}} of file \mbox{\hyperlink{material_8h_source}{material.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classdielectric_a41d64928c380a59555750a928ae92a63}\label{classdielectric_a41d64928c380a59555750a928ae92a63} 
+\index{dielectric@{dielectric}!dielectric@{dielectric}}
+\index{dielectric@{dielectric}!dielectric@{dielectric}}
+\doxysubsubsection{\texorpdfstring{dielectric()}{dielectric()}}
+{\footnotesize\ttfamily dielectric\+::dielectric (\begin{DoxyParamCaption}\item[{double}]{index\+\_\+of\+\_\+refraction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{material_8h_source_l00059}{59}} of file \mbox{\hyperlink{material_8h_source}{material.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00059\ :\ ir(index\_of\_refraction)\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classdielectric_aefd3b900c7e10ab92ecb127659a83d6e}\label{classdielectric_aefd3b900c7e10ab92ecb127659a83d6e} 
+\index{dielectric@{dielectric}!scatter@{scatter}}
+\index{scatter@{scatter}!dielectric@{dielectric}}
+\doxysubsubsection{\texorpdfstring{scatter()}{scatter()}}
+{\footnotesize\ttfamily bool dielectric\+::scatter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classray}{ray}} \&}]{r\+\_\+in,  }\item[{const \mbox{\hyperlink{classhit__record}{hit\+\_\+record}} \&}]{rec,  }\item[{\mbox{\hyperlink{classvec3}{color}} \&}]{attenuation,  }\item[{\mbox{\hyperlink{classray}{ray}} \&}]{scattered }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classmaterial}{material}}.
+
+
+
+Definition at line \mbox{\hyperlink{material_8h_source_l00061}{61}} of file \mbox{\hyperlink{material_8h_source}{material.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ attenuation\ =\ \mbox{\hyperlink{classvec3}{color}}(1.0,\ 1.0,\ 1.0);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ refraction\_ratio\ =\ rec.front\_face\ ?\ (1.0/ir)\ :\ ir;}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ unit\_direction\ =\ unit\_vector(r\_in.direction());}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ cos\_theta\ =\ fmin(dot(-\/unit\_direction,\ rec.normal),\ 1.0);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ sin\_theta\ =\ sqrt(1.0\ -\/\ cos\_theta*cos\_theta);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ cannot\_refract\ =\ refraction\_ratio\ *\ sin\_theta\ >\ 1.0;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ direction;}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cannot\_refract\ ||\ reflectance(cos\_theta,\ refraction\_ratio)\ >\ random\_double())}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ direction\ =\ reflect(unit\_direction,\ rec.normal);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ direction\ =\ refract(unit\_direction,\ rec.normal,\ refraction\_ratio);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ scattered\ =\ \mbox{\hyperlink{classray}{ray}}(rec.p,\ direction);}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00080\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+material.\+h\end{DoxyCompactItemize}

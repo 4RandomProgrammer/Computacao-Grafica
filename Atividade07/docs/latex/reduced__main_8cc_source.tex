@@ -1,0 +1,134 @@
+\doxysection{reduced\+\_\+main.\+cc}
+\hypertarget{reduced__main_8cc_source}{}\label{reduced__main_8cc_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{utils_8h}{utils.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{camera_8h}{camera.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{hittable__list_8h}{hittable\_list.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sphere_8h}{sphere.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}ObjReader.h"{}}}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}triangle.h"{}}}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00013}00013\ \textcolor{keywordtype}{string}\ file\_name\ =\ \textcolor{stringliteral}{"{}cube.obj"{}};}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00016}00016\ \textcolor{keywordtype}{int}\ main()\ \{}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{classhittable__list}{hittable\_list}}\ world;}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00018}00018\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{auto}\ R\ =\ cos(pi/4);}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{auto}\ material\_ground\ =\ make\_shared<lambertian>(\mbox{\hyperlink{classvec3}{color}}(0.8,\ 0.8,\ 0.0));}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{auto}\ material\_left\ \ =\ make\_shared<lambertian>(\mbox{\hyperlink{classvec3}{color}}(1,0,0));}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{auto}\ material\_right\ =\ make\_shared<dielectric>(1.5);}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{auto}\ material\_center\ =\ make\_shared<metal>(\mbox{\hyperlink{classvec3}{color}}(0.8,\ 0.6,\ 0.2),\ 0.0);}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00026}00026\ \ \ \ \ \mbox{\hyperlink{classvec3}{point3}}\ start(\ 0.0,\ 0.0,\ -\/1.0\ );}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{classvec3}{point3}}\ middle(\ 3.0,\ 0.0,\ -\/1.0\ );}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00028}00028\ \ \ \ \ \mbox{\hyperlink{classvec3}{point3}}\ end(\ 6.0,0.0,\ -\/1.0\ );}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00029}00029\ \ \ \ \ \mbox{\hyperlink{classvec3}{point3}}\ sub(0,0,0);}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00030}00030\ \ \ \ \ \mbox{\hyperlink{classvec3}{point3}}\ camera\_start(-\/2,2,1);}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00031}00031\ \ \ \ \ \mbox{\hyperlink{classvec3}{point3}}\ camera\_end(-\/8,2,-\/1);}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00032}00032\ \ \ \ \ \mbox{\hyperlink{classsphere}{sphere}}\ moving\_sphere(start,\ 0.5,\ material\_center);}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00033}00033\ \ \ \ \ \mbox{\hyperlink{classsphere}{sphere}}\ ground(\mbox{\hyperlink{classvec3}{point3}}(\ 0.0,\ -\/100.5,\ -\/1.0),\ 100.0,\ material\_ground);}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00034}00034\ \ \ \ \ shared\_ptr<ObjReader>\ quadrado1\ =\ make\_shared<ObjReader>(file\_name,\textcolor{stringliteral}{"{}"{}},\mbox{\hyperlink{classvec3}{vec3}}(-\/1,0,-\/1.0),material\_left);}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00035}00035\ \ \ \ \ shared\_ptr<ObjReader>\ quadrado2\ =\ make\_shared<ObjReader>(file\_name,\textcolor{stringliteral}{"{}"{}},\mbox{\hyperlink{classvec3}{vec3}}(8,0,-\/1),\ material\_right);}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00036}00036\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00037}00037\ \ \ \ \ world.add(make\_shared<sphere>(ground));}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00038}00038\ \ \ \ \ world.add(make\_shared<sphere>(moving\_sphere));}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00039}00039\ \ \ \ \ world.add(quadrado1);}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00040}00040\ \ \ \ \ world.add(quadrado2);}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00041}00041\ \ \ \ \ \mbox{\hyperlink{classcamera}{camera}}\ cam;}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00043}00043\ \ \ \ \ cam.aspect\_ratio\ =\ 16.0\ /\ 9.0;}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00044}00044\ \ \ \ \ cam.image\_width\ \ =\ 1280;}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00045}00045\ \ \ \ \ cam.samples\_per\_pixel\ =\ 50;}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00046}00046\ \ \ \ \ cam.max\_depth\ =\ 50;}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00048}00048\ \ \ \ \ cam.vfov\ \ \ \ \ =\ 45;}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00049}00049\ \ \ \ \ cam.lookfrom\ =\ camera\_start;}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00050}00050\ \ \ \ \ cam.lookat\ \ \ =\ \mbox{\hyperlink{classvec3}{point3}}(0,0,-\/1);}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00051}00051\ \ \ \ \ cam.vup\ \ \ \ \ \ =\ \mbox{\hyperlink{classvec3}{vec3}}(0,1,0);}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00053}00053\ \ \ \ \ \textcolor{keywordtype}{double}\ frames\ =\ 23;}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00054}00054\ \ \ \ \ \textcolor{keywordtype}{double}\ time\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00056}00056\ \ \ \ \ std::clog\ <<\ time\ /\ frames\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00057}00057\ \ \ \ \ \textcolor{comment}{//\ cam.render(world);}}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00058}00058\ \ \ \ \ \textcolor{comment}{//\ Loop\ de\ renderização}}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00060}00060\ \ \ \ \ \textcolor{comment}{//\ Como\ a\ função\ funiona\ de\ 1\ em\ 1\ segundo\ preciso\ criar\ um\ sistema\ que\ deixa\ a\ animação\ mais\ fácil\ de\ ocorrer.}}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00061}00061\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{double}\ i\ =\ 0;\ i\ <=\ time;\ i\ +=\ time\ /\ frames\ )\ \{}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00062}00062\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00063}00063\ \ \ \ \ \ \ \ \ cam.anim\_frame\ +=\ 1;}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00064}00064\ \ \ \ \ \ \ \ \ cam.lerp\_look\_at(start,middle,i);}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00065}00065\ \ \ \ \ \ \ \ \ world.clear();}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00066}00066\ \ \ \ \ \ \ \ \ moving\_sphere.lerp(start,middle,i);}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00067}00067\ \ \ \ \ \ \ \ \ world.add(make\_shared<sphere>(ground));}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00068}00068\ \ \ \ \ \ \ \ \ world.add(quadrado2);}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00069}00069\ \ \ \ \ \ \ \ \ world.add(make\_shared<sphere>(moving\_sphere));}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00070}00070\ \ \ \ \ \ \ \ \ world.add(quadrado1);}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00071}00071\ \ \ \ \ \ \ \ \ cam.render(world);}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00072}00072\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00074}00074\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{double}\ i\ =\ 0;\ i\ <=\ time;\ i\ +=\ time\ /\ frames\ )\ \{}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00075}00075\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00076}00076\ \ \ \ \ \ \ \ \ cam.anim\_frame\ +=\ 1;}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00077}00077\ \ \ \ \ \ \ \ \ cam.lerp\_look\_at(middle,end,i);}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00078}00078\ \ \ \ \ \ \ \ \ world.clear();}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00079}00079\ \ \ \ \ \ \ \ \ moving\_sphere.lerp(middle,end,i);}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00080}00080\ \ \ \ \ \ \ \ \ world.add(make\_shared<sphere>(ground));}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00081}00081\ \ \ \ \ \ \ \ \ world.add(quadrado2);}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00082}00082\ \ \ \ \ \ \ \ \ world.add(make\_shared<sphere>(moving\_sphere));}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00083}00083\ \ \ \ \ \ \ \ \ world.add(quadrado1);}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00085}00085\ \ \ \ \ \ \ \ \ cam.render(world);}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00086}00086\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00088}00088\ \ \ \ \ \textcolor{comment}{//\ bola\ para\ e\ camera\ mexe}}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00089}00089\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{double}\ i\ =\ 0;\ i\ <=\ time;\ i\ +=\ time\ /\ frames\ )\ \{}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00090}00090\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00091}00091\ \ \ \ \ \ \ \ \ cam.anim\_frame\ +=\ 1;}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00092}00092\ \ \ \ \ \ \ \ \ cam.lerp\_look\_from(camera\_start,camera\_end,i);}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00093}00093\ \ \ \ \ \ \ \ \ cam.render(world);}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00094}00094\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00096}00096\ \ \ \ \ \textcolor{comment}{//\ Movimento\ da\ voltando.}}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00097}00097\ \ \ \ \ sub\ =\ start;}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00098}00098\ \ \ \ \ start\ =\ end;}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00099}00099\ \ \ \ \ end\ =\ sub;}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00100}00100\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{double}\ i\ =\ 0;\ i\ <=\ time;\ i\ +=\ time\ /\ frames\ )\ \{}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00101}00101\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00102}00102\ \ \ \ \ \ \ \ \ cam.anim\_frame\ +=\ 1;}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00103}00103\ \ \ \ \ \ \ \ \ world.clear();}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00105}00105\ \ \ \ \ \ \ \ \ moving\_sphere.lerp(start,middle,i);}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00106}00106\ \ \ \ \ \ \ \ \ std::clog\ <<\ i\ <<\ \textcolor{charliteral}{'\(\backslash\)n'}\ <<\ moving\_sphere.center\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00107}00107\ \ \ \ \ \ \ \ \ world.add(make\_shared<sphere>(ground));}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00108}00108\ \ \ \ \ \ \ \ \ world.add(quadrado2);}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00109}00109\ \ \ \ \ \ \ \ \ world.add(make\_shared<sphere>(moving\_sphere));}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00110}00110\ \ \ \ \ \ \ \ \ world.add(quadrado1);}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00112}00112\ \ \ \ \ \ \ \ \ cam.render(world);}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00113}00113\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00114}00114\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00115}00115\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{double}\ i\ =\ 0;\ i\ <=\ time;\ i\ +=\ time\ /\ frames\ )\ \{}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00116}00116\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00117}00117\ \ \ \ \ \ \ \ \ cam.anim\_frame\ +=\ 1;}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00118}00118\ \ \ \ \ \ \ \ \ world.clear();}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00120}00120\ \ \ \ \ \ \ \ \ moving\_sphere.lerp(middle,end,i);}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00121}00121\ \ \ \ \ \ \ \ \ std::clog\ <<\ i\ <<\ \textcolor{charliteral}{'\(\backslash\)n'}\ <<\ moving\_sphere.center\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00122}00122\ \ \ \ \ \ \ \ \ world.add(make\_shared<sphere>(ground));}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00123}00123\ \ \ \ \ \ \ \ \ world.add(quadrado2);}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00124}00124\ \ \ \ \ \ \ \ \ world.add(make\_shared<sphere>(moving\_sphere));}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00125}00125\ \ \ \ \ \ \ \ \ world.add(quadrado1);}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00127}00127\ \ \ \ \ \ \ \ \ cam.render(world);}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00128}00128\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00129}00129\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{reduced__main_8cc_source_l00131}00131\ \}}
+
+\end{DoxyCode}

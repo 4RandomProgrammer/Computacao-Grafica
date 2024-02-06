@@ -1,0 +1,216 @@
+\doxysection{Obj\+Reader.\+h}
+\hypertarget{ObjReader_8h_source}{}\label{ObjReader_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ OBJREADER\_H}}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ OBJREADER\_H}}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include<fstream>}}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{hittable_8h}{hittable.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{utils_8h}{utils.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vec3_8h}{vec3.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}triangle.h"{}}}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00015}00015\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00017}\mbox{\hyperlink{classObjReader}{00017}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classObjReader}{ObjReader}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classhittable}{hittable}}\{}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ file\_name\_reader;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ file\_name\_writer;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ fileRead;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00022}00022\ \ \ \ \ \ \ \ \ fstream\ file\_to\_read;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ file\_initiated;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}*\ allocate(\textcolor{keywordtype}{int}\ int1,\textcolor{keywordtype}{int}\ int2,\textcolor{keywordtype}{int}\ int3)\ \{}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ *teste;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ teste\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{int}\ [3];}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ teste[0]\ =\ int1;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ teste[1]\ =\ int2;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ teste[2]\ =\ int3;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ teste;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00034}00034\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}*\ allocate\_one\_int(\textcolor{keywordtype}{int}\ value)\ \{}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}*\ teste;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ teste\ =\ \textcolor{keyword}{new}\ int;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ teste[0]\ =\ value;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ teste;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00043}00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}*\ allocate\_float(\textcolor{keywordtype}{float}\ int1,\textcolor{keywordtype}{float}\ int2,\textcolor{keywordtype}{float}\ int3)\ \{}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ *teste;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ teste\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{float}[3];}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ teste[0]\ =\ int1;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ teste[1]\ =\ int2;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ teste[2]\ =\ int3;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ teste;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00056}00056\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ std::vector<vec3>\ vertices;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ std::vector<triangle>\ triangles;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ std::vector<vec3>\ normals;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ shared\_ptr<material>\ mat;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ full\_file;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ mass\_center;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00070}\mbox{\hyperlink{classObjReader_acb6d7b18883035794b9cdcbe7bfbf97d}{00070}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classObjReader_acb6d7b18883035794b9cdcbe7bfbf97d}{ObjReader}}(\textcolor{keywordtype}{string}\ file\_reader,\ \textcolor{keywordtype}{string}\ file\_writer,\ \mbox{\hyperlink{classvec3}{vec3}}\ move,\ shared\_ptr<material>\ \_material)\ \{}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ file\_name\_reader\ =\ file\_reader;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ file\_name\_writer\ =\ file\_writer;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ file\_initiated\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ mat\ =\ \_material;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classObjReader_adad1f5452402d395843451a2c6a49af9}{open\_file}}();}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classObjReader_a30e7fd57d8ecc1ba4e9250eafd013ceb}{read\_file}}();}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classObjReader_a04b31b5a0973dd3151f0b98b82852edc}{close\_file}}();}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classObjReader_a90494c63313f8273a28b3fb852bbfa99}{disloc}}(move);}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00088}\mbox{\hyperlink{classObjReader_a3e25ed4771ba2e51a8dd953366ee64f5}{00088}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classObjReader_a3e25ed4771ba2e51a8dd953366ee64f5}{hit}}(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classray}{ray}}\&\ r,\ \mbox{\hyperlink{classinterval}{interval}}\ ray\_t,\ \mbox{\hyperlink{classhit__record}{hit\_record}}\&\ rec)\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00089}00089\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ size\ =\ triangles.size();}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ size;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (triangles[i].\mbox{\hyperlink{classObjReader_a3e25ed4771ba2e51a8dd953366ee64f5}{hit}}(r,\ ray\_t,rec))\{}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00099}00099\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00105}\mbox{\hyperlink{classObjReader_a90494c63313f8273a28b3fb852bbfa99}{00105}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classObjReader_a90494c63313f8273a28b3fb852bbfa99}{disloc}}(\mbox{\hyperlink{classvec3}{vec3}}\ \mbox{\hyperlink{classObjReader_a90494c63313f8273a28b3fb852bbfa99}{disloc}})\ \{}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ size\ =\ triangles.size();}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ size;\ i++)\{}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ triangles[i].disloc(\mbox{\hyperlink{classObjReader_a90494c63313f8273a28b3fb852bbfa99}{disloc}});}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00110}00110\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00113}\mbox{\hyperlink{classObjReader_acd8a724306f737468d1657256a19f8e2}{00113}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classObjReader_acd8a724306f737468d1657256a19f8e2}{get\_file\_read}}()\{}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ fileRead;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00115}00115\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00118}\mbox{\hyperlink{classObjReader_adad1f5452402d395843451a2c6a49af9}{00118}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classObjReader_adad1f5452402d395843451a2c6a49af9}{open\_file}}()\{}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ file\_to\_read.open(file\_name\_reader.c\_str(),\ ios::in);}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!file\_to\_read)\ \{}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}No\ file\ found!"{}};}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ file\_initiated\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00128}00128\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00130}\mbox{\hyperlink{classObjReader_a30e7fd57d8ecc1ba4e9250eafd013ceb}{00130}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classObjReader_a30e7fd57d8ecc1ba4e9250eafd013ceb}{read\_file}}()\ \{}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!file\_initiated)\ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ \{}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::getline(file\_to\_read,fileRead);}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ teste(fileRead);}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ type;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ teste\ >>\ type;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ (type\ ==\ "{}vn"{})\{}}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ std::clog\ <<\ fileRead;}}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (type\ ==\ \textcolor{stringliteral}{"{}v"{}})\{}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ x,y,z;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ teste\ >>\ x\ >>\ y\ >>\ z;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ teste(x,y,z);}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vertices.push\_back(teste);}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (type\ ==\ \textcolor{stringliteral}{"{}f"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ A,B,C,value;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ maybe;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ teste\ >>\ A\ >>\ maybe\ >>\ B\ >>\ maybe\ >>\ \ C\ ;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}*\ numbers\ =\ allocate(A,B,C);}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ss\ <<\ maybe[2];}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ss\ >>\ value;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value\ -\/=\ 1;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ A\ -\/=\ 1;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ B\ -\/=\ 1;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ C\ -\/=\ 1;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtriangle}{triangle}}\ new\_triangle(vertices[A],\ vertices[B],\ vertices[C],normals[value],normals[value],normals[value],\ mat,\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ triangles.push\_back(new\_triangle);}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (type\ ==\ \textcolor{stringliteral}{"{}vn"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ x,y,z;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ teste\ >>\ x\ >>\ y\ >>\ z;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::clog\ <<\ x\ <<\ '\ '\ <<\ y\ <<\ '\ '\ <<\ z\ <<\ '\(\backslash\)n'\ ;}}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ normal(x,y,z);}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ normals.push\_back(normal);}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ file\_to\_read.eof()\ )\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ object\_center();}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00181}00181\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00182}00182\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00184}\mbox{\hyperlink{classObjReader_af743b10dd579cb651d4e7c7a3d9da1de}{00184}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classObjReader_af743b10dd579cb651d4e7c7a3d9da1de}{write\_file}}()\{}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!file\_initiated)\ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00186}00186\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ ofstream\ test\_file(file\_name\_writer);}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!test\_file)\ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ test\_file\ \ <<\ full\_file;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00194}00194\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00195}00195\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00196}00196\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00198}\mbox{\hyperlink{classObjReader_a04b31b5a0973dd3151f0b98b82852edc}{00198}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classObjReader_a04b31b5a0973dd3151f0b98b82852edc}{close\_file}}()\{}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ !file\_initiated\ )\ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ file\_to\_read.close();}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00202}00202\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00203}00203\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00204}00204\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ object\_center()\{}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00205}00205\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ size\ =\ vertices.size();}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ avg\_x,avg\_y,avg\_z;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ avg\_x\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ avg\_y\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ avg\_z\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00211}00211\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ size;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00214}00214\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ avg\_x\ +=\ vertices[i].x();}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ avg\_y\ +=\ vertices[i].y();}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ avg\_z\ +=\ vertices[i].z();}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00218}00218\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00220}00220\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ avg\_x\ /=\ size;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ avg\_y\ /=\ size;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ avg\_z\ /=\ size;}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00224}00224\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ mass\_center\ =\ \mbox{\hyperlink{classvec3}{vec3}}(avg\_x,avg\_y,avg\_z);}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00226}00226\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classObjReader_a90494c63313f8273a28b3fb852bbfa99}{disloc}}(-\/mass\_center);}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00228}00228\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00229}00229\ \};}
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00230}00230\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00231}00231\ }
+\DoxyCodeLine{\Hypertarget{ObjReader_8h_source_l00232}00232\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

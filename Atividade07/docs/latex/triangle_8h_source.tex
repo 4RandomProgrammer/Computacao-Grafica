@@ -1,0 +1,139 @@
+\doxysection{triangle.\+h}
+\hypertarget{triangle_8h_source}{}\label{triangle_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ TRIANGLE\_H}}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ TRIANGLE\_H}}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{hittable_8h}{hittable.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vec3_8h}{vec3.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00007}00007\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00009}\mbox{\hyperlink{classtriangle}{00009}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtriangle}{triangle}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classhittable}{hittable}}\ \{}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00010}00010\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00011}00011\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ v0;}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00012}00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ v1;}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00013}00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ v2;}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00014}00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ n1;}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00015}00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ n2;}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00016}00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ n3;}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ there\_is\_normal;}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00018}00018\ \ \ \ \ \ \ \ \ shared\_ptr<material>\ mat;}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00031}\mbox{\hyperlink{classtriangle_a25912d5260510abbf812ff1331db071c}{00031}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtriangle_a25912d5260510abbf812ff1331db071c}{triangle}}(\mbox{\hyperlink{classvec3}{vec3}}\ \_v1,\ \mbox{\hyperlink{classvec3}{vec3}}\ \_v2,\ \mbox{\hyperlink{classvec3}{vec3}}\ \_v3,\ \mbox{\hyperlink{classvec3}{vec3}}\ \_normal,\mbox{\hyperlink{classvec3}{vec3}}\ \_normal2,\mbox{\hyperlink{classvec3}{vec3}}\ \_normal3,\ shared\_ptr<material>\ \_material,\ \textcolor{keywordtype}{bool}\ \_there\_is\_normal)\ :\ v0(\_v1),\ v1(\_v2),\ v2(\_v3),n1(\_normal),\ mat(\_material),\ there\_is\_normal(\_there\_is\_normal)\ \{\}}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00040}\mbox{\hyperlink{classtriangle_a6b8b7fe5c1bcc0ede0702d122c6428b9}{00040}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtriangle_a6b8b7fe5c1bcc0ede0702d122c6428b9}{hit\_triangle}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classray}{ray}}\&\ r,\ \mbox{\hyperlink{classhit__record}{hit\_record}}\&\ rec)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ v0v1\ =\ v1\ -\/\ v0;}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ v0v2\ =\ v2\ -\/\ v0;}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{double}\ kEpsilon\ =\ std::numeric\_limits<double>::epsilon();}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ N\ =\ cross(v0v1,v0v2);}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ area2\ =\ N.length();}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ NdotRayDirection\ =\ dot(N,r.direction());}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fabs(NdotRayDirection)\ <\ kEpsilon)\ \textcolor{comment}{//\ almost\ 0}}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ they\ are\ parallel,\ so\ they\ don't\ intersect!\ }}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ d\ =\ dot(N,\ v0);}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ t\ =\ (d\ -\/\ dot(N,r.origin()))\ /\ NdotRayDirection;}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (t\ <\ 0)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ P\ =\ r.origin()\ +\ t\ *\ r.direction();}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ C;}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ edge0\ =\ v1\ -\/\ v0;\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ vp0\ =\ P\ -\/\ v0;}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ C\ =\ cross(edge0,vp0);}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dot(N,C)\ <\ 0)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ edge1\ =\ v2\ -\/\ v1;\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ vp1\ =\ P\ -\/\ v1;}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ C\ =\ cross(edge1,vp1);}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dot(N,C)\ <\ 0)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ edge2\ =\ v0\ -\/\ v2;\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ vp2\ =\ P\ -\/\ v2;}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ C\ =\ cross(edge2,vp2);}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dot(N,C)\ <\ 0)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ rec.t\ =\ t;}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ rec.p\ =\ P;}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ rec.mat\ =\ mat;}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ there\_is\_normal\ )\ \{}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ weights[3];}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ baricentric(v0,\ v1,v2,P,weights);}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ new\_normal\ =\ weights[0]\ *\ n1\ +\ weights[1]\ *\ n2\ +\ weights[2]\ *\ n3;}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ new\_normal\ =\ unit\_vector(new\_normal);}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rec.normal\ =\ new\_normal;}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ outward\_normal\ =\ new\_normal;}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rec.set\_face\_normal(r,\ outward\_normal);}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rec.normal\ =\ N;}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ outward\_normal\ =\ N;}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rec.set\_face\_normal(r,\ outward\_normal);}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00106}00106\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00108}00108\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ hit(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classray}{ray}}\&\ r,\ \mbox{\hyperlink{classinterval}{interval}}\ ray\_t,\ \mbox{\hyperlink{classhit__record}{hit\_record}}\&\ rec)\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00109}00109\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classtriangle_a6b8b7fe5c1bcc0ede0702d122c6428b9}{hit\_triangle}}(r,\ rec))\{\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00116}00116\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00118}00118\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ disloc(\mbox{\hyperlink{classvec3}{vec3}}\ disloc)\ \{}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ v0\ +=\ disloc;}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ v1\ +=\ disloc;}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ v2\ +=\ disloc;\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00122}00122\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00124}00124\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00125}00125\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ baricentric(\mbox{\hyperlink{classvec3}{vec3}}\ point1,\ \mbox{\hyperlink{classvec3}{vec3}}\ point2,\ \mbox{\hyperlink{classvec3}{vec3}}\ \mbox{\hyperlink{classvec3}{point3}},\ \mbox{\hyperlink{classvec3}{vec3}}\ intersec\_point,\ \textcolor{keywordtype}{double}\ *ret)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ v0\ =\ point2\ -\/\ point1;}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ v1\ =\ \mbox{\hyperlink{classvec3}{point3}}\ -\/\ point1;}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ v2\ =\ intersec\_point\ -\/\ point1;}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ d00\ =\ dot(v0,v0);}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ d01\ =\ dot(v0,v1);}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ d11\ =\ dot(v1,v1);}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ d20\ =\ dot(v2,v0);}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ d21\ =\ dot(v2,v1);}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ denom\ =\ d00\ *\ d11\ -\/\ d01\ *\ d01;}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ v\ =\ (d11\ *\ d20\ -\/\ d01\ *\ d21)\ /\ denom;}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ w\ =\ (d00\ *\ d21\ -\/\ d01\ *\ d20)\ /\ denom;}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ u\ =\ 1.0\ -\/\ v\ -\/\ w;}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ ret[0]\ =\ u;}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ ret[1]\ =\ v;}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ ret[2]\ =\ w;}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::clog\ <<\ u\ <<\ '\ '\ <<\ v\ <<\ '\ '\ <<\ w\ <<\ '\(\backslash\)n';}}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00147}00147\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00149}00149\ \};}
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00150}00150\ }
+\DoxyCodeLine{\Hypertarget{triangle_8h_source_l00151}00151\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

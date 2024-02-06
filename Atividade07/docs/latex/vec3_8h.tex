@@ -1,0 +1,356 @@
+\doxysection{vec3.\+h File Reference}
+\hypertarget{vec3_8h}{}\label{vec3_8h}\index{vec3.h@{vec3.h}}
+
+
+Arquivo que implementa a base para operações com vetores de 3 dimensões.  
+
+
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for vec3.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classvec3}{vec3}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{vec3_8h_a23d4d64cd77609f1c386634d2c940f29}{point3}} = \mbox{\hyperlink{classvec3}{vec3}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{vec3_8h_a0057485269c781a1b0b7f34145f2d14b}{operator$<$$<$}} (std\+::ostream \&out, const \mbox{\hyperlink{classvec3}{vec3}} \&v)
+\item 
+\mbox{\hyperlink{classvec3}{vec3}} \mbox{\hyperlink{vec3_8h_af4489c4baa8f0761459287fe5bc0501c}{operator+}} (const \mbox{\hyperlink{classvec3}{vec3}} \&u, const \mbox{\hyperlink{classvec3}{vec3}} \&v)
+\item 
+\mbox{\hyperlink{classvec3}{vec3}} \mbox{\hyperlink{vec3_8h_a328f10c2653d1a7d2859f5de56215df7}{operator-\/}} (const \mbox{\hyperlink{classvec3}{vec3}} \&u, const \mbox{\hyperlink{classvec3}{vec3}} \&v)
+\item 
+\mbox{\hyperlink{classvec3}{vec3}} \mbox{\hyperlink{vec3_8h_aaf26a81adafbfb0c6829b0539db47e21}{operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{classvec3}{vec3}} \&u, const \mbox{\hyperlink{classvec3}{vec3}} \&v)
+\item 
+\mbox{\hyperlink{classvec3}{vec3}} \mbox{\hyperlink{vec3_8h_a0aaf9306e3908c180074f931981eb07f}{operator\texorpdfstring{$\ast$}{*}}} (double t, const \mbox{\hyperlink{classvec3}{vec3}} \&v)
+\item 
+\mbox{\hyperlink{classvec3}{vec3}} \mbox{\hyperlink{vec3_8h_a815e7098ef4a9361be61668da9ef19ec}{operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{classvec3}{vec3}} \&v, double t)
+\item 
+\mbox{\hyperlink{classvec3}{vec3}} \mbox{\hyperlink{vec3_8h_aa076be029b0defc0a720b34dbe9a512d}{operator/}} (\mbox{\hyperlink{classvec3}{vec3}} v, double t)
+\item 
+double \mbox{\hyperlink{vec3_8h_ae7820be764fada62a68b2af8eb86fad6}{dot}} (const \mbox{\hyperlink{classvec3}{vec3}} \&u, const \mbox{\hyperlink{classvec3}{vec3}} \&v)
+\item 
+\mbox{\hyperlink{classvec3}{vec3}} \mbox{\hyperlink{vec3_8h_a6f15d49fc74319def3ebad39cb40f4c2}{cross}} (const \mbox{\hyperlink{classvec3}{vec3}} \&u, const \mbox{\hyperlink{classvec3}{vec3}} \&v)
+\item 
+\mbox{\hyperlink{classvec3}{vec3}} \mbox{\hyperlink{vec3_8h_a88dc506816c3fef82ebac91ca859273a}{unit\+\_\+vector}} (\mbox{\hyperlink{classvec3}{vec3}} v)
+\item 
+\mbox{\hyperlink{classvec3}{vec3}} \mbox{\hyperlink{vec3_8h_a3f23fb03258dd44e8cb410f0a030c76e}{random\+\_\+in\+\_\+unit\+\_\+sphere}} ()
+\item 
+\mbox{\hyperlink{classvec3}{vec3}} \mbox{\hyperlink{vec3_8h_ada1a3d344d1bceea9aeb12a0dc83a805}{random\+\_\+unit\+\_\+vector}} ()
+\item 
+\mbox{\hyperlink{classvec3}{vec3}} \mbox{\hyperlink{vec3_8h_ada544b52ee9065d12db7b3b0b3029626}{random\+\_\+on\+\_\+hemisphere}} (const \mbox{\hyperlink{classvec3}{vec3}} normal)
+\item 
+\mbox{\hyperlink{classvec3}{vec3}} \mbox{\hyperlink{vec3_8h_a25997d9bc8a3a0187abd63f590efe4dd}{reflect}} (const \mbox{\hyperlink{classvec3}{vec3}} \&v, const \mbox{\hyperlink{classvec3}{vec3}} \&n)
+\item 
+\mbox{\hyperlink{classvec3}{vec3}} \mbox{\hyperlink{vec3_8h_a85842ddb0f64a09b09c898626da3dc99}{refract}} (const \mbox{\hyperlink{classvec3}{vec3}} \&uv, const \mbox{\hyperlink{classvec3}{vec3}} \&n, double etai\+\_\+over\+\_\+etat)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Arquivo que implementa a base para operações com vetores de 3 dimensões. 
+
+\begin{DoxyAuthor}{Author}
+Criado por Luís Felipe Dobner Henriques, porém retirado do tutorial\+: \href{https://raytracing.github.io/books/RayTracingInOneWeekend.html}{\texttt{ https\+://raytracing.\+github.\+io/books/\+Ray\+Tracing\+In\+One\+Weekend.\+html}} 
+\end{DoxyAuthor}
+
+
+Definition in file \mbox{\hyperlink{vec3_8h_source}{vec3.\+h}}.
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{vec3_8h_a23d4d64cd77609f1c386634d2c940f29}\label{vec3_8h_a23d4d64cd77609f1c386634d2c940f29} 
+\index{vec3.h@{vec3.h}!point3@{point3}}
+\index{point3@{point3}!vec3.h@{vec3.h}}
+\doxysubsubsection{\texorpdfstring{point3}{point3}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classvec3}{point3}} = \mbox{\hyperlink{classvec3}{vec3}}}
+
+
+
+Definition at line \mbox{\hyperlink{vec3_8h_source_l00071}{71}} of file \mbox{\hyperlink{vec3_8h_source}{vec3.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{vec3_8h_a6f15d49fc74319def3ebad39cb40f4c2}\label{vec3_8h_a6f15d49fc74319def3ebad39cb40f4c2} 
+\index{vec3.h@{vec3.h}!cross@{cross}}
+\index{cross@{cross}!vec3.h@{vec3.h}}
+\doxysubsubsection{\texorpdfstring{cross()}{cross()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classvec3}{vec3}} cross (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classvec3}{vec3}} \&}]{u,  }\item[{const \mbox{\hyperlink{classvec3}{vec3}} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{vec3_8h_source_l00110}{110}} of file \mbox{\hyperlink{vec3_8h_source}{vec3.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classvec3}{vec3}}(u.e[1]\ *\ v.e[2]\ -\/\ u.e[2]\ *\ v.e[1],}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u.e[2]\ *\ v.e[0]\ -\/\ u.e[0]\ *\ v.e[2],}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u.e[0]\ *\ v.e[1]\ -\/\ u.e[1]\ *\ v.e[0]);}
+\DoxyCodeLine{00114\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vec3_8h_ae7820be764fada62a68b2af8eb86fad6}\label{vec3_8h_ae7820be764fada62a68b2af8eb86fad6} 
+\index{vec3.h@{vec3.h}!dot@{dot}}
+\index{dot@{dot}!vec3.h@{vec3.h}}
+\doxysubsubsection{\texorpdfstring{dot()}{dot()}}
+{\footnotesize\ttfamily double dot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classvec3}{vec3}} \&}]{u,  }\item[{const \mbox{\hyperlink{classvec3}{vec3}} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{vec3_8h_source_l00104}{104}} of file \mbox{\hyperlink{vec3_8h_source}{vec3.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordflow}{return}\ u.e[0]\ *\ v.e[0]}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ +\ u.e[1]\ *\ v.e[1]}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ +\ u.e[2]\ *\ v.e[2];}
+\DoxyCodeLine{00108\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vec3_8h_aaf26a81adafbfb0c6829b0539db47e21}\label{vec3_8h_aaf26a81adafbfb0c6829b0539db47e21} 
+\index{vec3.h@{vec3.h}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!vec3.h@{vec3.h}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classvec3}{vec3}} operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classvec3}{vec3}} \&}]{u,  }\item[{const \mbox{\hyperlink{classvec3}{vec3}} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{vec3_8h_source_l00088}{88}} of file \mbox{\hyperlink{vec3_8h_source}{vec3.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classvec3}{vec3}}(u.e[0]\ *\ v.e[0],\ u.e[1]\ *\ v.e[1],\ u.e[2]\ *\ v.e[2]);}
+\DoxyCodeLine{00090\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vec3_8h_a815e7098ef4a9361be61668da9ef19ec}\label{vec3_8h_a815e7098ef4a9361be61668da9ef19ec} 
+\index{vec3.h@{vec3.h}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!vec3.h@{vec3.h}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classvec3}{vec3}} operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classvec3}{vec3}} \&}]{v,  }\item[{double}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{vec3_8h_source_l00096}{96}} of file \mbox{\hyperlink{vec3_8h_source}{vec3.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordflow}{return}\ t\ *\ v;}
+\DoxyCodeLine{00098\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vec3_8h_a0aaf9306e3908c180074f931981eb07f}\label{vec3_8h_a0aaf9306e3908c180074f931981eb07f} 
+\index{vec3.h@{vec3.h}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!vec3.h@{vec3.h}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classvec3}{vec3}} operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{double}]{t,  }\item[{const \mbox{\hyperlink{classvec3}{vec3}} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{vec3_8h_source_l00092}{92}} of file \mbox{\hyperlink{vec3_8h_source}{vec3.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classvec3}{vec3}}(t*v.e[0],\ t*v.e[1],\ t*v.e[2]);}
+\DoxyCodeLine{00094\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vec3_8h_af4489c4baa8f0761459287fe5bc0501c}\label{vec3_8h_af4489c4baa8f0761459287fe5bc0501c} 
+\index{vec3.h@{vec3.h}!operator+@{operator+}}
+\index{operator+@{operator+}!vec3.h@{vec3.h}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classvec3}{vec3}} operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classvec3}{vec3}} \&}]{u,  }\item[{const \mbox{\hyperlink{classvec3}{vec3}} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{vec3_8h_source_l00080}{80}} of file \mbox{\hyperlink{vec3_8h_source}{vec3.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classvec3}{vec3}}(u.e[0]\ +\ v.e[0],\ u.e[1]\ +\ v.e[1],\ u.e[2]\ +\ v.e[2]);}
+\DoxyCodeLine{00082\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vec3_8h_a328f10c2653d1a7d2859f5de56215df7}\label{vec3_8h_a328f10c2653d1a7d2859f5de56215df7} 
+\index{vec3.h@{vec3.h}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!vec3.h@{vec3.h}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classvec3}{vec3}} operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classvec3}{vec3}} \&}]{u,  }\item[{const \mbox{\hyperlink{classvec3}{vec3}} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{vec3_8h_source_l00084}{84}} of file \mbox{\hyperlink{vec3_8h_source}{vec3.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classvec3}{vec3}}(u.e[0]\ -\/\ v.e[0],\ u.e[1]\ -\/\ v.e[1],\ u.e[2]\ -\/\ v.e[2]);}
+\DoxyCodeLine{00086\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vec3_8h_aa076be029b0defc0a720b34dbe9a512d}\label{vec3_8h_aa076be029b0defc0a720b34dbe9a512d} 
+\index{vec3.h@{vec3.h}!operator/@{operator/}}
+\index{operator/@{operator/}!vec3.h@{vec3.h}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classvec3}{vec3}} operator/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classvec3}{vec3}}}]{v,  }\item[{double}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{vec3_8h_source_l00100}{100}} of file \mbox{\hyperlink{vec3_8h_source}{vec3.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordflow}{return}\ (1/t)\ *\ v;}
+\DoxyCodeLine{00102\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vec3_8h_a0057485269c781a1b0b7f34145f2d14b}\label{vec3_8h_a0057485269c781a1b0b7f34145f2d14b} 
+\index{vec3.h@{vec3.h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!vec3.h@{vec3.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{const \mbox{\hyperlink{classvec3}{vec3}} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{vec3_8h_source_l00076}{76}} of file \mbox{\hyperlink{vec3_8h_source}{vec3.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordflow}{return}\ out\ <<\ v.e[0]\ <<\ \textcolor{charliteral}{'\ '}\ <<\ v.e[1]\ <<\ \textcolor{charliteral}{'\ '}\ <<\ v.e[2];}
+\DoxyCodeLine{00078\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vec3_8h_a3f23fb03258dd44e8cb410f0a030c76e}\label{vec3_8h_a3f23fb03258dd44e8cb410f0a030c76e} 
+\index{vec3.h@{vec3.h}!random\_in\_unit\_sphere@{random\_in\_unit\_sphere}}
+\index{random\_in\_unit\_sphere@{random\_in\_unit\_sphere}!vec3.h@{vec3.h}}
+\doxysubsubsection{\texorpdfstring{random\_in\_unit\_sphere()}{random\_in\_unit\_sphere()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classvec3}{vec3}} random\+\_\+in\+\_\+unit\+\_\+sphere (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{vec3_8h_source_l00120}{120}} of file \mbox{\hyperlink{vec3_8h_source}{vec3.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ p\ =\ vec3::random(-\/1,1);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ p.length\_squared()\ <\ 1\ )\ \textcolor{keywordflow}{return}\ p;}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+\DoxyCodeLine{00126\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vec3_8h_ada544b52ee9065d12db7b3b0b3029626}\label{vec3_8h_ada544b52ee9065d12db7b3b0b3029626} 
+\index{vec3.h@{vec3.h}!random\_on\_hemisphere@{random\_on\_hemisphere}}
+\index{random\_on\_hemisphere@{random\_on\_hemisphere}!vec3.h@{vec3.h}}
+\doxysubsubsection{\texorpdfstring{random\_on\_hemisphere()}{random\_on\_hemisphere()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classvec3}{vec3}} random\+\_\+on\+\_\+hemisphere (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classvec3}{vec3}}}]{normal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{vec3_8h_source_l00132}{132}} of file \mbox{\hyperlink{vec3_8h_source}{vec3.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ on\_unit\_sphere\ =\ random\_unit\_vector();}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordflow}{if}\ (dot(on\_unit\_sphere,\ normal)\ >\ 0.0)\ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ on\_unit\_sphere;}
+\DoxyCodeLine{00136\ \ \ \ \ \}}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/on\_unit\_sphere;}
+\DoxyCodeLine{00139\ \ \ \ \ \}}
+\DoxyCodeLine{00140\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vec3_8h_ada1a3d344d1bceea9aeb12a0dc83a805}\label{vec3_8h_ada1a3d344d1bceea9aeb12a0dc83a805} 
+\index{vec3.h@{vec3.h}!random\_unit\_vector@{random\_unit\_vector}}
+\index{random\_unit\_vector@{random\_unit\_vector}!vec3.h@{vec3.h}}
+\doxysubsubsection{\texorpdfstring{random\_unit\_vector()}{random\_unit\_vector()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classvec3}{vec3}} random\+\_\+unit\+\_\+vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{vec3_8h_source_l00128}{128}} of file \mbox{\hyperlink{vec3_8h_source}{vec3.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordflow}{return}\ unit\_vector(random\_in\_unit\_sphere());}
+\DoxyCodeLine{00130\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vec3_8h_a25997d9bc8a3a0187abd63f590efe4dd}\label{vec3_8h_a25997d9bc8a3a0187abd63f590efe4dd} 
+\index{vec3.h@{vec3.h}!reflect@{reflect}}
+\index{reflect@{reflect}!vec3.h@{vec3.h}}
+\doxysubsubsection{\texorpdfstring{reflect()}{reflect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classvec3}{vec3}} reflect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classvec3}{vec3}} \&}]{v,  }\item[{const \mbox{\hyperlink{classvec3}{vec3}} \&}]{n }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vec3_8h_source_l00142}{142}} of file \mbox{\hyperlink{vec3_8h_source}{vec3.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordflow}{return}\ v\ -\/\ 2*dot(v,n)*n;}
+\DoxyCodeLine{00144\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vec3_8h_a85842ddb0f64a09b09c898626da3dc99}\label{vec3_8h_a85842ddb0f64a09b09c898626da3dc99} 
+\index{vec3.h@{vec3.h}!refract@{refract}}
+\index{refract@{refract}!vec3.h@{vec3.h}}
+\doxysubsubsection{\texorpdfstring{refract()}{refract()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classvec3}{vec3}} refract (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classvec3}{vec3}} \&}]{uv,  }\item[{const \mbox{\hyperlink{classvec3}{vec3}} \&}]{n,  }\item[{double}]{etai\+\_\+over\+\_\+etat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{vec3_8h_source_l00146}{146}} of file \mbox{\hyperlink{vec3_8h_source}{vec3.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keyword}{auto}\ cos\_theta\ =\ fmin(dot(-\/uv,\ n),\ 1.0);}
+\DoxyCodeLine{00148\ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ r\_out\_perp\ =\ \ etai\_over\_etat\ *\ (uv\ +\ cos\_theta*n);}
+\DoxyCodeLine{00149\ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ r\_out\_parallel\ =\ -\/sqrt(fabs(1.0\ -\/\ r\_out\_perp.length\_squared()))\ *\ n;}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordflow}{return}\ r\_out\_perp\ +\ r\_out\_parallel;}
+\DoxyCodeLine{00151\ \}}
+
+\end{DoxyCode}
+\Hypertarget{vec3_8h_a88dc506816c3fef82ebac91ca859273a}\label{vec3_8h_a88dc506816c3fef82ebac91ca859273a} 
+\index{vec3.h@{vec3.h}!unit\_vector@{unit\_vector}}
+\index{unit\_vector@{unit\_vector}!vec3.h@{vec3.h}}
+\doxysubsubsection{\texorpdfstring{unit\_vector()}{unit\_vector()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classvec3}{vec3}} unit\+\_\+vector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classvec3}{vec3}}}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{vec3_8h_source_l00116}{116}} of file \mbox{\hyperlink{vec3_8h_source}{vec3.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordflow}{return}\ v\ /\ v.length();}
+\DoxyCodeLine{00118\ \}}
+
+\end{DoxyCode}

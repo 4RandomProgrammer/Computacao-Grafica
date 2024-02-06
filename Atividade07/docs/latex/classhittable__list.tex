@@ -1,0 +1,152 @@
+\doxysection{hittable\+\_\+list Class Reference}
+\hypertarget{classhittable__list}{}\label{classhittable__list}\index{hittable\_list@{hittable\_list}}
+
+
+Inheritance diagram for hittable\+\_\+list\+:
+% FIG 0
+
+
+Collaboration diagram for hittable\+\_\+list\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classhittable__list_a6d9d2cda6092972cb38ed9eb9a53d613}{hittable\+\_\+list}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{classhittable}{hittable}} $>$ object)
+\item 
+void \mbox{\hyperlink{classhittable__list_a74cf8b7ee9846ac7bbbb634863e253f6}{clear}} ()
+\item 
+void \mbox{\hyperlink{classhittable__list_a6f51233df1bf18c6665a9ec36e475f39}{add}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{classhittable}{hittable}} $>$ object)
+\item 
+bool \mbox{\hyperlink{classhittable__list_ac83866480d07afc962f5686dc1866295}{hit}} (const \mbox{\hyperlink{classray}{ray}} \&r, \mbox{\hyperlink{classinterval}{interval}} ray\+\_\+t, \mbox{\hyperlink{classhit__record}{hit\+\_\+record}} \&rec) const override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classhittable}{hittable}} $>$ $>$ \mbox{\hyperlink{classhittable__list_a4de3045519f5de1f5d20e53c52b916be}{objects}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{hittable__list_8h_source_l00015}{15}} of file \mbox{\hyperlink{hittable__list_8h_source}{hittable\+\_\+list.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classhittable__list_ab5677053409dc9db3807eb0fd91c84ab}\label{classhittable__list_ab5677053409dc9db3807eb0fd91c84ab} 
+\index{hittable\_list@{hittable\_list}!hittable\_list@{hittable\_list}}
+\index{hittable\_list@{hittable\_list}!hittable\_list@{hittable\_list}}
+\doxysubsubsection{\texorpdfstring{hittable\_list()}{hittable\_list()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily hittable\+\_\+list\+::hittable\+\_\+list (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{hittable__list_8h_source_l00019}{19}} of file \mbox{\hyperlink{hittable__list_8h_source}{hittable\+\_\+list.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \{\}}
+
+\end{DoxyCode}
+\Hypertarget{classhittable__list_a6d9d2cda6092972cb38ed9eb9a53d613}\label{classhittable__list_a6d9d2cda6092972cb38ed9eb9a53d613} 
+\index{hittable\_list@{hittable\_list}!hittable\_list@{hittable\_list}}
+\index{hittable\_list@{hittable\_list}!hittable\_list@{hittable\_list}}
+\doxysubsubsection{\texorpdfstring{hittable\_list()}{hittable\_list()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily hittable\+\_\+list\+::hittable\+\_\+list (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classhittable}{hittable}} $>$}]{object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{hittable__list_8h_source_l00020}{20}} of file \mbox{\hyperlink{hittable__list_8h_source}{hittable\+\_\+list.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \{\ add(\textcolor{keywordtype}{object});\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classhittable__list_a6f51233df1bf18c6665a9ec36e475f39}\label{classhittable__list_a6f51233df1bf18c6665a9ec36e475f39} 
+\index{hittable\_list@{hittable\_list}!add@{add}}
+\index{add@{add}!hittable\_list@{hittable\_list}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void hittable\+\_\+list\+::add (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classhittable}{hittable}} $>$}]{object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{hittable__list_8h_source_l00024}{24}} of file \mbox{\hyperlink{hittable__list_8h_source}{hittable\+\_\+list.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ objects.push\_back(\textcolor{keywordtype}{object});}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classhittable__list_a74cf8b7ee9846ac7bbbb634863e253f6}\label{classhittable__list_a74cf8b7ee9846ac7bbbb634863e253f6} 
+\index{hittable\_list@{hittable\_list}!clear@{clear}}
+\index{clear@{clear}!hittable\_list@{hittable\_list}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void hittable\+\_\+list\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{hittable__list_8h_source_l00022}{22}} of file \mbox{\hyperlink{hittable__list_8h_source}{hittable\+\_\+list.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \{\ objects.clear();\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classhittable__list_ac83866480d07afc962f5686dc1866295}\label{classhittable__list_ac83866480d07afc962f5686dc1866295} 
+\index{hittable\_list@{hittable\_list}!hit@{hit}}
+\index{hit@{hit}!hittable\_list@{hittable\_list}}
+\doxysubsubsection{\texorpdfstring{hit()}{hit()}}
+{\footnotesize\ttfamily bool hittable\+\_\+list\+::hit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classray}{ray}} \&}]{r,  }\item[{\mbox{\hyperlink{classinterval}{interval}}}]{ray\+\_\+t,  }\item[{\mbox{\hyperlink{classhit__record}{hit\+\_\+record}} \&}]{rec }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classhittable}{hittable}}.
+
+
+
+Definition at line \mbox{\hyperlink{hittable__list_8h_source_l00028}{28}} of file \mbox{\hyperlink{hittable__list_8h_source}{hittable\+\_\+list.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classhit__record}{hit\_record}}\ \ temp\_rec;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ hit\_anything\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ closest\_so\_far\ =\ ray\_t.max;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \textcolor{keywordtype}{object}\ :\ objects\ )\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(object-\/>hit(r,\mbox{\hyperlink{classinterval}{interval}}(ray\_t.min,\ closest\_so\_far),\ temp\_rec))\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hit\_anything\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ closest\_so\_far\ =\ temp\_rec.t;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rec\ =\ temp\_rec;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ hit\_anything;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classhittable__list_a4de3045519f5de1f5d20e53c52b916be}\label{classhittable__list_a4de3045519f5de1f5d20e53c52b916be} 
+\index{hittable\_list@{hittable\_list}!objects@{objects}}
+\index{objects@{objects}!hittable\_list@{hittable\_list}}
+\doxysubsubsection{\texorpdfstring{objects}{objects}}
+{\footnotesize\ttfamily std\+::vector$<$shared\+\_\+ptr$<$\mbox{\hyperlink{classhittable}{hittable}}$>$ $>$ hittable\+\_\+list\+::objects}
+
+
+
+Definition at line \mbox{\hyperlink{hittable__list_8h_source_l00017}{17}} of file \mbox{\hyperlink{hittable__list_8h_source}{hittable\+\_\+list.\+h}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{hittable__list_8h}{hittable\+\_\+list.\+h}}\end{DoxyCompactItemize}

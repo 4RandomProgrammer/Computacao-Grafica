@@ -1,0 +1,36 @@
+\doxysection{camera.\+h File Reference}
+\hypertarget{camera_8h}{}\label{camera_8h}\index{camera.h@{camera.h}}
+
+
+Arquivo que implementa a lógica da camera e foi adaptado no tutorial para gerar arquivos PNG.  
+
+
+{\ttfamily \#include "{}utils.\+h"{}}\newline
+{\ttfamily \#include "{}color.\+h"{}}\newline
+{\ttfamily \#include "{}hittable.\+h"{}}\newline
+{\ttfamily \#include "{}material.\+h"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$libpng/png.\+h$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+Include dependency graph for camera.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classcamera}{camera}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Arquivo que implementa a lógica da camera e foi adaptado no tutorial para gerar arquivos PNG. 
+
+\begin{DoxyAuthor}{Author}
+Criado por Luís Felipe Dobner Henriques, baseado no tutorial\+: \href{https://raytracing.github.io/books/RayTracingInOneWeekend.html}{\texttt{ https\+://raytracing.\+github.\+io/books/\+Ray\+Tracing\+In\+One\+Weekend.\+html}} 
+\end{DoxyAuthor}
+
+
+Definition in file \mbox{\hyperlink{camera_8h_source}{camera.\+h}}.
+

@@ -1,0 +1,449 @@
+\doxysection{Obj\+Reader Class Reference}
+\hypertarget{classObjReader}{}\label{classObjReader}\index{ObjReader@{ObjReader}}
+
+
+Inheritance diagram for Obj\+Reader\+:
+% FIG 0
+
+
+Collaboration diagram for Obj\+Reader\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classObjReader_acb6d7b18883035794b9cdcbe7bfbf97d}{Obj\+Reader}} (string file\+\_\+reader, string file\+\_\+writer, \mbox{\hyperlink{classvec3}{vec3}} move, shared\+\_\+ptr$<$ \mbox{\hyperlink{classmaterial}{material}} $>$ \+\_\+material)
+\begin{DoxyCompactList}\small\item\em Construtor da classe de leitura de .Obj e criação dos respectivos triangulos lidos.. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classObjReader_a3e25ed4771ba2e51a8dd953366ee64f5}{hit}} (const \mbox{\hyperlink{classray}{ray}} \&r, \mbox{\hyperlink{classinterval}{interval}} ray\+\_\+t, \mbox{\hyperlink{classhit__record}{hit\+\_\+record}} \&rec) const override
+\begin{DoxyCompactList}\small\item\em função de acerto para um objeto que vai verificar se um raio cruza determinado objeto. Essa função foi baseada na função realizada no tutorial. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classObjReader_a90494c63313f8273a28b3fb852bbfa99}{disloc}} (\mbox{\hyperlink{classvec3}{vec3}} disloc)
+\begin{DoxyCompactList}\small\item\em função com o objetivo de deslocar um objeto para uma posição desejada.. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classObjReader_acd8a724306f737468d1657256a19f8e2}{get\+\_\+file\+\_\+read}} ()
+\begin{DoxyCompactList}\small\item\em Getter da variavel que armazena os conteúdos do arquivo lido. Retorna o valor dele apenas. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classObjReader_adad1f5452402d395843451a2c6a49af9}{open\+\_\+file}} ()
+\begin{DoxyCompactList}\small\item\em Função de abertura de arquivo. É necessário executa-\/la antes de qualquer operação. Ela verfica se o arquivo com nome indicado pode ser aberto e retorna 0 sim e -\/1 indicando erro. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classObjReader_a30e7fd57d8ecc1ba4e9250eafd013ceb}{read\+\_\+file}} ()
+\begin{DoxyCompactList}\small\item\em Função de leitura de arquivo. Ela lê um arquivo aberto. Ela verfica se o arquivo ja foi aberto para fazer a leitura, caso não tenha retorna erro. Em caso do arquivo estar aberto le o arquivo e guarda o seu valor em uma variavel interna. Se tudo ocorrer bem retorna 0. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classObjReader_af743b10dd579cb651d4e7c7a3d9da1de}{write\+\_\+file}} ()
+\begin{DoxyCompactList}\small\item\em Função de leitura de escrita. Ela escreve os conteudos de um arquivo aberto. Ela verfica se o arquivo ja foi aberto para fazer a escrita, caso não tenha retorna erro. Em caso do arquivo estar aberto escreve em outro arquivo com o nome fornecido. Se tudo ocorrer bem retorna 0. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classObjReader_a04b31b5a0973dd3151f0b98b82852edc}{close\+\_\+file}} ()
+\begin{DoxyCompactList}\small\item\em Função de fechamento de arquivo. É necessário a abertura do arquivo antes do fechamento. Ela verfica se o arquivo com nome indicado ja foi aberto, se não retornar erro. Caso contrário, fecha o arquivo e retorna 0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classObjReader_ab2e98ddfd8521576825b7d9c8269f950}{object\+\_\+center}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classvec3}{vec3}} $>$ \mbox{\hyperlink{classObjReader_afab025431eb5130eb78713b947b2c612}{vertices}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classtriangle}{triangle}} $>$ \mbox{\hyperlink{classObjReader_a3a37d36d767b822b5a423fd4b6bd2fba}{triangles}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classvec3}{vec3}} $>$ \mbox{\hyperlink{classObjReader_a27d0138c3f52ecdffa1c6efbabba8673}{normals}}
+\item 
+shared\+\_\+ptr$<$ \mbox{\hyperlink{classmaterial}{material}} $>$ \mbox{\hyperlink{classObjReader_a2258b328aa51c7f94be480a132ae7f35}{mat}}
+\item 
+string \mbox{\hyperlink{classObjReader_a96086af9f553edbd26ed9aec61d1d9b3}{full\+\_\+file}}
+\item 
+\mbox{\hyperlink{classvec3}{vec3}} \mbox{\hyperlink{classObjReader_a1882dfc3200f80682e6bee1d7c55b0d9}{mass\+\_\+center}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{ObjReader_8h_source_l00017}{17}} of file \mbox{\hyperlink{ObjReader_8h_source}{Obj\+Reader.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classObjReader_acb6d7b18883035794b9cdcbe7bfbf97d}\label{classObjReader_acb6d7b18883035794b9cdcbe7bfbf97d} 
+\index{ObjReader@{ObjReader}!ObjReader@{ObjReader}}
+\index{ObjReader@{ObjReader}!ObjReader@{ObjReader}}
+\doxysubsubsection{\texorpdfstring{ObjReader()}{ObjReader()}}
+{\footnotesize\ttfamily Obj\+Reader\+::\+Obj\+Reader (\begin{DoxyParamCaption}\item[{string}]{file\+\_\+reader,  }\item[{string}]{file\+\_\+writer,  }\item[{\mbox{\hyperlink{classvec3}{vec3}}}]{move,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classmaterial}{material}} $>$}]{\+\_\+material }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor da classe de leitura de .Obj e criação dos respectivos triangulos lidos.. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+reader} & nome do arquivo a ser lido. \\
+\hline
+{\em file\+\_\+writer} & writer\+: nome do arquivo a ser escrito. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{ObjReader_8h_source_l00070}{70}} of file \mbox{\hyperlink{ObjReader_8h_source}{Obj\+Reader.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ file\_name\_reader\ =\ file\_reader;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ file\_name\_writer\ =\ file\_writer;}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ file\_initiated\ =\ 0;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ mat\ =\ \_material;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classObjReader_adad1f5452402d395843451a2c6a49af9}{open\_file}}();}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classObjReader_a30e7fd57d8ecc1ba4e9250eafd013ceb}{read\_file}}();}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classObjReader_a04b31b5a0973dd3151f0b98b82852edc}{close\_file}}();}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classObjReader_a90494c63313f8273a28b3fb852bbfa99}{disloc}}(move);}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classObjReader_a04b31b5a0973dd3151f0b98b82852edc}\label{classObjReader_a04b31b5a0973dd3151f0b98b82852edc} 
+\index{ObjReader@{ObjReader}!close\_file@{close\_file}}
+\index{close\_file@{close\_file}!ObjReader@{ObjReader}}
+\doxysubsubsection{\texorpdfstring{close\_file()}{close\_file()}}
+{\footnotesize\ttfamily int Obj\+Reader\+::close\+\_\+file (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Função de fechamento de arquivo. É necessário a abertura do arquivo antes do fechamento. Ela verfica se o arquivo com nome indicado ja foi aberto, se não retornar erro. Caso contrário, fecha o arquivo e retorna 0. 
+
+
+
+Definition at line \mbox{\hyperlink{ObjReader_8h_source_l00198}{198}} of file \mbox{\hyperlink{ObjReader_8h_source}{Obj\+Reader.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ !file\_initiated\ )\ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ file\_to\_read.close();}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classObjReader_a90494c63313f8273a28b3fb852bbfa99}\label{classObjReader_a90494c63313f8273a28b3fb852bbfa99} 
+\index{ObjReader@{ObjReader}!disloc@{disloc}}
+\index{disloc@{disloc}!ObjReader@{ObjReader}}
+\doxysubsubsection{\texorpdfstring{disloc()}{disloc()}}
+{\footnotesize\ttfamily void Obj\+Reader\+::disloc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classvec3}{vec3}}}]{disloc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+função com o objetivo de deslocar um objeto para uma posição desejada.. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em discloc} & Deslocamento desejado a aplicar em um objeto. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{ObjReader_8h_source_l00105}{105}} of file \mbox{\hyperlink{ObjReader_8h_source}{Obj\+Reader.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ size\ =\ triangles.size();}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ size;\ i++)\{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ triangles[i].disloc(\mbox{\hyperlink{classObjReader_a90494c63313f8273a28b3fb852bbfa99}{disloc}});}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classObjReader_acd8a724306f737468d1657256a19f8e2}\label{classObjReader_acd8a724306f737468d1657256a19f8e2} 
+\index{ObjReader@{ObjReader}!get\_file\_read@{get\_file\_read}}
+\index{get\_file\_read@{get\_file\_read}!ObjReader@{ObjReader}}
+\doxysubsubsection{\texorpdfstring{get\_file\_read()}{get\_file\_read()}}
+{\footnotesize\ttfamily string Obj\+Reader\+::get\+\_\+file\+\_\+read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter da variavel que armazena os conteúdos do arquivo lido. Retorna o valor dele apenas. 
+
+
+
+Definition at line \mbox{\hyperlink{ObjReader_8h_source_l00113}{113}} of file \mbox{\hyperlink{ObjReader_8h_source}{Obj\+Reader.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ fileRead;}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classObjReader_a3e25ed4771ba2e51a8dd953366ee64f5}\label{classObjReader_a3e25ed4771ba2e51a8dd953366ee64f5} 
+\index{ObjReader@{ObjReader}!hit@{hit}}
+\index{hit@{hit}!ObjReader@{ObjReader}}
+\doxysubsubsection{\texorpdfstring{hit()}{hit()}}
+{\footnotesize\ttfamily bool Obj\+Reader\+::hit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classray}{ray}} \&}]{r,  }\item[{\mbox{\hyperlink{classinterval}{interval}}}]{ray\+\_\+t,  }\item[{\mbox{\hyperlink{classhit__record}{hit\+\_\+record}} \&}]{rec }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+função de acerto para um objeto que vai verificar se um raio cruza determinado objeto. Essa função foi baseada na função realizada no tutorial. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & O raio que queremos testar. \\
+\hline
+{\em ray\+\_\+t} & O intervalo de acerto. \\
+\hline
+{\em rec} & caso o raio acerte foi indicar aonde foi acertado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+se o raio fornecido acertou ou não o objeto. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classhittable}{hittable}}.
+
+
+
+Definition at line \mbox{\hyperlink{ObjReader_8h_source_l00088}{88}} of file \mbox{\hyperlink{ObjReader_8h_source}{Obj\+Reader.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ size\ =\ triangles.size();}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ size;\ i++)\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (triangles[i].\mbox{\hyperlink{classObjReader_a3e25ed4771ba2e51a8dd953366ee64f5}{hit}}(r,\ ray\_t,rec))\{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classObjReader_ab2e98ddfd8521576825b7d9c8269f950}\label{classObjReader_ab2e98ddfd8521576825b7d9c8269f950} 
+\index{ObjReader@{ObjReader}!object\_center@{object\_center}}
+\index{object\_center@{object\_center}!ObjReader@{ObjReader}}
+\doxysubsubsection{\texorpdfstring{object\_center()}{object\_center()}}
+{\footnotesize\ttfamily void Obj\+Reader\+::object\+\_\+center (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{ObjReader_8h_source_l00204}{204}} of file \mbox{\hyperlink{ObjReader_8h_source}{Obj\+Reader.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ size\ =\ vertices.size();}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ avg\_x,avg\_y,avg\_z;}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ avg\_x\ =\ 0;}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ avg\_y\ =\ 0;}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ avg\_z\ =\ 0;}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ size;\ i++)\ \{}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ avg\_x\ +=\ vertices[i].x();}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ avg\_y\ +=\ vertices[i].y();}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ avg\_z\ +=\ vertices[i].z();}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ avg\_x\ /=\ size;}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ avg\_y\ /=\ size;}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ avg\_z\ /=\ size;}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ mass\_center\ =\ \mbox{\hyperlink{classvec3}{vec3}}(avg\_x,avg\_y,avg\_z);}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classObjReader_a90494c63313f8273a28b3fb852bbfa99}{disloc}}(-\/mass\_center);}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classObjReader_adad1f5452402d395843451a2c6a49af9}\label{classObjReader_adad1f5452402d395843451a2c6a49af9} 
+\index{ObjReader@{ObjReader}!open\_file@{open\_file}}
+\index{open\_file@{open\_file}!ObjReader@{ObjReader}}
+\doxysubsubsection{\texorpdfstring{open\_file()}{open\_file()}}
+{\footnotesize\ttfamily int Obj\+Reader\+::open\+\_\+file (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Função de abertura de arquivo. É necessário executa-\/la antes de qualquer operação. Ela verfica se o arquivo com nome indicado pode ser aberto e retorna 0 sim e -\/1 indicando erro. 
+
+
+
+Definition at line \mbox{\hyperlink{ObjReader_8h_source_l00118}{118}} of file \mbox{\hyperlink{ObjReader_8h_source}{Obj\+Reader.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ file\_to\_read.open(file\_name\_reader.c\_str(),\ ios::in);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!file\_to\_read)\ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}No\ file\ found!"{}};}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ file\_initiated\ =\ 1;}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classObjReader_a30e7fd57d8ecc1ba4e9250eafd013ceb}\label{classObjReader_a30e7fd57d8ecc1ba4e9250eafd013ceb} 
+\index{ObjReader@{ObjReader}!read\_file@{read\_file}}
+\index{read\_file@{read\_file}!ObjReader@{ObjReader}}
+\doxysubsubsection{\texorpdfstring{read\_file()}{read\_file()}}
+{\footnotesize\ttfamily int Obj\+Reader\+::read\+\_\+file (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Função de leitura de arquivo. Ela lê um arquivo aberto. Ela verfica se o arquivo ja foi aberto para fazer a leitura, caso não tenha retorna erro. Em caso do arquivo estar aberto le o arquivo e guarda o seu valor em uma variavel interna. Se tudo ocorrer bem retorna 0. 
+
+
+
+Definition at line \mbox{\hyperlink{ObjReader_8h_source_l00130}{130}} of file \mbox{\hyperlink{ObjReader_8h_source}{Obj\+Reader.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!file\_initiated)\ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::getline(file\_to\_read,fileRead);}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ teste(fileRead);}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ type;}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ teste\ >>\ type;}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ (type\ ==\ "{}vn"{})\{}}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ std::clog\ <<\ fileRead;}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (type\ ==\ \textcolor{stringliteral}{"{}v"{}})\{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ x,y,z;}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ teste\ >>\ x\ >>\ y\ >>\ z;}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ teste(x,y,z);}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vertices.push\_back(teste);}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (type\ ==\ \textcolor{stringliteral}{"{}f"{}})\ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ A,B,C,value;}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ maybe;}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ teste\ >>\ A\ >>\ maybe\ >>\ B\ >>\ maybe\ >>\ \ C\ ;}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}*\ numbers\ =\ allocate(A,B,C);}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ss\ <<\ maybe[2];}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ss\ >>\ value;}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value\ -\/=\ 1;}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ A\ -\/=\ 1;}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ B\ -\/=\ 1;}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ C\ -\/=\ 1;}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtriangle}{triangle}}\ new\_triangle(vertices[A],\ vertices[B],\ vertices[C],normals[value],normals[value],normals[value],\ mat,\textcolor{keyword}{true});}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ triangles.push\_back(new\_triangle);}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (type\ ==\ \textcolor{stringliteral}{"{}vn"{}})\ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ x,y,z;}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ teste\ >>\ x\ >>\ y\ >>\ z;}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::clog\ <<\ x\ <<\ '\ '\ <<\ y\ <<\ '\ '\ <<\ z\ <<\ '\(\backslash\)n'\ ;}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ normal(x,y,z);}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ normals.push\_back(normal);}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ file\_to\_read.eof()\ )\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ object\_center();}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classObjReader_af743b10dd579cb651d4e7c7a3d9da1de}\label{classObjReader_af743b10dd579cb651d4e7c7a3d9da1de} 
+\index{ObjReader@{ObjReader}!write\_file@{write\_file}}
+\index{write\_file@{write\_file}!ObjReader@{ObjReader}}
+\doxysubsubsection{\texorpdfstring{write\_file()}{write\_file()}}
+{\footnotesize\ttfamily int Obj\+Reader\+::write\+\_\+file (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Função de leitura de escrita. Ela escreve os conteudos de um arquivo aberto. Ela verfica se o arquivo ja foi aberto para fazer a escrita, caso não tenha retorna erro. Em caso do arquivo estar aberto escreve em outro arquivo com o nome fornecido. Se tudo ocorrer bem retorna 0. 
+
+
+
+Definition at line \mbox{\hyperlink{ObjReader_8h_source_l00184}{184}} of file \mbox{\hyperlink{ObjReader_8h_source}{Obj\+Reader.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!file\_initiated)\ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ ofstream\ test\_file(file\_name\_writer);}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!test\_file)\ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ test\_file\ \ <<\ full\_file;}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classObjReader_a96086af9f553edbd26ed9aec61d1d9b3}\label{classObjReader_a96086af9f553edbd26ed9aec61d1d9b3} 
+\index{ObjReader@{ObjReader}!full\_file@{full\_file}}
+\index{full\_file@{full\_file}!ObjReader@{ObjReader}}
+\doxysubsubsection{\texorpdfstring{full\_file}{full\_file}}
+{\footnotesize\ttfamily string Obj\+Reader\+::full\+\_\+file}
+
+
+
+Definition at line \mbox{\hyperlink{ObjReader_8h_source_l00061}{61}} of file \mbox{\hyperlink{ObjReader_8h_source}{Obj\+Reader.\+h}}.
+
+\Hypertarget{classObjReader_a1882dfc3200f80682e6bee1d7c55b0d9}\label{classObjReader_a1882dfc3200f80682e6bee1d7c55b0d9} 
+\index{ObjReader@{ObjReader}!mass\_center@{mass\_center}}
+\index{mass\_center@{mass\_center}!ObjReader@{ObjReader}}
+\doxysubsubsection{\texorpdfstring{mass\_center}{mass\_center}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classvec3}{vec3}} Obj\+Reader\+::mass\+\_\+center}
+
+
+
+Definition at line \mbox{\hyperlink{ObjReader_8h_source_l00062}{62}} of file \mbox{\hyperlink{ObjReader_8h_source}{Obj\+Reader.\+h}}.
+
+\Hypertarget{classObjReader_a2258b328aa51c7f94be480a132ae7f35}\label{classObjReader_a2258b328aa51c7f94be480a132ae7f35} 
+\index{ObjReader@{ObjReader}!mat@{mat}}
+\index{mat@{mat}!ObjReader@{ObjReader}}
+\doxysubsubsection{\texorpdfstring{mat}{mat}}
+{\footnotesize\ttfamily shared\+\_\+ptr$<$\mbox{\hyperlink{classmaterial}{material}}$>$ Obj\+Reader\+::mat}
+
+
+
+Definition at line \mbox{\hyperlink{ObjReader_8h_source_l00060}{60}} of file \mbox{\hyperlink{ObjReader_8h_source}{Obj\+Reader.\+h}}.
+
+\Hypertarget{classObjReader_a27d0138c3f52ecdffa1c6efbabba8673}\label{classObjReader_a27d0138c3f52ecdffa1c6efbabba8673} 
+\index{ObjReader@{ObjReader}!normals@{normals}}
+\index{normals@{normals}!ObjReader@{ObjReader}}
+\doxysubsubsection{\texorpdfstring{normals}{normals}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classvec3}{vec3}}$>$ Obj\+Reader\+::normals}
+
+
+
+Definition at line \mbox{\hyperlink{ObjReader_8h_source_l00059}{59}} of file \mbox{\hyperlink{ObjReader_8h_source}{Obj\+Reader.\+h}}.
+
+\Hypertarget{classObjReader_a3a37d36d767b822b5a423fd4b6bd2fba}\label{classObjReader_a3a37d36d767b822b5a423fd4b6bd2fba} 
+\index{ObjReader@{ObjReader}!triangles@{triangles}}
+\index{triangles@{triangles}!ObjReader@{ObjReader}}
+\doxysubsubsection{\texorpdfstring{triangles}{triangles}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classtriangle}{triangle}}$>$ Obj\+Reader\+::triangles}
+
+
+
+Definition at line \mbox{\hyperlink{ObjReader_8h_source_l00058}{58}} of file \mbox{\hyperlink{ObjReader_8h_source}{Obj\+Reader.\+h}}.
+
+\Hypertarget{classObjReader_afab025431eb5130eb78713b947b2c612}\label{classObjReader_afab025431eb5130eb78713b947b2c612} 
+\index{ObjReader@{ObjReader}!vertices@{vertices}}
+\index{vertices@{vertices}!ObjReader@{ObjReader}}
+\doxysubsubsection{\texorpdfstring{vertices}{vertices}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classvec3}{vec3}}$>$ Obj\+Reader\+::vertices}
+
+
+
+Definition at line \mbox{\hyperlink{ObjReader_8h_source_l00057}{57}} of file \mbox{\hyperlink{ObjReader_8h_source}{Obj\+Reader.\+h}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Obj\+Reader.\+h\end{DoxyCompactItemize}

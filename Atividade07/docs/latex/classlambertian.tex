@@ -1,0 +1,77 @@
+\doxysection{lambertian Class Reference}
+\hypertarget{classlambertian}{}\label{classlambertian}\index{lambertian@{lambertian}}
+
+
+Inheritance diagram for lambertian\+:
+% FIG 0
+
+
+Collaboration diagram for lambertian\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlambertian_af8e58b324776397a6598b2ec85a0b887}{lambertian}} (const \mbox{\hyperlink{classvec3}{color}} \&a)
+\item 
+bool \mbox{\hyperlink{classlambertian_addbce7ba60f1ff30067ee9de362b12a7}{scatter}} (const \mbox{\hyperlink{classray}{ray}} \&r\+\_\+in, const \mbox{\hyperlink{classhit__record}{hit\+\_\+record}} \&rec, \mbox{\hyperlink{classvec3}{color}} \&attenuation, \mbox{\hyperlink{classray}{ray}} \&scattered) const override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{material_8h_source_l00019}{19}} of file \mbox{\hyperlink{material_8h_source}{material.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlambertian_af8e58b324776397a6598b2ec85a0b887}\label{classlambertian_af8e58b324776397a6598b2ec85a0b887} 
+\index{lambertian@{lambertian}!lambertian@{lambertian}}
+\index{lambertian@{lambertian}!lambertian@{lambertian}}
+\doxysubsubsection{\texorpdfstring{lambertian()}{lambertian()}}
+{\footnotesize\ttfamily lambertian\+::lambertian (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classvec3}{color}} \&}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{material_8h_source_l00021}{21}} of file \mbox{\hyperlink{material_8h_source}{material.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ :\ albedo(a)\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlambertian_addbce7ba60f1ff30067ee9de362b12a7}\label{classlambertian_addbce7ba60f1ff30067ee9de362b12a7} 
+\index{lambertian@{lambertian}!scatter@{scatter}}
+\index{scatter@{scatter}!lambertian@{lambertian}}
+\doxysubsubsection{\texorpdfstring{scatter()}{scatter()}}
+{\footnotesize\ttfamily bool lambertian\+::scatter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classray}{ray}} \&}]{r\+\_\+in,  }\item[{const \mbox{\hyperlink{classhit__record}{hit\+\_\+record}} \&}]{rec,  }\item[{\mbox{\hyperlink{classvec3}{color}} \&}]{attenuation,  }\item[{\mbox{\hyperlink{classray}{ray}} \&}]{scattered }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classmaterial}{material}}.
+
+
+
+Definition at line \mbox{\hyperlink{material_8h_source_l00023}{23}} of file \mbox{\hyperlink{material_8h_source}{material.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ scatter\_direction\ =\ rec.normal\ +\ random\_unit\_vector();}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Catch\ degenerate\ scatter\ direction}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (scatter\_direction.near\_zero())\ scatter\_direction\ =\ rec.normal;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ scattered\ =\ \mbox{\hyperlink{classray}{ray}}(rec.p,\ scatter\_direction);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ attenuation\ =\ albedo;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+material.\+h\end{DoxyCompactItemize}

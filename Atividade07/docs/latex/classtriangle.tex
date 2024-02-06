@@ -1,0 +1,320 @@
+\doxysection{triangle Class Reference}
+\hypertarget{classtriangle}{}\label{classtriangle}\index{triangle@{triangle}}
+
+
+Inheritance diagram for triangle\+:
+% FIG 0
+
+
+Collaboration diagram for triangle\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtriangle_a25912d5260510abbf812ff1331db071c}{triangle}} (\mbox{\hyperlink{classvec3}{vec3}} \+\_\+v1, \mbox{\hyperlink{classvec3}{vec3}} \+\_\+v2, \mbox{\hyperlink{classvec3}{vec3}} \+\_\+v3, \mbox{\hyperlink{classvec3}{vec3}} \+\_\+normal, \mbox{\hyperlink{classvec3}{vec3}} \+\_\+normal2, \mbox{\hyperlink{classvec3}{vec3}} \+\_\+normal3, shared\+\_\+ptr$<$ \mbox{\hyperlink{classmaterial}{material}} $>$ \+\_\+material, bool \+\_\+there\+\_\+is\+\_\+normal)
+\begin{DoxyCompactList}\small\item\em Construtor do triangulo. Responsável por receber todos os seus valores e inicializalos. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtriangle_a6b8b7fe5c1bcc0ede0702d122c6428b9}{hit\+\_\+triangle}} (const \mbox{\hyperlink{classray}{ray}} \&r, \mbox{\hyperlink{classhit__record}{hit\+\_\+record}} \&rec) const
+\begin{DoxyCompactList}\small\item\em faz o calculo e a lógica para entender se o triangulo foi acertado. Caso o triangulo seja acertado e tenha normal, realiza o calculo das baricentrica para entender a influencia de cada ponto na normal obtida. Caso não fora fornecidas as normais apenas retorna a normal calculada. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtriangle_afa941d88c78e0a14e3d4e3136ecc92ed}{hit}} (const \mbox{\hyperlink{classray}{ray}} \&r, \mbox{\hyperlink{classinterval}{interval}} ray\+\_\+t, \mbox{\hyperlink{classhit__record}{hit\+\_\+record}} \&rec) const override
+\item 
+void \mbox{\hyperlink{classtriangle_a70ecc0343c243ba8fdce1d7c3d133789}{disloc}} (\mbox{\hyperlink{classvec3}{vec3}} disloc)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classvec3}{vec3}} \mbox{\hyperlink{classtriangle_a3d27f4770adf1f1b773a36fbddc89413}{v0}}
+\item 
+\mbox{\hyperlink{classvec3}{vec3}} \mbox{\hyperlink{classtriangle_aabcac864e6aea86857c46f92686ac51b}{v1}}
+\item 
+\mbox{\hyperlink{classvec3}{vec3}} \mbox{\hyperlink{classtriangle_a9b8e3ac68c89088560f6b9443519bbf4}{v2}}
+\item 
+\mbox{\hyperlink{classvec3}{vec3}} \mbox{\hyperlink{classtriangle_a3a71420f9595aa706768e4711e5def44}{n1}}
+\item 
+\mbox{\hyperlink{classvec3}{vec3}} \mbox{\hyperlink{classtriangle_ad7e244b431050cc88403de054d5c881c}{n2}}
+\item 
+\mbox{\hyperlink{classvec3}{vec3}} \mbox{\hyperlink{classtriangle_a78298aec1fe097085ce3cff7fb62ce37}{n3}}
+\item 
+bool \mbox{\hyperlink{classtriangle_a2eb5a163651c58077de61e9d33a1cf24}{there\+\_\+is\+\_\+normal}}
+\item 
+shared\+\_\+ptr$<$ \mbox{\hyperlink{classmaterial}{material}} $>$ \mbox{\hyperlink{classtriangle_a070d478a241602ac8ba67082b12ec05c}{mat}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{triangle_8h_source_l00009}{9}} of file \mbox{\hyperlink{triangle_8h_source}{triangle.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtriangle_a25912d5260510abbf812ff1331db071c}\label{classtriangle_a25912d5260510abbf812ff1331db071c} 
+\index{triangle@{triangle}!triangle@{triangle}}
+\index{triangle@{triangle}!triangle@{triangle}}
+\doxysubsubsection{\texorpdfstring{triangle()}{triangle()}}
+{\footnotesize\ttfamily triangle\+::triangle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classvec3}{vec3}}}]{\+\_\+v1,  }\item[{\mbox{\hyperlink{classvec3}{vec3}}}]{\+\_\+v2,  }\item[{\mbox{\hyperlink{classvec3}{vec3}}}]{\+\_\+v3,  }\item[{\mbox{\hyperlink{classvec3}{vec3}}}]{\+\_\+normal,  }\item[{\mbox{\hyperlink{classvec3}{vec3}}}]{\+\_\+normal2,  }\item[{\mbox{\hyperlink{classvec3}{vec3}}}]{\+\_\+normal3,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classmaterial}{material}} $>$}]{\+\_\+material,  }\item[{bool}]{\+\_\+there\+\_\+is\+\_\+normal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor do triangulo. Responsável por receber todos os seus valores e inicializalos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+v1} & Vertice 1 do triangulo. \\
+\hline
+{\em \+\_\+v2} & Vertice 2 do triangulo. \\
+\hline
+{\em \+\_\+v3} & Vertice 3 do triangulo. \\
+\hline
+{\em \+\_\+normal} & normal do vertice 1 do triangulo. \\
+\hline
+{\em \+\_\+normal2} & normal do vertice 2 do triangulo. \\
+\hline
+{\em \+\_\+normal3} & normal do vertice 3 do triangulo. \\
+\hline
+{\em \+\_\+material} & material para a textura do triangulo. \\
+\hline
+{\em \+\_\+there\+\_\+is\+\_\+normal} & booleano utilizado para entender caso o triangulo teve normais fornecidas. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{triangle_8h_source_l00031}{31}} of file \mbox{\hyperlink{triangle_8h_source}{triangle.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031\ :\ v0(\_v1),\ v1(\_v2),\ v2(\_v3),n1(\_normal),\ mat(\_material),\ there\_is\_normal(\_there\_is\_normal)\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtriangle_a70ecc0343c243ba8fdce1d7c3d133789}\label{classtriangle_a70ecc0343c243ba8fdce1d7c3d133789} 
+\index{triangle@{triangle}!disloc@{disloc}}
+\index{disloc@{disloc}!triangle@{triangle}}
+\doxysubsubsection{\texorpdfstring{disloc()}{disloc()}}
+{\footnotesize\ttfamily void triangle\+::disloc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classvec3}{vec3}}}]{disloc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{triangle_8h_source_l00118}{118}} of file \mbox{\hyperlink{triangle_8h_source}{triangle.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ v0\ +=\ disloc;}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ v1\ +=\ disloc;}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ v2\ +=\ disloc;\ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classtriangle_afa941d88c78e0a14e3d4e3136ecc92ed}\label{classtriangle_afa941d88c78e0a14e3d4e3136ecc92ed} 
+\index{triangle@{triangle}!hit@{hit}}
+\index{hit@{hit}!triangle@{triangle}}
+\doxysubsubsection{\texorpdfstring{hit()}{hit()}}
+{\footnotesize\ttfamily bool triangle\+::hit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classray}{ray}} \&}]{r,  }\item[{\mbox{\hyperlink{classinterval}{interval}}}]{ray\+\_\+t,  }\item[{\mbox{\hyperlink{classhit__record}{hit\+\_\+record}} \&}]{rec }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classhittable}{hittable}}.
+
+
+
+Definition at line \mbox{\hyperlink{triangle_8h_source_l00108}{108}} of file \mbox{\hyperlink{triangle_8h_source}{triangle.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00109\ \ \ \ \ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classtriangle_a6b8b7fe5c1bcc0ede0702d122c6428b9}{hit\_triangle}}(r,\ rec))\{\ \ \ \ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classtriangle_a6b8b7fe5c1bcc0ede0702d122c6428b9}\label{classtriangle_a6b8b7fe5c1bcc0ede0702d122c6428b9} 
+\index{triangle@{triangle}!hit\_triangle@{hit\_triangle}}
+\index{hit\_triangle@{hit\_triangle}!triangle@{triangle}}
+\doxysubsubsection{\texorpdfstring{hit\_triangle()}{hit\_triangle()}}
+{\footnotesize\ttfamily bool triangle\+::hit\+\_\+triangle (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classray}{ray}} \&}]{r,  }\item[{\mbox{\hyperlink{classhit__record}{hit\+\_\+record}} \&}]{rec }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+faz o calculo e a lógica para entender se o triangulo foi acertado. Caso o triangulo seja acertado e tenha normal, realiza o calculo das baricentrica para entender a influencia de cada ponto na normal obtida. Caso não fora fornecidas as normais apenas retorna a normal calculada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & O raio que se deseja ver se acerta o triangulo. \\
+\hline
+{\em rec} & O objeto fornecido para realizar . \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+retorna verdadeiro em caso de acerto e falso em caso de erro. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{triangle_8h_source_l00040}{40}} of file \mbox{\hyperlink{triangle_8h_source}{triangle.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ v0v1\ =\ v1\ -\/\ v0;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ v0v2\ =\ v2\ -\/\ v0;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{double}\ kEpsilon\ =\ std::numeric\_limits<double>::epsilon();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ N\ =\ cross(v0v1,v0v2);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ area2\ =\ N.length();}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ NdotRayDirection\ =\ dot(N,r.direction());}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fabs(NdotRayDirection)\ <\ kEpsilon)\ \textcolor{comment}{//\ almost\ 0}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ they\ are\ parallel,\ so\ they\ don't\ intersect!\ }}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ d\ =\ dot(N,\ v0);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ t\ =\ (d\ -\/\ dot(N,r.origin()))\ /\ NdotRayDirection;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (t\ <\ 0)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \ \ \ }
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ P\ =\ r.origin()\ +\ t\ *\ r.direction();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ C;}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ edge0\ =\ v1\ -\/\ v0;\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ vp0\ =\ P\ -\/\ v0;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ C\ =\ cross(edge0,vp0);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dot(N,C)\ <\ 0)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ edge1\ =\ v2\ -\/\ v1;\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ vp1\ =\ P\ -\/\ v1;}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ C\ =\ cross(edge1,vp1);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dot(N,C)\ <\ 0)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ edge2\ =\ v0\ -\/\ v2;\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ vp2\ =\ P\ -\/\ v2;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ C\ =\ cross(edge2,vp2);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dot(N,C)\ <\ 0)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ rec.t\ =\ t;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ rec.p\ =\ P;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ rec.mat\ =\ mat;}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ there\_is\_normal\ )\ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ weights[3];}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ baricentric(v0,\ v1,v2,P,weights);}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ new\_normal\ =\ weights[0]\ *\ n1\ +\ weights[1]\ *\ n2\ +\ weights[2]\ *\ n3;}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ new\_normal\ =\ unit\_vector(new\_normal);}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rec.normal\ =\ new\_normal;}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ outward\_normal\ =\ new\_normal;}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rec.set\_face\_normal(r,\ outward\_normal);}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rec.normal\ =\ N;}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ outward\_normal\ =\ N;}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rec.set\_face\_normal(r,\ outward\_normal);}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classtriangle_a070d478a241602ac8ba67082b12ec05c}\label{classtriangle_a070d478a241602ac8ba67082b12ec05c} 
+\index{triangle@{triangle}!mat@{mat}}
+\index{mat@{mat}!triangle@{triangle}}
+\doxysubsubsection{\texorpdfstring{mat}{mat}}
+{\footnotesize\ttfamily shared\+\_\+ptr$<$\mbox{\hyperlink{classmaterial}{material}}$>$ triangle\+::mat}
+
+
+
+Definition at line \mbox{\hyperlink{triangle_8h_source_l00018}{18}} of file \mbox{\hyperlink{triangle_8h_source}{triangle.\+h}}.
+
+\Hypertarget{classtriangle_a3a71420f9595aa706768e4711e5def44}\label{classtriangle_a3a71420f9595aa706768e4711e5def44} 
+\index{triangle@{triangle}!n1@{n1}}
+\index{n1@{n1}!triangle@{triangle}}
+\doxysubsubsection{\texorpdfstring{n1}{n1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classvec3}{vec3}} triangle\+::n1}
+
+
+
+Definition at line \mbox{\hyperlink{triangle_8h_source_l00014}{14}} of file \mbox{\hyperlink{triangle_8h_source}{triangle.\+h}}.
+
+\Hypertarget{classtriangle_ad7e244b431050cc88403de054d5c881c}\label{classtriangle_ad7e244b431050cc88403de054d5c881c} 
+\index{triangle@{triangle}!n2@{n2}}
+\index{n2@{n2}!triangle@{triangle}}
+\doxysubsubsection{\texorpdfstring{n2}{n2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classvec3}{vec3}} triangle\+::n2}
+
+
+
+Definition at line \mbox{\hyperlink{triangle_8h_source_l00015}{15}} of file \mbox{\hyperlink{triangle_8h_source}{triangle.\+h}}.
+
+\Hypertarget{classtriangle_a78298aec1fe097085ce3cff7fb62ce37}\label{classtriangle_a78298aec1fe097085ce3cff7fb62ce37} 
+\index{triangle@{triangle}!n3@{n3}}
+\index{n3@{n3}!triangle@{triangle}}
+\doxysubsubsection{\texorpdfstring{n3}{n3}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classvec3}{vec3}} triangle\+::n3}
+
+
+
+Definition at line \mbox{\hyperlink{triangle_8h_source_l00016}{16}} of file \mbox{\hyperlink{triangle_8h_source}{triangle.\+h}}.
+
+\Hypertarget{classtriangle_a2eb5a163651c58077de61e9d33a1cf24}\label{classtriangle_a2eb5a163651c58077de61e9d33a1cf24} 
+\index{triangle@{triangle}!there\_is\_normal@{there\_is\_normal}}
+\index{there\_is\_normal@{there\_is\_normal}!triangle@{triangle}}
+\doxysubsubsection{\texorpdfstring{there\_is\_normal}{there\_is\_normal}}
+{\footnotesize\ttfamily bool triangle\+::there\+\_\+is\+\_\+normal}
+
+
+
+Definition at line \mbox{\hyperlink{triangle_8h_source_l00017}{17}} of file \mbox{\hyperlink{triangle_8h_source}{triangle.\+h}}.
+
+\Hypertarget{classtriangle_a3d27f4770adf1f1b773a36fbddc89413}\label{classtriangle_a3d27f4770adf1f1b773a36fbddc89413} 
+\index{triangle@{triangle}!v0@{v0}}
+\index{v0@{v0}!triangle@{triangle}}
+\doxysubsubsection{\texorpdfstring{v0}{v0}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classvec3}{vec3}} triangle\+::v0}
+
+
+
+Definition at line \mbox{\hyperlink{triangle_8h_source_l00011}{11}} of file \mbox{\hyperlink{triangle_8h_source}{triangle.\+h}}.
+
+\Hypertarget{classtriangle_aabcac864e6aea86857c46f92686ac51b}\label{classtriangle_aabcac864e6aea86857c46f92686ac51b} 
+\index{triangle@{triangle}!v1@{v1}}
+\index{v1@{v1}!triangle@{triangle}}
+\doxysubsubsection{\texorpdfstring{v1}{v1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classvec3}{vec3}} triangle\+::v1}
+
+
+
+Definition at line \mbox{\hyperlink{triangle_8h_source_l00012}{12}} of file \mbox{\hyperlink{triangle_8h_source}{triangle.\+h}}.
+
+\Hypertarget{classtriangle_a9b8e3ac68c89088560f6b9443519bbf4}\label{classtriangle_a9b8e3ac68c89088560f6b9443519bbf4} 
+\index{triangle@{triangle}!v2@{v2}}
+\index{v2@{v2}!triangle@{triangle}}
+\doxysubsubsection{\texorpdfstring{v2}{v2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classvec3}{vec3}} triangle\+::v2}
+
+
+
+Definition at line \mbox{\hyperlink{triangle_8h_source_l00013}{13}} of file \mbox{\hyperlink{triangle_8h_source}{triangle.\+h}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+triangle.\+h\end{DoxyCompactItemize}

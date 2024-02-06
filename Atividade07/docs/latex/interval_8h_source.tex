@@ -1,0 +1,38 @@
+\doxysection{interval.\+h}
+\hypertarget{interval_8h_source}{}\label{interval_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{interval_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ INTERVAL\_H}}
+\DoxyCodeLine{\Hypertarget{interval_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ INTERVAL\_H}}
+\DoxyCodeLine{\Hypertarget{interval_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{interval_8h_source_l00004}\mbox{\hyperlink{classinterval}{00004}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classinterval}{interval}}\ \{}
+\DoxyCodeLine{\Hypertarget{interval_8h_source_l00005}00005\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{interval_8h_source_l00006}00006\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ min,\ max;}
+\DoxyCodeLine{\Hypertarget{interval_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{interval_8h_source_l00008}00008\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classinterval}{interval}}()\ :\ min(+infinity),\ max(-\/infinity)\ \{\};}
+\DoxyCodeLine{\Hypertarget{interval_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{interval_8h_source_l00010}00010\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classinterval}{interval}}(\textcolor{keywordtype}{double}\ \_min,\ \textcolor{keywordtype}{double}\ \_max)\ :\ min(\_min),\ max(\_max)\ \{\};}
+\DoxyCodeLine{\Hypertarget{interval_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{interval_8h_source_l00012}00012\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ contains(\textcolor{keywordtype}{double}\ x)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{interval_8h_source_l00013}00013\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ min\ <=\ x\ \&\&\ x\ <=\ max;}
+\DoxyCodeLine{\Hypertarget{interval_8h_source_l00014}00014\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{interval_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{interval_8h_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ surrounds(\textcolor{keywordtype}{double}\ x)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{interval_8h_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ min\ <\ x\ \&\&\ x\ <\ max;}
+\DoxyCodeLine{\Hypertarget{interval_8h_source_l00018}00018\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{interval_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{interval_8h_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classinterval}{interval}}\ empty,\ universe;}
+\DoxyCodeLine{\Hypertarget{interval_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{interval_8h_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ clamp(\textcolor{keywordtype}{double}\ x)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{interval_8h_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ <\ min)\ \textcolor{keywordflow}{return}\ min;}
+\DoxyCodeLine{\Hypertarget{interval_8h_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ >\ max)\ \textcolor{keywordflow}{return}\ max;}
+\DoxyCodeLine{\Hypertarget{interval_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{interval_8h_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x;}
+\DoxyCodeLine{\Hypertarget{interval_8h_source_l00027}00027\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{interval_8h_source_l00028}00028\ \};}
+\DoxyCodeLine{\Hypertarget{interval_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{interval_8h_source_l00030}00030\ \textcolor{keyword}{const}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{classinterval}{interval}}\ empty(+infinity,\ -\/infinity);}
+\DoxyCodeLine{\Hypertarget{interval_8h_source_l00031}00031\ \textcolor{keyword}{const}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{classinterval}{interval}}\ universe(-\/infinity,\ +infinity);}
+\DoxyCodeLine{\Hypertarget{interval_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{interval_8h_source_l00033}00033\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

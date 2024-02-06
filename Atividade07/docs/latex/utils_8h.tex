@@ -1,0 +1,136 @@
+\doxysection{utils.\+h File Reference}
+\hypertarget{utils_8h}{}\label{utils_8h}\index{utils.h@{utils.h}}
+
+
+Arquivo que centraliza todas as coisas úteis que são mais utilizadas dentro de projeto.  
+
+
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include "{}interval.\+h"{}}\newline
+{\ttfamily \#include "{}ray.\+h"{}}\newline
+{\ttfamily \#include "{}vec3.\+h"{}}\newline
+{\ttfamily \#include "{}color.\+h"{}}\newline
+Include dependency graph for utils.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{utils_8h_a457297701063cbffc976655fcac3d5b1}{degrees\+\_\+to\+\_\+radians}} (double degrees)
+\item 
+double \mbox{\hyperlink{utils_8h_a98b7c682bb6ace85fb747cd2f14db72b}{random\+\_\+double}} ()
+\item 
+double \mbox{\hyperlink{utils_8h_ae8857dcf75600277c0cbc79a687090ab}{random\+\_\+double}} (double min, double max)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const double \mbox{\hyperlink{utils_8h_a1bb1e42ae1b40cad6e99da0aab8a5576}{infinity}} = std\+::numeric\+\_\+limits$<$double$>$\+::infinity()
+\item 
+const double \mbox{\hyperlink{utils_8h_a43016d873124d39034edb8cd164794db}{pi}} = 3.\+1415926535897932385
+\item 
+constexpr double \mbox{\hyperlink{utils_8h_a2df379b283a801aa08771af3f657b7f5}{k\+Epsilon}} = std\+::numeric\+\_\+limits$<$double$>$\+::epsilon()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Arquivo que centraliza todas as coisas úteis que são mais utilizadas dentro de projeto. 
+
+\begin{DoxyAuthor}{Author}
+Criado por Luís Felipe Dobner Henriques, porém retirado do tutorial\+: \href{https://raytracing.github.io/books/RayTracingInOneWeekend.html}{\texttt{ https\+://raytracing.\+github.\+io/books/\+Ray\+Tracing\+In\+One\+Weekend.\+html}} 
+\end{DoxyAuthor}
+
+
+Definition in file \mbox{\hyperlink{utils_8h_source}{utils.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{utils_8h_a457297701063cbffc976655fcac3d5b1}\label{utils_8h_a457297701063cbffc976655fcac3d5b1} 
+\index{utils.h@{utils.h}!degrees\_to\_radians@{degrees\_to\_radians}}
+\index{degrees\_to\_radians@{degrees\_to\_radians}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{degrees\_to\_radians()}{degrees\_to\_radians()}}
+{\footnotesize\ttfamily double degrees\+\_\+to\+\_\+radians (\begin{DoxyParamCaption}\item[{double}]{degrees }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{utils_8h_source_l00027}{27}} of file \mbox{\hyperlink{utils_8h_source}{utils.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{return}\ degrees\ *\ pi\ /\ 180.0;}
+\DoxyCodeLine{00029\ \}}
+
+\end{DoxyCode}
+\Hypertarget{utils_8h_a98b7c682bb6ace85fb747cd2f14db72b}\label{utils_8h_a98b7c682bb6ace85fb747cd2f14db72b} 
+\index{utils.h@{utils.h}!random\_double@{random\_double}}
+\index{random\_double@{random\_double}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{random\_double()}{random\_double()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double random\+\_\+double (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{utils_8h_source_l00031}{31}} of file \mbox{\hyperlink{utils_8h_source}{utils.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordflow}{return}\ rand()\ /\ (RAND\_MAX\ +\ 1.0);}
+\DoxyCodeLine{00033\ \}}
+
+\end{DoxyCode}
+\Hypertarget{utils_8h_ae8857dcf75600277c0cbc79a687090ab}\label{utils_8h_ae8857dcf75600277c0cbc79a687090ab} 
+\index{utils.h@{utils.h}!random\_double@{random\_double}}
+\index{random\_double@{random\_double}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{random\_double()}{random\_double()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily double random\+\_\+double (\begin{DoxyParamCaption}\item[{double}]{min,  }\item[{double}]{max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{utils_8h_source_l00035}{35}} of file \mbox{\hyperlink{utils_8h_source}{utils.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{return}\ min\ +\ (max\ -\/\ min)\ *\ random\_double();}
+\DoxyCodeLine{00037\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{utils_8h_a1bb1e42ae1b40cad6e99da0aab8a5576}\label{utils_8h_a1bb1e42ae1b40cad6e99da0aab8a5576} 
+\index{utils.h@{utils.h}!infinity@{infinity}}
+\index{infinity@{infinity}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{infinity}{infinity}}
+{\footnotesize\ttfamily const double infinity = std\+::numeric\+\_\+limits$<$double$>$\+::infinity()}
+
+
+
+Definition at line \mbox{\hyperlink{utils_8h_source_l00021}{21}} of file \mbox{\hyperlink{utils_8h_source}{utils.\+h}}.
+
+\Hypertarget{utils_8h_a2df379b283a801aa08771af3f657b7f5}\label{utils_8h_a2df379b283a801aa08771af3f657b7f5} 
+\index{utils.h@{utils.h}!kEpsilon@{kEpsilon}}
+\index{kEpsilon@{kEpsilon}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{kEpsilon}{kEpsilon}}
+{\footnotesize\ttfamily constexpr double k\+Epsilon = std\+::numeric\+\_\+limits$<$double$>$\+::epsilon()\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{utils_8h_source_l00023}{23}} of file \mbox{\hyperlink{utils_8h_source}{utils.\+h}}.
+
+\Hypertarget{utils_8h_a43016d873124d39034edb8cd164794db}\label{utils_8h_a43016d873124d39034edb8cd164794db} 
+\index{utils.h@{utils.h}!pi@{pi}}
+\index{pi@{pi}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{pi}{pi}}
+{\footnotesize\ttfamily const double pi = 3.\+1415926535897932385}
+
+
+
+Definition at line \mbox{\hyperlink{utils_8h_source_l00022}{22}} of file \mbox{\hyperlink{utils_8h_source}{utils.\+h}}.
+

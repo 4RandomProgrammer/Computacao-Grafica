@@ -1,0 +1,45 @@
+\doxysection{color.\+h}
+\hypertarget{color_8h_source}{}\label{color_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ COLOR\_H}}
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ COLOR\_H}}
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vec3_8h}{vec3.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{utils_8h}{utils.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include<png.h>}}
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00010}00010\ \textcolor{keyword}{using\ }\mbox{\hyperlink{classvec3}{color}}\ =\ \mbox{\hyperlink{classvec3}{vec3}};}
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00012}00012\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ linear\_to\_gamma(\textcolor{keywordtype}{double}\ linear\_component)}
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00014}00014\ \ \ \ \ \textcolor{keywordflow}{return}\ sqrt(linear\_component);}
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00015}00015\ \}}
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00017}00017\ \textcolor{keywordtype}{void}\ write\_color(std::ostream\ \&out,\ \mbox{\hyperlink{classvec3}{color}}\ pixel\_color,\ \textcolor{keywordtype}{int}\ samples\_per\_pixel)\ \{}
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00018}00018\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{auto}\ r\ =\ pixel\_color.x();}
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{auto}\ g\ =\ pixel\_color.y();}
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{auto}\ b\ =\ pixel\_color.z();}
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{auto}\ scale\ =\ 1.0\ /\ samples\_per\_pixel;}
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00025}00025\ \ \ \ \ r\ *=\ scale;}
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00026}00026\ \ \ \ \ g\ *=\ scale;}
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00027}00027\ \ \ \ \ b\ *=\ scale;}
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00029}00029\ \ \ \ \ r\ =\ linear\_to\_gamma(r);}
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00030}00030\ \ \ \ \ g\ =\ linear\_to\_gamma(g);}
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00031}00031\ \ \ \ \ b\ =\ linear\_to\_gamma(b);}
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00033}00033\ \ \ \ \ \textcolor{comment}{//\ Write\ the\ translated\ [0,255]\ value\ of\ each\ color\ component.}}
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classinterval}{interval}}\ intensity(0.000,\ 0.999);}
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00035}00035\ \ \ \ \ out\ <<\ static\_cast<int>(256\ *\ intensity.clamp(r))\ <<\ \textcolor{charliteral}{'\ '}}
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ <<\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(256\ *\ intensity.clamp(g))\ <<\ \textcolor{charliteral}{'\ '}}
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ <<\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(256\ *\ intensity.clamp(b))\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00038}00038\ \};}
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{color_8h_source_l00040}00040\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

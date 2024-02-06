@@ -1,0 +1,98 @@
+\doxysection{material.\+h}
+\hypertarget{material_8h_source}{}\label{material_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ MATERIAL\_H}}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ MATERIAL\_H}}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{utils_8h}{utils.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{hittable_8h}{hittable.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00008}00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classhit__record}{hit\_record}};}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00010}\mbox{\hyperlink{classmaterial}{00010}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmaterial}{material}}\ \{}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00012}00012\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classmaterial}{\string~material}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ scatter(\textcolor{keyword}{const}\ \mbox{\hyperlink{classray}{ray}}\&\ r,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classhit__record}{hit\_record}}\&\ rec,\ \mbox{\hyperlink{classvec3}{color}}\&\ attenuation,\ \mbox{\hyperlink{classray}{ray}}\&\ scattered)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00015}00015\ \};}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00019}\mbox{\hyperlink{classlambertian}{00019}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlambertian}{lambertian}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classmaterial}{material}}\ \{}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00020}00020\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00021}00021\ \ \ \ \ \mbox{\hyperlink{classlambertian}{lambertian}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classvec3}{color}}\&\ a)\ :\ albedo(a)\ \{\}}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00023}00023\ \ \ \ \ \textcolor{keywordtype}{bool}\ scatter(\textcolor{keyword}{const}\ \mbox{\hyperlink{classray}{ray}}\&\ r\_in,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classhit__record}{hit\_record}}\&\ rec,\ \mbox{\hyperlink{classvec3}{color}}\&\ attenuation,\ \mbox{\hyperlink{classray}{ray}}\&\ scattered)\textcolor{keyword}{}}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00024}00024\ \textcolor{keyword}{\ \ \ \ const\ override\ }\{}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ scatter\_direction\ =\ rec.normal\ +\ random\_unit\_vector();}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Catch\ degenerate\ scatter\ direction}}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (scatter\_direction.near\_zero())\ scatter\_direction\ =\ rec.normal;}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00029}00029\ \ \ \ \ \ \ \ \ scattered\ =\ \mbox{\hyperlink{classray}{ray}}(rec.p,\ scatter\_direction);}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00030}00030\ \ \ \ \ \ \ \ \ attenuation\ =\ albedo;}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00034}00034\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00035}00035\ \ \ \ \ \mbox{\hyperlink{classvec3}{color}}\ albedo;}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00036}00036\ \};}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00039}\mbox{\hyperlink{classmetal}{00039}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmetal}{metal}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classmaterial}{material}}\ \{}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00040}00040\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00041}00041\ \ \ \ \ \mbox{\hyperlink{classmetal}{metal}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classvec3}{color}}\&\ a,\ \textcolor{keywordtype}{double}\ f)\ :\ albedo(a),\ fuzz(f\ <\ 1\ ?\ f\ :\ 1)\ \{\}}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00043}00043\ \ \ \ \ \textcolor{keywordtype}{bool}\ scatter(\textcolor{keyword}{const}\ \mbox{\hyperlink{classray}{ray}}\&\ r\_in,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classhit__record}{hit\_record}}\&\ rec,\ \mbox{\hyperlink{classvec3}{color}}\&\ attenuation,\ \mbox{\hyperlink{classray}{ray}}\&\ scattered)\textcolor{keyword}{}}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00044}00044\ \textcolor{keyword}{\ \ \ \ const\ override\ }\{}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ reflected\ =\ reflect(unit\_vector(r\_in.direction()),\ rec.normal);}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ scattered\ =\ \mbox{\hyperlink{classray}{ray}}(rec.p,\ reflected);}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ scattered\ =\ \mbox{\hyperlink{classray}{ray}}(rec.p,\ reflected\ +\ fuzz*random\_unit\_vector());}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ attenuation\ =\ albedo;}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (dot(scattered.direction(),\ rec.normal)\ >\ 0);}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00050}00050\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00052}00052\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00053}00053\ \ \ \ \ \mbox{\hyperlink{classvec3}{color}}\ albedo;}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00054}00054\ \ \ \ \ \textcolor{keywordtype}{double}\ fuzz;}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00055}00055\ \};}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00057}\mbox{\hyperlink{classdielectric}{00057}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdielectric}{dielectric}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classmaterial}{material}}\ \{}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00058}00058\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00059}00059\ \ \ \ \ \mbox{\hyperlink{classdielectric}{dielectric}}(\textcolor{keywordtype}{double}\ index\_of\_refraction)\ :\ ir(index\_of\_refraction)\ \{\}}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00061}00061\ \ \ \ \ \textcolor{keywordtype}{bool}\ scatter(\textcolor{keyword}{const}\ \mbox{\hyperlink{classray}{ray}}\&\ r\_in,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classhit__record}{hit\_record}}\&\ rec,\ \mbox{\hyperlink{classvec3}{color}}\&\ attenuation,\ \mbox{\hyperlink{classray}{ray}}\&\ scattered)\textcolor{keyword}{}}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00062}00062\ \textcolor{keyword}{\ \ \ \ const\ override\ }\{}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ attenuation\ =\ \mbox{\hyperlink{classvec3}{color}}(1.0,\ 1.0,\ 1.0);}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ refraction\_ratio\ =\ rec.front\_face\ ?\ (1.0/ir)\ :\ ir;}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ unit\_direction\ =\ unit\_vector(r\_in.direction());}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ cos\_theta\ =\ fmin(dot(-\/unit\_direction,\ rec.normal),\ 1.0);}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ sin\_theta\ =\ sqrt(1.0\ -\/\ cos\_theta*cos\_theta);}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ cannot\_refract\ =\ refraction\_ratio\ *\ sin\_theta\ >\ 1.0;}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00071}00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ direction;}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cannot\_refract\ ||\ reflectance(cos\_theta,\ refraction\_ratio)\ >\ random\_double())}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ direction\ =\ reflect(unit\_direction,\ rec.normal);}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ direction\ =\ refract(unit\_direction,\ rec.normal,\ refraction\_ratio);}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00078}00078\ \ \ \ \ \ \ \ \ scattered\ =\ \mbox{\hyperlink{classray}{ray}}(rec.p,\ direction);}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00080}00080\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00082}00082\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00083}00083\ \ \ \ \ \textcolor{keywordtype}{double}\ ir;\ \textcolor{comment}{//\ Index\ of\ Refraction}}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00085}00085\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ reflectance(\textcolor{keywordtype}{double}\ cosine,\ \textcolor{keywordtype}{double}\ ref\_idx)\ \{}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Use\ Schlick's\ approximation\ for\ reflectance.}}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ r0\ =\ (1-\/ref\_idx)\ /\ (1+ref\_idx);}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00088}00088\ \ \ \ \ \ \ \ \ r0\ =\ r0*r0;}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ r0\ +\ (1-\/r0)*pow((1\ -\/\ cosine),5);}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00090}00090\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00091}00091\ \};}
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{material_8h_source_l00093}00093\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

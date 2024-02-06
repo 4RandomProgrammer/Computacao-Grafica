@@ -1,0 +1,108 @@
+\doxysection{ray Class Reference}
+\hypertarget{classray}{}\label{classray}\index{ray@{ray}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classray_a7def5725591c1dda81936aa89c2003f4}{ray}} (const \mbox{\hyperlink{classvec3}{point3}} \&origin, const \mbox{\hyperlink{classvec3}{vec3}} \&direction)
+\item 
+\mbox{\hyperlink{classvec3}{point3}} \mbox{\hyperlink{classray_abc229e41909f1f0aa0290894d363408a}{origin}} () const
+\item 
+\mbox{\hyperlink{classvec3}{vec3}} \mbox{\hyperlink{classray_a28fa3264fc44eef1c968797f49aa8d7e}{direction}} () const
+\item 
+\mbox{\hyperlink{classvec3}{point3}} \mbox{\hyperlink{classray_a9b41fb48d2e3bce032471a42a1cedc70}{at}} (double t) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{ray_8h_source_l00006}{6}} of file \mbox{\hyperlink{ray_8h_source}{ray.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classray_a6a81906c090ceff40ac9a288639f4861}\label{classray_a6a81906c090ceff40ac9a288639f4861} 
+\index{ray@{ray}!ray@{ray}}
+\index{ray@{ray}!ray@{ray}}
+\doxysubsubsection{\texorpdfstring{ray()}{ray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ray\+::ray (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{ray_8h_source_l00008}{8}} of file \mbox{\hyperlink{ray_8h_source}{ray.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00008\ \{\}}
+
+\end{DoxyCode}
+\Hypertarget{classray_a7def5725591c1dda81936aa89c2003f4}\label{classray_a7def5725591c1dda81936aa89c2003f4} 
+\index{ray@{ray}!ray@{ray}}
+\index{ray@{ray}!ray@{ray}}
+\doxysubsubsection{\texorpdfstring{ray()}{ray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ray\+::ray (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classvec3}{point3}} \&}]{origin,  }\item[{const \mbox{\hyperlink{classvec3}{vec3}} \&}]{direction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{ray_8h_source_l00010}{10}} of file \mbox{\hyperlink{ray_8h_source}{ray.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010\ :\ orig(origin),\ dir(direction)\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classray_a9b41fb48d2e3bce032471a42a1cedc70}\label{classray_a9b41fb48d2e3bce032471a42a1cedc70} 
+\index{ray@{ray}!at@{at}}
+\index{at@{at}!ray@{ray}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classvec3}{point3}} ray\+::at (\begin{DoxyParamCaption}\item[{double}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{ray_8h_source_l00015}{15}} of file \mbox{\hyperlink{ray_8h_source}{ray.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ orig\ +\ t*dir;}
+\DoxyCodeLine{00017\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classray_a28fa3264fc44eef1c968797f49aa8d7e}\label{classray_a28fa3264fc44eef1c968797f49aa8d7e} 
+\index{ray@{ray}!direction@{direction}}
+\index{direction@{direction}!ray@{ray}}
+\doxysubsubsection{\texorpdfstring{direction()}{direction()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classvec3}{vec3}} ray\+::direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{ray_8h_source_l00013}{13}} of file \mbox{\hyperlink{ray_8h_source}{ray.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \{\ \textcolor{keywordflow}{return}\ dir;\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classray_abc229e41909f1f0aa0290894d363408a}\label{classray_abc229e41909f1f0aa0290894d363408a} 
+\index{ray@{ray}!origin@{origin}}
+\index{origin@{origin}!ray@{ray}}
+\doxysubsubsection{\texorpdfstring{origin()}{origin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classvec3}{point3}} ray\+::origin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{ray_8h_source_l00012}{12}} of file \mbox{\hyperlink{ray_8h_source}{ray.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \{\ \textcolor{keywordflow}{return}\ orig;\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+ray.\+h\end{DoxyCompactItemize}

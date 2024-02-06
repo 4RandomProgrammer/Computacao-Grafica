@@ -1,0 +1,60 @@
+\doxysection{sphere.\+h}
+\hypertarget{sphere_8h_source}{}\label{sphere_8h_source}\mbox{\hyperlink{sphere_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00005}00005\ \textcolor{preprocessor}{\#ifndef\ SPHERE\_H}}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00006}00006\ \textcolor{preprocessor}{\#define\ SPHERE\_H}}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{hittable_8h}{hittable.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vec3_8h}{vec3.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00011}\mbox{\hyperlink{classsphere}{00011}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsphere}{sphere}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classhittable}{hittable}}\ \{}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00013}00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{point3}}\ center;}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00014}00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classsphere}{sphere}}(\mbox{\hyperlink{classvec3}{point3}}\ \_center,\ \textcolor{keywordtype}{double}\ \_radius,\ shared\_ptr<material>\ \_material)\ :\ center(\_center),\ radius(\_radius),\ mat(\_material)\ \{\}}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ hit(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classray}{ray}}\&\ r,\ \mbox{\hyperlink{classinterval}{interval}}\ ray\_t,\ \mbox{\hyperlink{classhit__record}{hit\_record}}\&\ rec)\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ oc\ =\ r.origin()\ -\/\ center;}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ a\ =\ r.direction().length\_squared();}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ half\_b\ =\ dot(oc,\ r.direction());}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ c\ =\ oc.length\_squared()\ -\/\ radius*radius;}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ discriminant\ =\ half\_b\ *\ half\_b\ -\/\ a\ *\ c;}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (discriminant\ <\ 0)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ sqrtd\ =\ sqrt(discriminant);}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ root\ =\ (-\/half\_b\ -\/\ sqrtd)\ /\ a;}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!ray\_t.surrounds(root))\ \{}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ root\ =\ (-\/half\_b\ +\ sqrtd)\ /\ a;}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!ray\_t.surrounds(root))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ rec.t\ =\ root;}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ rec.p\ =\ r.at(rec.t);}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ rec.normal\ =\ (rec.p\ -\/\ center)\ /\ radius;}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ outward\_normal\ =\ (rec.p\ -\/\ center)\ /\ radius;}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ rec.set\_face\_normal(r,\ outward\_normal);}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ rec.mat\ =\ mat;}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ lerp(\mbox{\hyperlink{classvec3}{point3}}\ start,\ \mbox{\hyperlink{classvec3}{point3}}\ end,\ \textcolor{keywordtype}{double}\ time)\ \{}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ center\ =\ start\ *\ (\ 1\ -\/\ time\ )\ +\ end\ *\ time;}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00050}00050\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ radius;}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ shared\_ptr<material>\ mat;}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00055}00055\ \};}
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{sphere_8h_source_l00057}00057\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,134 @@
+\doxysection{sphere Class Reference}
+\hypertarget{classsphere}{}\label{classsphere}\index{sphere@{sphere}}
+
+
+Inheritance diagram for sphere\+:
+% FIG 0
+
+
+Collaboration diagram for sphere\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsphere_afb5f0ae0d487c21a08c4741bc736664c}{sphere}} (\mbox{\hyperlink{classvec3}{point3}} \+\_\+center, double \+\_\+radius, shared\+\_\+ptr$<$ \mbox{\hyperlink{classmaterial}{material}} $>$ \+\_\+material)
+\item 
+bool \mbox{\hyperlink{classsphere_ae829560b28cd8ad4c47be224adc10c3d}{hit}} (const \mbox{\hyperlink{classray}{ray}} \&r, \mbox{\hyperlink{classinterval}{interval}} ray\+\_\+t, \mbox{\hyperlink{classhit__record}{hit\+\_\+record}} \&rec) const override
+\item 
+void \mbox{\hyperlink{classsphere_aff9062b96233a1ee485e37e698c8d8e7}{lerp}} (\mbox{\hyperlink{classvec3}{point3}} start, \mbox{\hyperlink{classvec3}{point3}} end, double time)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classvec3}{point3}} \mbox{\hyperlink{classsphere_a77f6d47c479f7300d7cf3528f4b592c4}{center}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{sphere_8h_source_l00011}{11}} of file \mbox{\hyperlink{sphere_8h_source}{sphere.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classsphere_afb5f0ae0d487c21a08c4741bc736664c}\label{classsphere_afb5f0ae0d487c21a08c4741bc736664c} 
+\index{sphere@{sphere}!sphere@{sphere}}
+\index{sphere@{sphere}!sphere@{sphere}}
+\doxysubsubsection{\texorpdfstring{sphere()}{sphere()}}
+{\footnotesize\ttfamily sphere\+::sphere (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classvec3}{point3}}}]{\+\_\+center,  }\item[{double}]{\+\_\+radius,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classmaterial}{material}} $>$}]{\+\_\+material }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{sphere_8h_source_l00014}{14}} of file \mbox{\hyperlink{sphere_8h_source}{sphere.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ :\ center(\_center),\ radius(\_radius),\ mat(\_material)\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsphere_ae829560b28cd8ad4c47be224adc10c3d}\label{classsphere_ae829560b28cd8ad4c47be224adc10c3d} 
+\index{sphere@{sphere}!hit@{hit}}
+\index{hit@{hit}!sphere@{sphere}}
+\doxysubsubsection{\texorpdfstring{hit()}{hit()}}
+{\footnotesize\ttfamily bool sphere\+::hit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classray}{ray}} \&}]{r,  }\item[{\mbox{\hyperlink{classinterval}{interval}}}]{ray\+\_\+t,  }\item[{\mbox{\hyperlink{classhit__record}{hit\+\_\+record}} \&}]{rec }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classhittable}{hittable}}.
+
+
+
+Definition at line \mbox{\hyperlink{sphere_8h_source_l00016}{16}} of file \mbox{\hyperlink{sphere_8h_source}{sphere.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ oc\ =\ r.origin()\ -\/\ center;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ a\ =\ r.direction().length\_squared();}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ half\_b\ =\ dot(oc,\ r.direction());}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ c\ =\ oc.length\_squared()\ -\/\ radius*radius;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ discriminant\ =\ half\_b\ *\ half\_b\ -\/\ a\ *\ c;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (discriminant\ <\ 0)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ sqrtd\ =\ sqrt(discriminant);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ root\ =\ (-\/half\_b\ -\/\ sqrtd)\ /\ a;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!ray\_t.surrounds(root))\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ root\ =\ (-\/half\_b\ +\ sqrtd)\ /\ a;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!ray\_t.surrounds(root))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ rec.t\ =\ root;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ rec.p\ =\ r.at(rec.t);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ rec.normal\ =\ (rec.p\ -\/\ center)\ /\ radius;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ outward\_normal\ =\ (rec.p\ -\/\ center)\ /\ radius;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ rec.set\_face\_normal(r,\ outward\_normal);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ rec.mat\ =\ mat;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classsphere_aff9062b96233a1ee485e37e698c8d8e7}\label{classsphere_aff9062b96233a1ee485e37e698c8d8e7} 
+\index{sphere@{sphere}!lerp@{lerp}}
+\index{lerp@{lerp}!sphere@{sphere}}
+\doxysubsubsection{\texorpdfstring{lerp()}{lerp()}}
+{\footnotesize\ttfamily void sphere\+::lerp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classvec3}{point3}}}]{start,  }\item[{\mbox{\hyperlink{classvec3}{point3}}}]{end,  }\item[{double}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{sphere_8h_source_l00046}{46}} of file \mbox{\hyperlink{sphere_8h_source}{sphere.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ center\ =\ start\ *\ (\ 1\ -\/\ time\ )\ +\ end\ *\ time;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classsphere_a77f6d47c479f7300d7cf3528f4b592c4}\label{classsphere_a77f6d47c479f7300d7cf3528f4b592c4} 
+\index{sphere@{sphere}!center@{center}}
+\index{center@{center}!sphere@{sphere}}
+\doxysubsubsection{\texorpdfstring{center}{center}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classvec3}{point3}} sphere\+::center}
+
+
+
+Definition at line \mbox{\hyperlink{sphere_8h_source_l00013}{13}} of file \mbox{\hyperlink{sphere_8h_source}{sphere.\+h}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{sphere_8h}{sphere.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,49 @@
+\doxysection{hittable\+\_\+list.\+h}
+\hypertarget{hittable__list_8h_source}{}\label{hittable__list_8h_source}\mbox{\hyperlink{hittable__list_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00004}00004\ \textcolor{preprocessor}{\#ifndef\ HITTABLE\_LIST\_H}}
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00005}00005\ \textcolor{preprocessor}{\#define\ HITTABLE\_LIST\_H}}
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{hittable_8h}{hittable.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{utils_8h}{utils.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00012}00012\ \textcolor{keyword}{using\ }std::shared\_ptr;}
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00013}00013\ \textcolor{keyword}{using\ }std::make\_shared;}
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00015}\mbox{\hyperlink{classhittable__list}{00015}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classhittable__list}{hittable\_list}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classhittable}{hittable}}\ \{}
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00017}00017\ \ \ \ \ \ \ \ \ std::vector<shared\_ptr<hittable>>\ objects;}
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00019}00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classhittable__list}{hittable\_list}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00020}00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classhittable__list}{hittable\_list}}(shared\_ptr<hittable>\ \textcolor{keywordtype}{object})\ \{\ add(\textcolor{keywordtype}{object});\}}
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ clear()\ \{\ objects.clear();\ \}}
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ add(shared\_ptr<hittable>\ \textcolor{keywordtype}{object})\ \{}
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ objects.push\_back(\textcolor{keywordtype}{object});}
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00026}00026\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ hit(\textcolor{keyword}{const}\ \mbox{\hyperlink{classray}{ray}}\&\ r,\mbox{\hyperlink{classinterval}{interval}}\ ray\_t,\ \mbox{\hyperlink{classhit__record}{hit\_record}}\&\ rec)\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classhit__record}{hit\_record}}\ \ temp\_rec;}
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ hit\_anything\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ closest\_so\_far\ =\ ray\_t.max;}
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \textcolor{keywordtype}{object}\ :\ objects\ )\ \{}
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(object-\/>hit(r,\mbox{\hyperlink{classinterval}{interval}}(ray\_t.min,\ closest\_so\_far),\ temp\_rec))\ \{}
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hit\_anything\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ closest\_so\_far\ =\ temp\_rec.t;}
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rec\ =\ temp\_rec;}
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ hit\_anything;}
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00042}00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00043}00043\ \};}
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{hittable__list_8h_source_l00046}00046\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

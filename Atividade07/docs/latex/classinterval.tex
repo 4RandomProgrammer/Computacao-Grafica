@@ -1,0 +1,176 @@
+\doxysection{interval Class Reference}
+\hypertarget{classinterval}{}\label{classinterval}\index{interval@{interval}}
+
+
+Collaboration diagram for interval\+:
+% FIG 0
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classinterval_ac7cd712129b0217cd8a466ccb6e03f6d}{interval}} (double \+\_\+min, double \+\_\+max)
+\item 
+bool \mbox{\hyperlink{classinterval_aa981e5b35d830ef5525c479e9724250a}{contains}} (double x) const
+\item 
+bool \mbox{\hyperlink{classinterval_a2b78c560ddb82a10ba138471a631cbcc}{surrounds}} (double x) const
+\item 
+double \mbox{\hyperlink{classinterval_add5a3a1a969cf4b7a11ccc33dd861042}{clamp}} (double x) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classinterval_ab325ada0296eefdc208d49862aa01175}{min}}
+\item 
+double \mbox{\hyperlink{classinterval_a02eac6f97ae4212f8b2bbeea12f4874e}{max}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \mbox{\hyperlink{classinterval}{interval}} \mbox{\hyperlink{classinterval_a6e23ba90dce932166d37f871b5ffc3e4}{empty}}
+\item 
+static const \mbox{\hyperlink{classinterval}{interval}} \mbox{\hyperlink{classinterval_ade23700267da88e2d1a5b470aff38de6}{universe}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{interval_8h_source_l00004}{4}} of file \mbox{\hyperlink{interval_8h_source}{interval.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classinterval_acbedd1641f77c0c8007c75ff3f10bb11}\label{classinterval_acbedd1641f77c0c8007c75ff3f10bb11} 
+\index{interval@{interval}!interval@{interval}}
+\index{interval@{interval}!interval@{interval}}
+\doxysubsubsection{\texorpdfstring{interval()}{interval()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily interval\+::interval (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{interval_8h_source_l00008}{8}} of file \mbox{\hyperlink{interval_8h_source}{interval.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00008\ :\ min(+infinity),\ max(-\/infinity)\ \{\};}
+
+\end{DoxyCode}
+\Hypertarget{classinterval_ac7cd712129b0217cd8a466ccb6e03f6d}\label{classinterval_ac7cd712129b0217cd8a466ccb6e03f6d} 
+\index{interval@{interval}!interval@{interval}}
+\index{interval@{interval}!interval@{interval}}
+\doxysubsubsection{\texorpdfstring{interval()}{interval()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily interval\+::interval (\begin{DoxyParamCaption}\item[{double}]{\+\_\+min,  }\item[{double}]{\+\_\+max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{interval_8h_source_l00010}{10}} of file \mbox{\hyperlink{interval_8h_source}{interval.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010\ :\ min(\_min),\ max(\_max)\ \{\};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classinterval_add5a3a1a969cf4b7a11ccc33dd861042}\label{classinterval_add5a3a1a969cf4b7a11ccc33dd861042} 
+\index{interval@{interval}!clamp@{clamp}}
+\index{clamp@{clamp}!interval@{interval}}
+\doxysubsubsection{\texorpdfstring{clamp()}{clamp()}}
+{\footnotesize\ttfamily double interval\+::clamp (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{interval_8h_source_l00022}{22}} of file \mbox{\hyperlink{interval_8h_source}{interval.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ <\ min)\ \textcolor{keywordflow}{return}\ min;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ >\ max)\ \textcolor{keywordflow}{return}\ max;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classinterval_aa981e5b35d830ef5525c479e9724250a}\label{classinterval_aa981e5b35d830ef5525c479e9724250a} 
+\index{interval@{interval}!contains@{contains}}
+\index{contains@{contains}!interval@{interval}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily bool interval\+::contains (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{interval_8h_source_l00012}{12}} of file \mbox{\hyperlink{interval_8h_source}{interval.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ min\ <=\ x\ \&\&\ x\ <=\ max;}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classinterval_a2b78c560ddb82a10ba138471a631cbcc}\label{classinterval_a2b78c560ddb82a10ba138471a631cbcc} 
+\index{interval@{interval}!surrounds@{surrounds}}
+\index{surrounds@{surrounds}!interval@{interval}}
+\doxysubsubsection{\texorpdfstring{surrounds()}{surrounds()}}
+{\footnotesize\ttfamily bool interval\+::surrounds (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{interval_8h_source_l00016}{16}} of file \mbox{\hyperlink{interval_8h_source}{interval.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ min\ <\ x\ \&\&\ x\ <\ max;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classinterval_a6e23ba90dce932166d37f871b5ffc3e4}\label{classinterval_a6e23ba90dce932166d37f871b5ffc3e4} 
+\index{interval@{interval}!empty@{empty}}
+\index{empty@{empty}!interval@{interval}}
+\doxysubsubsection{\texorpdfstring{empty}{empty}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classinterval}{interval}} interval\+::empty\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{interval_8h_source_l00020}{20}} of file \mbox{\hyperlink{interval_8h_source}{interval.\+h}}.
+
+\Hypertarget{classinterval_a02eac6f97ae4212f8b2bbeea12f4874e}\label{classinterval_a02eac6f97ae4212f8b2bbeea12f4874e} 
+\index{interval@{interval}!max@{max}}
+\index{max@{max}!interval@{interval}}
+\doxysubsubsection{\texorpdfstring{max}{max}}
+{\footnotesize\ttfamily double interval\+::max}
+
+
+
+Definition at line \mbox{\hyperlink{interval_8h_source_l00006}{6}} of file \mbox{\hyperlink{interval_8h_source}{interval.\+h}}.
+
+\Hypertarget{classinterval_ab325ada0296eefdc208d49862aa01175}\label{classinterval_ab325ada0296eefdc208d49862aa01175} 
+\index{interval@{interval}!min@{min}}
+\index{min@{min}!interval@{interval}}
+\doxysubsubsection{\texorpdfstring{min}{min}}
+{\footnotesize\ttfamily double interval\+::min}
+
+
+
+Definition at line \mbox{\hyperlink{interval_8h_source_l00006}{6}} of file \mbox{\hyperlink{interval_8h_source}{interval.\+h}}.
+
+\Hypertarget{classinterval_ade23700267da88e2d1a5b470aff38de6}\label{classinterval_ade23700267da88e2d1a5b470aff38de6} 
+\index{interval@{interval}!universe@{universe}}
+\index{universe@{universe}!interval@{interval}}
+\doxysubsubsection{\texorpdfstring{universe}{universe}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classinterval}{interval}} interval\+::universe\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{interval_8h_source_l00020}{20}} of file \mbox{\hyperlink{interval_8h_source}{interval.\+h}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+interval.\+h\end{DoxyCompactItemize}

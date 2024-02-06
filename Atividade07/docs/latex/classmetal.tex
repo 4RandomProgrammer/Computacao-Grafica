@@ -1,0 +1,75 @@
+\doxysection{metal Class Reference}
+\hypertarget{classmetal}{}\label{classmetal}\index{metal@{metal}}
+
+
+Inheritance diagram for metal\+:
+% FIG 0
+
+
+Collaboration diagram for metal\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmetal_ac27c387dc67625c2f7967c23ccf1aa81}{metal}} (const \mbox{\hyperlink{classvec3}{color}} \&a, double f)
+\item 
+bool \mbox{\hyperlink{classmetal_a7e934504e51b2c6bad3f073021ea696d}{scatter}} (const \mbox{\hyperlink{classray}{ray}} \&r\+\_\+in, const \mbox{\hyperlink{classhit__record}{hit\+\_\+record}} \&rec, \mbox{\hyperlink{classvec3}{color}} \&attenuation, \mbox{\hyperlink{classray}{ray}} \&scattered) const override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{material_8h_source_l00039}{39}} of file \mbox{\hyperlink{material_8h_source}{material.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classmetal_ac27c387dc67625c2f7967c23ccf1aa81}\label{classmetal_ac27c387dc67625c2f7967c23ccf1aa81} 
+\index{metal@{metal}!metal@{metal}}
+\index{metal@{metal}!metal@{metal}}
+\doxysubsubsection{\texorpdfstring{metal()}{metal()}}
+{\footnotesize\ttfamily metal\+::metal (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classvec3}{color}} \&}]{a,  }\item[{double}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{material_8h_source_l00041}{41}} of file \mbox{\hyperlink{material_8h_source}{material.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041\ :\ albedo(a),\ fuzz(f\ <\ 1\ ?\ f\ :\ 1)\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmetal_a7e934504e51b2c6bad3f073021ea696d}\label{classmetal_a7e934504e51b2c6bad3f073021ea696d} 
+\index{metal@{metal}!scatter@{scatter}}
+\index{scatter@{scatter}!metal@{metal}}
+\doxysubsubsection{\texorpdfstring{scatter()}{scatter()}}
+{\footnotesize\ttfamily bool metal\+::scatter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classray}{ray}} \&}]{r\+\_\+in,  }\item[{const \mbox{\hyperlink{classhit__record}{hit\+\_\+record}} \&}]{rec,  }\item[{\mbox{\hyperlink{classvec3}{color}} \&}]{attenuation,  }\item[{\mbox{\hyperlink{classray}{ray}} \&}]{scattered }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classmaterial}{material}}.
+
+
+
+Definition at line \mbox{\hyperlink{material_8h_source_l00043}{43}} of file \mbox{\hyperlink{material_8h_source}{material.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classvec3}{vec3}}\ reflected\ =\ reflect(unit\_vector(r\_in.direction()),\ rec.normal);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ scattered\ =\ \mbox{\hyperlink{classray}{ray}}(rec.p,\ reflected);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ scattered\ =\ \mbox{\hyperlink{classray}{ray}}(rec.p,\ reflected\ +\ fuzz*random\_unit\_vector());}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ attenuation\ =\ albedo;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (dot(scattered.direction(),\ rec.normal)\ >\ 0);}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+material.\+h\end{DoxyCompactItemize}
